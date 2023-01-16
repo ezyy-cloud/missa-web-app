@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import {
-  useMediaQuery, InputLabel, Select, MenuItem, FormControl, Button, TextField, Link, Snackbar, IconButton, Tooltip,
+  useMediaQuery, InputLabel, Select, MenuItem, FormControl, Button, TextField, Link, Snackbar, IconButton, Typography, Grid,
+  // Tooltip,
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import CloseIcon from '@mui/icons-material/Close';
-import LockOpenIcon from '@mui/icons-material/LockOpen';
+// import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { useTheme } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -34,11 +35,19 @@ const useStyles = makeStyles((theme) => ({
   },
   registerButton: {
     minWidth: 'unset',
+    backgroundColor: theme.palette.colors.primary,
+  },
+  loginButton: {
+    color: theme.palette.colors.primary,
   },
   resetPassword: {
     cursor: 'pointer',
     textAlign: 'center',
     marginTop: theme.spacing(2),
+  },
+  mobileHeader: {
+    display: 'flex',
+    alignItems: 'end',
   },
 }));
 
@@ -131,7 +140,7 @@ const LoginPage = () => {
 
   return (
     <LoginLayout>
-      <div className={classes.options}>
+      {/* <div className={classes.options}>
         {nativeEnvironment && (
           <Tooltip title={t('settingsServer')}>
             <IconButton onClick={() => navigate('/change-server')}>
@@ -139,9 +148,20 @@ const LoginPage = () => {
             </IconButton>
           </Tooltip>
         )}
-      </div>
+      </div> */}
       <div className={classes.container}>
-        {useMediaQuery(theme.breakpoints.down('lg')) && <LogoImage color={theme.palette.primary.main} />}
+        {useMediaQuery(theme.breakpoints.down('lg')) && (
+        <Grid container spacing={2} className={classes.mobileHeader}>
+          <Grid xs={4}>
+            <LogoImage color={theme.palette.secondary.contrastText} />
+          </Grid>
+          <Grid xs={8}>
+            <Typography variant="h4" className={classes.sidebarTitle} gutterBottom>
+              Missa Cloud
+            </Typography>
+          </Grid>
+        </Grid>
+        )}
         <TextField
           required
           error={failed}
@@ -172,10 +192,12 @@ const LoginPage = () => {
           variant="contained"
           color="secondary"
           disabled={!email || !password}
+          className={classes.loginButton}
         >
           {t('loginLogin')}
         </Button>
         <div className={classes.extraContainer}>
+          {registrationEnabled && (
           <Button
             className={classes.registerButton}
             onClick={() => navigate('/register')}
@@ -184,6 +206,7 @@ const LoginPage = () => {
           >
             {t('loginRegister')}
           </Button>
+          )}
           {languageEnabled && (
             <FormControl fullWidth>
               <InputLabel>{t('loginLanguage')}</InputLabel>

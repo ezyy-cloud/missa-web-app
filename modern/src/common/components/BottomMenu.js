@@ -11,16 +11,30 @@ import MapIcon from '@mui/icons-material/Map';
 import PersonIcon from '@mui/icons-material/Person';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
+import { makeStyles } from '@mui/styles';
 import { sessionActions } from '../../store';
 import { useTranslation } from './LocalizationProvider';
 import { useRestriction } from '../util/permissions';
 import { nativePostMessage } from './NativeInterface';
+
+const useStyles = makeStyles((theme) => ({
+  bottomNav: {
+    backgroundColor: theme.palette.colors.primary,
+  },
+  bottomNavAction: {
+    color: theme.palette.colors.background,
+    '&.Mui-selected': {
+      color: theme.palette.colors.secondary,
+    },
+  },
+}));
 
 const BottomMenu = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
   const t = useTranslation();
+  const classes = useStyles();
 
   const readonly = useRestriction('readonly');
   const disableReports = useRestriction('disableReports');
@@ -100,9 +114,10 @@ const BottomMenu = () => {
 
   return (
     <Paper square elevation={3}>
-      <BottomNavigation value={currentSelection()} onChange={handleSelection} showLabels>
+      <BottomNavigation value={currentSelection()} onChange={handleSelection} className={classes.bottomNav} showLabels>
         <BottomNavigationAction
           label={t('mapTitle')}
+          className={classes.bottomNavAction}
           icon={(
             <Badge color="error" variant="dot" overlap="circular" invisible={socket !== false}>
               <MapIcon />
@@ -111,13 +126,13 @@ const BottomMenu = () => {
           value="map"
         />
         {!disableReports && (
-          <BottomNavigationAction label={t('reportTitle')} icon={<DescriptionIcon />} value="reports" />
+          <BottomNavigationAction label={t('reportTitle')} className={classes.bottomNavAction} icon={<DescriptionIcon />} value="reports" />
         )}
-        <BottomNavigationAction label={t('settingsTitle')} icon={<SettingsIcon />} value="settings" />
+        <BottomNavigationAction label={t('settingsTitle')} className={classes.bottomNavAction} icon={<SettingsIcon />} value="settings" />
         {readonly ? (
-          <BottomNavigationAction label={t('loginLogout')} icon={<ExitToAppIcon />} value="logout" />
+          <BottomNavigationAction label={t('loginLogout')} className={classes.bottomNavAction} icon={<ExitToAppIcon />} value="logout" />
         ) : (
-          <BottomNavigationAction label={t('settingsUser')} icon={<PersonIcon />} value="account" />
+          <BottomNavigationAction label={t('settingsUser')} className={classes.bottomNavAction} icon={<PersonIcon />} value="account" />
         )}
       </BottomNavigation>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>

@@ -40,12 +40,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       height: theme.dimensions.drawerHeightPhone,
     },
+    backgroundColor: theme.palette.colors.primary,
+    color: theme.palette.colors.white,
   },
   mapContainer: {
     flexGrow: 1,
   },
   title: {
     flexGrow: 1,
+    color: theme.palette.colors.secondary,
   },
   fileInput: {
     display: 'none',
@@ -107,13 +110,13 @@ const GeofencesPage = () => {
         >
           <Toolbar>
             <IconButton edge="start" sx={{ mr: 2 }} onClick={() => navigate(-1)}>
-              <ArrowBackIcon />
+              <ArrowBackIcon color="secondary" />
             </IconButton>
             <Typography variant="h6" className={classes.title}>{t('sharedGeofences')}</Typography>
             <label htmlFor="upload-gpx">
               <input accept=".gpx" id="upload-gpx" type="file" className={classes.fileInput} onChange={handleFile} />
               <IconButton edge="end" component="span" onClick={() => {}}>
-                <UploadFileIcon />
+                <UploadFileIcon color="secondary" />
               </IconButton>
             </label>
           </Toolbar>

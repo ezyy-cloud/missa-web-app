@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     width: '25px',
     height: '25px',
-    filter: 'brightness(0) invert(1)',
+    filter: 'grayscale(100%)',
   },
   batteryText: {
     fontSize: '0.75rem',
@@ -44,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
   },
   neutral: {
     color: theme.palette.colors.neutral,
+  },
+  avatar: {
+    background: theme.palette.colors.secondary,
   },
 }));
 
@@ -96,7 +99,7 @@ const DeviceRow = ({ data, index, style }) => {
         disabled={!admin && item.disabled}
       >
         <ListItemAvatar>
-          <Avatar>
+          <Avatar className={classes.avatar}>
             <img className={classes.icon} src={mapIcons[mapIconKey(item.category)]} alt="" />
           </Avatar>
         </ListItemAvatar>

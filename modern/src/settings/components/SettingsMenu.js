@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Divider, List, ListItemButton, ListItemIcon, ListItemText,
 } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import SettingsIcon from '@mui/icons-material/Settings';
 import CreateIcon from '@mui/icons-material/Create';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -21,14 +22,28 @@ import {
 } from '../../common/util/permissions';
 import useFeatures from '../../common/util/useFeatures';
 
+const useStyles = makeStyles(() => ({
+  listItemRoot: {
+    '&.Mui-selected': {
+      backgroundColor: 'rgb(255 255 255 / 46%)',
+    },
+    '&:hover': {
+      backgroundColor: 'rgb(255 255 255 / 46%)',
+    },
+  },
+}));
+
 const MenuItem = ({
   title, link, icon, selected,
-}) => (
-  <ListItemButton key={link} component={Link} to={link} selected={selected}>
-    <ListItemIcon>{icon}</ListItemIcon>
-    <ListItemText primary={title} />
-  </ListItemButton>
-);
+}) => {
+  const classes = useStyles();
+  return (
+    <ListItemButton key={link} component={Link} to={link} selected={selected} classes={{ root: classes.listItemRoot }}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText primary={title} />
+    </ListItemButton>
+  );
+};
 
 const SettingsMenu = () => {
   const t = useTranslation();
@@ -48,7 +63,7 @@ const SettingsMenu = () => {
         <MenuItem
           title={t('sharedPreferences')}
           link="/settings/preferences"
-          icon={<SettingsIcon />}
+          icon={<SettingsIcon color="secondary" />}
           selected={location.pathname === '/settings/preferences'}
         />
         {!readonly && (
@@ -56,34 +71,34 @@ const SettingsMenu = () => {
             <MenuItem
               title={t('sharedNotifications')}
               link="/settings/notifications"
-              icon={<NotificationsIcon />}
+              icon={<NotificationsIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/notification')}
             />
             <MenuItem
               title={t('settingsUser')}
               link={`/settings/user/${userId}`}
-              icon={<PersonIcon />}
+              icon={<PersonIcon color="secondary" />}
               selected={location.pathname === `/settings/user/${userId}`}
             />
             {!deviceReadonly && (
               <MenuItem
                 title={t('deviceTitle')}
                 link="/settings/devices"
-                icon={<SmartphoneIcon />}
+                icon={<SmartphoneIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/device')}
               />
             )}
             <MenuItem
               title={t('sharedGeofences')}
               link="/geofences"
-              icon={<CreateIcon />}
+              icon={<CreateIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/geofence')}
             />
             {!features.disableGroups && (
               <MenuItem
                 title={t('settingsGroups')}
                 link="/settings/groups"
-                icon={<FolderIcon />}
+                icon={<FolderIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/group')}
               />
             )}
@@ -91,7 +106,7 @@ const SettingsMenu = () => {
               <MenuItem
                 title={t('sharedDrivers')}
                 link="/settings/drivers"
-                icon={<PersonIcon />}
+                icon={<PersonIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/driver')}
               />
             )}
@@ -99,7 +114,7 @@ const SettingsMenu = () => {
               <MenuItem
                 title={t('sharedCalendars')}
                 link="/settings/calendars"
-                icon={<TodayIcon />}
+                icon={<TodayIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/calendar')}
               />
             )}
@@ -107,7 +122,7 @@ const SettingsMenu = () => {
               <MenuItem
                 title={t('sharedComputedAttributes')}
                 link="/settings/attributes"
-                icon={<StorageIcon />}
+                icon={<StorageIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/attribute')}
               />
             )}
@@ -115,14 +130,14 @@ const SettingsMenu = () => {
               <MenuItem
                 title={t('sharedMaintenance')}
                 link="/settings/maintenances"
-                icon={<BuildIcon />}
+                icon={<BuildIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/maintenance')}
               />
             )}
             <MenuItem
               title={t('sharedSavedCommands')}
               link="/settings/commands"
-              icon={<PublishIcon />}
+              icon={<PublishIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/command') && !location.pathname.startsWith('/settings/command-send')}
             />
           </>
@@ -130,20 +145,20 @@ const SettingsMenu = () => {
       </List>
       {manager && (
         <>
-          <Divider />
+          <Divider sx={{ bgcolor: 'primary.light' }} />
           <List>
             {admin && (
               <MenuItem
                 title={t('settingsServer')}
                 link="/settings/server"
-                icon={<StorageIcon />}
+                icon={<StorageIcon color="secondary" />}
                 selected={location.pathname === '/settings/server'}
               />
             )}
             <MenuItem
               title={t('settingsUsers')}
               link="/settings/users"
-              icon={<PeopleIcon />}
+              icon={<PeopleIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/user') && location.pathname !== `/settings/user/${userId}`}
             />
           </List>

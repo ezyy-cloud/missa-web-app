@@ -56,7 +56,7 @@ const CollectionActions = ({
       {phone ? (
         <>
           <IconButton size="small" onClick={(event) => setMenuAnchorEl(event.currentTarget)}>
-            <MoreVertIcon fontSize="small" />
+            <MoreVertIcon fontSize="small" color="secondary" />
           </IconButton>
           <Menu open={!!menuAnchorEl} anchorEl={menuAnchorEl} onClose={() => setMenuAnchorEl(null)}>
             {customAction && (
@@ -74,10 +74,10 @@ const CollectionActions = ({
             </IconButton>
           )}
           <IconButton size="small" onClick={handleEdit}>
-            <EditIcon fontSize="small" />
+            <EditIcon fontSize="small" sx={{ color: 'grey' }} />
           </IconButton>
           <IconButton size="small" onClick={handleRemove}>
-            <DeleteIcon fontSize="small" />
+            <DeleteIcon fontSize="small" sx={{ color: 'red' }} />
           </IconButton>
         </div>
       )}

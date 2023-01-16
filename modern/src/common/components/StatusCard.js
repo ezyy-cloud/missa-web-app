@@ -36,6 +36,7 @@ import { useAttributePreference } from '../util/preferences';
 const useStyles = makeStyles((theme) => ({
   card: {
     width: theme.dimensions.popupMaxWidth,
+    background: theme.palette.colors.background,
   },
   media: {
     height: theme.dimensions.popupImageHeight,
@@ -188,7 +189,7 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
               </CardMedia>
             ) : (
               <div className={classes.header}>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="h6" color="textSecondary">
                   {device.name}
                 </Typography>
                 <IconButton
@@ -227,7 +228,7 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                 onClick={(e) => setAnchorEl(e.currentTarget)}
                 disabled={!position}
               >
-                <PendingIcon />
+                <PendingIcon sx={{ color: 'black' }} />
               </IconButton>
               <IconButton
                 onClick={() => navigate('/replay')}

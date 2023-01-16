@@ -28,12 +28,18 @@ const useStyles = makeStyles((theme) => ({
   },
   desktopDrawer: {
     width: theme.dimensions.drawerWidthDesktop,
+    backgroundColor: theme.palette.colors.primary,
+    color: theme.palette.colors.white,
   },
   mobileDrawer: {
     width: theme.dimensions.drawerWidthTablet,
+    backgroundColor: theme.palette.colors.primary,
+    color: theme.palette.colors.white,
   },
   mobileToolbar: {
     zIndex: 1,
+    backgroundColor: theme.palette.colors.primary,
+    color: theme.palette.colors.secondary,
   },
   content: {
     flexGrow: 1,
@@ -42,11 +48,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     overflowY: 'auto',
   },
+  text: {
+    color: theme.palette.colors.white,
+  },
 }));
 
 const PageTitle = ({ breadcrumbs }) => {
   const theme = useTheme();
   const t = useTranslation();
+  const classes = useStyles();
 
   const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
@@ -56,11 +66,11 @@ const PageTitle = ({ breadcrumbs }) => {
     );
   }
   return (
-    <Breadcrumbs>
+    <Breadcrumbs className={classes.text}>
       {breadcrumbs.slice(0, -1).map((breadcrumb) => (
-        <Typography variant="h6" color="inherit" key={breadcrumb}>{t(breadcrumb)}</Typography>
+        <Typography variant="h6" color="white" key={breadcrumb}>{t(breadcrumb)}</Typography>
       ))}
-      <Typography variant="h6" color="textPrimary">{t(breadcrumbs[breadcrumbs.length - 1])}</Typography>
+      <Typography variant="h6" color="white">{t(breadcrumbs[breadcrumbs.length - 1])}</Typography>
     </Breadcrumbs>
   );
 };
@@ -83,7 +93,7 @@ const PageLayout = ({ menu, breadcrumbs, children }) => {
       >
         <Toolbar>
           <IconButton color="inherit" edge="start" sx={{ mr: 2 }} onClick={() => navigate('/')}>
-            <ArrowBackIcon />
+            <ArrowBackIcon color="secondary" />
           </IconButton>
           <PageTitle breadcrumbs={breadcrumbs} />
         </Toolbar>

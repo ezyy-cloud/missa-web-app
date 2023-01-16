@@ -73,6 +73,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       marginTop: theme.spacing(1),
     },
+    background: theme.palette.colors.background,
+  },
+  toolbar: {
+    background: theme.palette.colors.primary,
+    color: theme.palette.colors.white,
   },
 }));
 
@@ -170,18 +175,18 @@ const ReplayPage = () => {
       <MapCamera positions={positions} />
       <div className={classes.sidebar}>
         <Paper elevation={3} square>
-          <Toolbar>
+          <Toolbar className={classes.toolbar}>
             <IconButton edge="start" sx={{ mr: 2 }} onClick={() => navigate(-1)}>
-              <ArrowBackIcon />
+              <ArrowBackIcon color="secondary" />
             </IconButton>
             <Typography variant="h6" className={classes.title}>{t('reportReplay')}</Typography>
             {!expanded && (
               <>
                 <IconButton onClick={handleDownload}>
-                  <DownloadIcon />
+                  <DownloadIcon color="secondary" />
                 </IconButton>
                 <IconButton edge="end" onClick={() => setExpanded(true)}>
-                  <TuneIcon />
+                  <TuneIcon color="secondary" />
                 </IconButton>
               </>
             )}

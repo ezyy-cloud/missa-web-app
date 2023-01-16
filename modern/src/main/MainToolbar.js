@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     gap: theme.spacing(1),
+    backgroundColor: theme.palette.colors.primary,
   },
   filterPanel: {
     display: 'flex',
@@ -24,6 +25,13 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     gap: theme.spacing(2),
     width: theme.dimensions.drawerWidthTablet,
+    background: theme.palette.colors.background,
+  },
+  icon: {
+    backgroundColor: theme.palette.colors.secondary,
+  },
+  filter: {
+    backgroundColor: theme.palette.colors.backgground,
   },
 }));
 
@@ -59,11 +67,12 @@ const MainToolbar = ({
 
   return (
     <Toolbar ref={toolbarRef} className={classes.toolbar}>
-      <IconButton edge="start" onClick={() => setDevicesOpen(!devicesOpen)}>
+      <IconButton edge="start" onClick={() => setDevicesOpen(!devicesOpen)} className={classes.icon}>
         {devicesOpen ? <MapIcon /> : <ViewListIcon />}
       </IconButton>
       <OutlinedInput
         ref={inputRef}
+        className={classes.filter}
         placeholder={t('sharedSearchDevices')}
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
@@ -166,7 +175,7 @@ const MainToolbar = ({
           </FormGroup>
         </div>
       </Popover>
-      <IconButton edge="end" onClick={() => navigate('/settings/device')} disabled={deviceReadonly}>
+      <IconButton edge="end" onClick={() => navigate('/settings/device')} disabled={deviceReadonly} className={classes.icon}>
         <AddIcon />
       </IconButton>
     </Toolbar>

@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Divider, List, ListItemButton, ListItemIcon, ListItemText,
 } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
@@ -14,14 +15,28 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../../common/components/LocalizationProvider';
 import { useAdministrator } from '../../common/util/permissions';
 
+const useStyles = makeStyles(() => ({
+  listItemRoot: {
+    '&.Mui-selected': {
+      backgroundColor: 'rgb(255 255 255 / 46%)',
+    },
+    '&:hover': {
+      backgroundColor: 'rgb(255 255 255 / 46%)',
+    },
+  },
+}));
+
 const MenuItem = ({
   title, link, icon, selected,
-}) => (
-  <ListItemButton key={link} component={Link} to={link} selected={selected}>
-    <ListItemIcon>{icon}</ListItemIcon>
-    <ListItemText primary={title} />
-  </ListItemButton>
-);
+}) => {
+  const classes = useStyles();
+  return (
+    <ListItemButton key={link} component={Link} to={link} selected={selected} classes={{ root: classes.listItemRoot }}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText primary={title} />
+    </ListItemButton>
+  );
+};
 
 const ReportsMenu = () => {
   const t = useTranslation();
@@ -35,53 +50,53 @@ const ReportsMenu = () => {
         <MenuItem
           title={t('reportRoute')}
           link="/reports/route"
-          icon={<TimelineIcon />}
+          icon={<TimelineIcon color="secondary" />}
           selected={location.pathname === '/reports/route'}
         />
         <MenuItem
           title={t('reportEvents')}
           link="/reports/event"
-          icon={<NotificationsActiveIcon />}
+          icon={<NotificationsActiveIcon color="secondary" />}
           selected={location.pathname === '/reports/event'}
         />
         <MenuItem
           title={t('reportTrips')}
           link="/reports/trip"
-          icon={<PlayCircleFilledIcon />}
+          icon={<PlayCircleFilledIcon color="secondary" />}
           selected={location.pathname === '/reports/trip'}
         />
         <MenuItem
           title={t('reportStops')}
           link="/reports/stop"
-          icon={<PauseCircleFilledIcon />}
+          icon={<PauseCircleFilledIcon color="secondary" />}
           selected={location.pathname === '/reports/stop'}
         />
         <MenuItem
           title={t('reportSummary')}
           link="/reports/summary"
-          icon={<FormatListBulletedIcon />}
+          icon={<FormatListBulletedIcon color="secondary" />}
           selected={location.pathname === '/reports/summary'}
         />
         <MenuItem
           title={t('reportChart')}
           link="/reports/chart"
-          icon={<TrendingUpIcon />}
+          icon={<TrendingUpIcon color="secondary" />}
           selected={location.pathname === '/reports/chart'}
         />
         <MenuItem
           title={t('reportReplay')}
           link="/replay"
-          icon={<RouteIcon />}
+          icon={<RouteIcon color="secondary" />}
         />
       </List>
       {admin && (
         <>
-          <Divider />
+          <Divider sx={{ bgcolor: 'primary.light' }} />
           <List>
             <MenuItem
               title={t('statisticsTitle')}
               link="/reports/statistics"
-              icon={<BarChartIcon />}
+              icon={<BarChartIcon color="secondary" />}
               selected={location.pathname === '/reports/statistics'}
             />
           </List>

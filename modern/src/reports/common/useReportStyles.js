@@ -41,6 +41,10 @@ export default makeStyles((theme) => ({
   },
   filterButton: {
     flexGrow: 1,
+    background: theme.palette.colors.primary,
+    '&:hover': {
+      backgroundColor: theme.palette.colors.primary,
+    },
   },
   chart: {
     flexGrow: 1,

@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     margin: theme.spacing(1.5, 0),
   },
+  fixedList: {
+    background: theme.palette.colors.background,
+  },
 }));
 
 const DeviceList = ({ devices }) => {
@@ -48,6 +51,7 @@ const DeviceList = ({ devices }) => {
     <AutoSizer className={classes.list}>
       {({ height, width }) => (
         <FixedSizeList
+          className={classes.fixedList}
           width={width}
           height={height}
           itemCount={devices.length}
