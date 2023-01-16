@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api/*"
+  to = "lab.ezyy.cloud/:splat"
+  status = 200
