@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/api/*"
-  to = "lab.ezyy.cloud/:splat"
+  to = "lab.ezyy.cloud:8082/:splat"
   status = 200
