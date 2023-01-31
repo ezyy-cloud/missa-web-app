@@ -5,12 +5,12 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "http://lab.ezyy.cloud:8082/api/:splat"
+  to = "http://traccar.ezyy.cloud:8082/api/:splat"
   status = 200
   force = true
 
   [[redirects]]
   from = "/api/socket/*"
-  to = "ws://lab.ezyy.cloud:8082/api/:splat"
+  to = "ws://traccar.ezyy.cloud:8082/api/:splat"
   status = 200
   force = true
