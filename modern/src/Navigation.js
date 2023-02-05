@@ -48,6 +48,7 @@ import CommandSendPage from './settings/CommandSendPage';
 import App from './App';
 import ChangeServerPage from './other/ChangeServerPage';
 import DevicesPage from './settings/DevicesPage';
+import PrivacyPolicyPage from './other/PrivacyPolicyPage';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -88,6 +89,7 @@ const Navigation = () => {
   }
   return (
     <Routes>
+      <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
