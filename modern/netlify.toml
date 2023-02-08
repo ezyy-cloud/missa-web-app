@@ -9,8 +9,14 @@
   status = 200
   force = true
 
-  [[redirects]]
+[[redirects]]
   from = "/api/socket/*"
   to = "ws://traccar.ezyy.cloud:8082/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
   force = true
