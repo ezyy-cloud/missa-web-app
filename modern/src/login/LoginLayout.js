@@ -3,9 +3,16 @@ import {
   Paper, Grid, Stack, Typography, Tabs, Tab, Box, Button, Accordion, AccordionSummary, AccordionDetails, SvgIcon,
 } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
+import { styled, useTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
 import PropTypes from 'prop-types';
 import makeStyles from '@mui/styles/makeStyles';
-import { useTheme } from '@mui/material/styles';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import LogoImage from './LogoImage';
 import splash1 from '../resources/images/splash1.webp';
 import splash2 from '../resources/images/splash2.png';
@@ -109,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: theme.palette.primary.main,
+    background: theme.palette.primary.black,
     paddingBottom: theme.spacing(5),
     width: theme.dimensions.sidebarWidth,
     [theme.breakpoints.down('md')]: {
@@ -144,13 +151,21 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.colors.secondary,
   },
   sidebarBody: {
-    color: theme.palette.colors.neutral,
+    color: theme.palette.colors.white,
   },
   sidebarTab: {
     color: theme.palette.colors.neutral,
     '&.Mui-selected': {
       color: theme.palette.colors.background,
     },
+    '&.MuiTabs-indicator': {
+      display: 'none',
+      width: '0px',
+      background: '#000000',
+    },
+    margin: '0px',
+    padding: '0px',
+    alignItems: 'flex-start',
   },
   alignCenter: {
     display: 'flex',
@@ -183,6 +198,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    marginBottom: '8vh',
     [theme.breakpoints.down('md')]: {
       padding: theme.spacing(30),
     },
@@ -192,6 +208,9 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileForm: {
     width: '100%',
+  },
+  mobileSocialBar: {
+    marginTop: '2vh',
   },
   mobileSplash: {
     width: '100%',
@@ -216,6 +235,17 @@ const LoginLayout = ({ children }) => {
     setExpanded(newExpanded ? panel : false);
   };
 
+  const SideBarTabs = styled((props) => (
+    <Tabs
+      {...props}
+      TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+    />
+  ))({
+    '& .MuiTabs-indicator': {
+      display: 'none',
+    },
+  });
+
   return (
     <main className={classes.root}>
       <div className={classes.sidebar}>
@@ -234,15 +264,76 @@ const LoginLayout = ({ children }) => {
                 tracker on everything that matters to you.
                 Monitor the location of all your assets right from your connected device.
               </Typography>
-              <Tabs
+              <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid item xs={2} sm={2} md={2}>
+                  <IconButton
+                    color="primary"
+                    aria-label="facebook"
+                    component="label"
+                    onClick={() => window.location.href = 'https://facebook.com/missa263'}
+                  >
+                    <FacebookIcon color="secondary" />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={2} sm={2} md={2}>
+                  <IconButton
+                    color="primary"
+                    aria-label="twitter"
+                    component="label"
+                    onClick={() => window.location.href = 'https://twitter.com/missa263'}
+                  >
+                    <TwitterIcon color="secondary" />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={2} sm={2} md={2}>
+                  <IconButton
+                    color="primary"
+                    aria-label="instagram"
+                    component="label"
+                    onClick={() => window.location.href = 'https://instagram.com/missa263'}
+                  >
+                    <InstagramIcon color="secondary" />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={2} sm={2} md={2}>
+                  <IconButton
+                    color="primary"
+                    aria-label="whatsapp"
+                    component="label"
+                    onClick={() => window.location.href = 'https://wa.me/263774481007?text='}
+                  >
+                    <WhatsAppIcon color="secondary" />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={2} sm={2} md={2}>
+                  <IconButton
+                    color="primary"
+                    aria-label="email"
+                    component="label"
+                    onClick={() => window.location.href = 'mailto:missa@ezyy.cloud'}
+                  >
+                    <EmailIcon color="secondary" />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={2} sm={2} md={2}>
+                  <IconButton
+                    color="primary"
+                    aria-label="call"
+                    component="label"
+                    onClick={() => window.location.href = 'tel:+263774481007'}
+                  >
+                    <PhoneAndroidIcon color="secondary" />
+                  </IconButton>
+                </Grid>
+              </Grid>
+              <SideBarTabs
                 value={value}
                 onChange={handleChange}
-                aria-label="Vertical tabs example"
-                sx={{ borderRight: 1, borderColor: 'divider' }}
+                TabIndicatorProps={{ children: <span className="sidebarTab" /> }}
               >
-                <Tab label="Home" {...a11yProps(0)} className={classes.sidebarTab} />
-                <Tab label="Log In" {...a11yProps(1)} className={classes.sidebarTab} />
-              </Tabs>
+                <Tab disableRipple label="Home" {...a11yProps(0)} className={classes.sidebarTab} />
+                <Tab disableRipple label="Log In" {...a11yProps(1)} className={classes.sidebarTab} />
+              </SideBarTabs>
             </Stack>
           </Grid>
         </Grid>
@@ -498,6 +589,68 @@ const LoginLayout = ({ children }) => {
             </form>
           )}
 
+          <Grid container columns={{ xs: 12, sm: 12, md: 12 }} className={classes.mobileSocialBar}>
+            <Grid item xs={2} sm={2} md={2}>
+              <IconButton
+                color="primary"
+                aria-label="facebook"
+                component="label"
+                onClick={() => window.location.href = 'https://facebook.com/missa263'}
+              >
+                <FacebookIcon color="primary" />
+              </IconButton>
+            </Grid>
+            <Grid item xs={2} sm={2} md={2}>
+              <IconButton
+                color="primary"
+                aria-label="twitter"
+                component="label"
+                onClick={() => window.location.href = 'https://twitter.com/missa263'}
+              >
+                <TwitterIcon color="primary" />
+              </IconButton>
+            </Grid>
+            <Grid item xs={2} sm={2} md={2}>
+              <IconButton
+                color="primary"
+                aria-label="instagram"
+                component="label"
+                onClick={() => window.location.href = 'https://instagram.com/missa263'}
+              >
+                <InstagramIcon color="primary" />
+              </IconButton>
+            </Grid>
+            <Grid item xs={2} sm={2} md={2}>
+              <IconButton
+                color="primary"
+                aria-label="whatsapp"
+                component="label"
+                onClick={() => window.location.href = 'https://wa.me/263774481007?text='}
+              >
+                <WhatsAppIcon color="primary" />
+              </IconButton>
+            </Grid>
+            <Grid item xs={2} sm={2} md={2}>
+              <IconButton
+                color="primary"
+                aria-label="email"
+                component="label"
+                onClick={() => window.location.href = 'mailto:missa@ezyy.cloud'}
+              >
+                <EmailIcon color="primary" />
+              </IconButton>
+            </Grid>
+            <Grid item xs={2} sm={2} md={2}>
+              <IconButton
+                color="primary"
+                aria-label="call"
+                component="label"
+                onClick={() => window.location.href = 'tel:+263774481007'}
+              >
+                <PhoneAndroidIcon color="primary" />
+              </IconButton>
+            </Grid>
+          </Grid>
         </div>
       </div>
     </main>

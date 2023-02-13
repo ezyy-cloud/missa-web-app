@@ -21,6 +21,7 @@ export default {
   },
   primary: {
     main: colors.primary,
+    black: colors.black,
   },
   secondary: {
     main: colors.secondary,

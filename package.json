@@ -1,5 +1,5 @@
 {
-    "name": "traccar-web",
+    "name": "missa-web-app",
     "dependencies": {
         "extjs-gpl": "^6.2.0",
         "ol": "^6.12.0",
