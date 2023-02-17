@@ -262,7 +262,8 @@ const LoginLayout = ({ children }) => {
               <Typography variant="subtitle1" className={classes.sidebarBody} gutterBottom>
                 Missa is a telematics platform helping you put a geo
                 tracker on everything that matters to you.
-                Monitor the location of all your assets right from your connected device.
+                Monitor the location of all your assets right from your connected device. Get in touch today,
+                to get started.
               </Typography>
               <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
                 <Grid item xs={2} sm={2} md={2}>
