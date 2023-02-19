@@ -616,7 +616,7 @@ const LoginLayout = ({ children }) => {
                 color="primary"
                 aria-label="instagram"
                 component="label"
-                onClick={() => window.location.href = 'https://instagram.com/missa263'}
+                onClick={() => window.location.href = 'https://instagram.com/missa.263'}
               >
                 <InstagramIcon color="primary" />
               </IconButton>
@@ -626,7 +626,7 @@ const LoginLayout = ({ children }) => {
                 color="primary"
                 aria-label="whatsapp"
                 component="label"
-                onClick={() => window.location.href = 'https://wa.me/263774481007?text='}
+                onClick={() => window.location.href = 'https://wa.me/message/2U6H2CARUKMBD1'}
               >
                 <WhatsAppIcon color="primary" />
               </IconButton>
