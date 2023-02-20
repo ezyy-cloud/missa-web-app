@@ -19,6 +19,83 @@ import splash2 from '../resources/images/splash2.png';
 import splash3 from '../resources/images/splash3.jpeg';
 import splash4 from '../resources/images/splash4.jpeg';
 
+const MailChimpForm = `
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://cloud.us11.list-manage.com/subscribe/post?u=5ee4fccdf47565f72616e6151&amp;id=5416a83e2e&amp;f_id=00fda0e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+   <div id="mc_embed_signup_scroll">
+      <h2>Request A Call</h2>
+      <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+      <div class="mc-field-group">
+         <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+         </label>
+         <input type="email" value="" name="EMAIL" class="required email " id="mce-EMAIL" required>
+         <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+      </div>
+      <div class="mc-field-group">
+         <label for="mce-FNAME">First Name </label>
+         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+         <span id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
+      </div>
+      <div class="mc-field-group">
+         <label for="mce-LNAME">Last Name </label>
+         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+         <span id="mce-LNAME-HELPERTEXT" class="helper_text"></span>
+      </div>
+      <div class="mc-address-group">
+         <div class="mc-field-group">
+            <label for="mce-ADDRESS-addr1">Address </label>
+            <input type="text" value="" maxlength="70" name="ADDRESS[addr1]" id="mce-ADDRESS-addr1" class="">
+         </div>
+         <div class="mc-field-group">
+            <label for="mce-ADDRESS-addr2">Address Line 2</label>
+            <input type="text" value="" maxlength="70" name="ADDRESS[addr2]" id="mce-ADDRESS-addr2">
+         </div>
+         <div class="mc-address-fields-group">
+            <div class="mc-field-group">
+               <label for="mce-ADDRESS-city">City</label>
+               <input type="text" value="" maxlength="40" name="ADDRESS[city]" id="mce-ADDRESS-city" class="">
+            </div>
+            <div class="mc-field-group">
+               <label for="mce-ADDRESS-state">State/Province/Region</label>
+               <input type="text" value="" maxlength="20" name="ADDRESS[state]" id="mce-ADDRESS-state" class="">
+            </div>
+            <div class="mc-field-group">
+               <label for="mce-ADDRESS-zip">Postal / Zip Code</label>
+               <input type="text" value="" maxlength="10" name="ADDRESS[zip]" id="mce-ADDRESS-zip" class="">
+            </div>
+         </div>
+         <div class="mc-field-group">
+            <label for="mce-ADDRESS-country">Country</label>
+            <select name="ADDRESS[country]" id="mce-ADDRESS-country" class="">
+               <option value="174">Zimbabwe</option>
+            </select>
+            </,div>
+         </div>
+         <div class="mc-field-group size1of2">
+            <label for="mce-PHONE">Phone Number </label>
+            <input type="text" name="PHONE" class="" value="" id="mce-PHONE">
+            <span id="mce-PHONE-HELPERTEXT" class="helper_text"></span>
+         </div>
+         <div id="mce-responses" class="clear foot">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+         </div>
+         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5ee4fccdf47565f72616e6151_5416a83e2e" tabindex="-1" value=""></div>
+         <div class="optionalParent">
+            <div class="clear foot">
+               <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+               <p class="brandingLogo"><a href="http://eepurl.com/ik9b9H" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_light_dtp.svg"></a></p>
+            </div>
+         </div>
+      </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+`;
+
 const Splash = () => {
   const items = [
     splash1, splash2, splash3, splash4,
@@ -334,6 +411,7 @@ const LoginLayout = ({ children }) => {
               >
                 <Tab disableRipple label="Home" {...a11yProps(0)} className={classes.sidebarTab} />
                 <Tab disableRipple label="Log In" {...a11yProps(1)} className={classes.sidebarTab} />
+                <Tab disableRipple label="Sign Up" {...a11yProps(2)} className={classes.sidebarTab} />
               </SideBarTabs>
             </Stack>
           </Grid>
@@ -452,6 +530,12 @@ const LoginLayout = ({ children }) => {
           <form className={classes.form}>
             {children}
           </form>
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <div
+                // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: MailChimpForm }}
+          />
         </TabPanel>
       </Paper>
       <div className={classes.mobile}>
