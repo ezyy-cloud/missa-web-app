@@ -48,27 +48,27 @@ const DevicesPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('sharedName')}</TableCell>
-            <TableCell>{t('deviceIdentifier')}</TableCell>
-            <TableCell>{t('sharedPhone')}</TableCell>
-            <TableCell>{t('deviceModel')}</TableCell>
-            <TableCell>{t('deviceContact')}</TableCell>
-            <TableCell className={classes.columnAction} />
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedName')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('deviceIdentifier')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedPhone')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('deviceModel')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('deviceContact')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }} className={classes.columnAction} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>{item.uniqueId}</TableCell>
-              <TableCell>{item.phone}</TableCell>
-              <TableCell>{item.model}</TableCell>
-              <TableCell>{item.contact}</TableCell>
-              <TableCell className={classes.columnAction} padding="none">
+              <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{item.name}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{item.uniqueId}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{item.phone}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{item.model}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{item.contact}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded' }} className={classes.columnAction} padding="none">
                 <CollectionActions itemId={item.id} editPath="/settings/device" endpoint="devices" setTimestamp={setTimestamp} />
               </TableCell>
             </TableRow>
-          )) : (<TableShimmer columns={6} endAction />)}
+          )) : (<TableShimmer columns={6} endAction sx={{ fontFamily: 'Gotham Rounded' }} />)}
         </TableBody>
       </Table>
       <CollectionFab editPath="/settings/device" />

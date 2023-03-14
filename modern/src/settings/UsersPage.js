@@ -71,23 +71,23 @@ const UsersPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('sharedName')}</TableCell>
-            <TableCell>{t('userEmail')}</TableCell>
-            <TableCell>{t('userAdmin')}</TableCell>
-            <TableCell>{t('sharedDisabled')}</TableCell>
-            <TableCell>{t('userExpirationTime')}</TableCell>
-            <TableCell className={classes.columnAction} />
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedName')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('userEmail')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('userAdmin')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDisabled')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('userExpirationTime')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }} className={classes.columnAction} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>{item.email}</TableCell>
-              <TableCell>{formatBoolean(item.administrator, t)}</TableCell>
-              <TableCell>{formatBoolean(item.disabled, t)}</TableCell>
-              <TableCell>{formatTime(item.expirationTime, 'date', hours12)}</TableCell>
-              <TableCell className={classes.columnAction} padding="none">
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.name}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.email}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatBoolean(item.administrator, t)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatBoolean(item.disabled, t)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatTime(item.expirationTime, 'date', hours12)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} className={classes.columnAction} padding="none">
                 <CollectionActions
                   itemId={item.id}
                   editPath="/settings/user"

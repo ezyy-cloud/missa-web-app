@@ -2,7 +2,7 @@ import React from 'react';
 import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
 import { makeStyles } from '@mui/styles';
 import {
-  Autocomplete, Container, createFilterOptions, TextField,
+  Autocomplete, Container, createFilterOptions, TextField, Typography,
 } from '@mui/material';
 import { useTranslation } from '../common/components/LocalizationProvider';
 
@@ -57,7 +57,7 @@ const ChangeServerPage = () => {
         freeSolo
         className={classes.field}
         options={officialServers}
-        renderInput={(params) => <TextField {...params} label={t('settingsServer')} />}
+        renderInput={(params) => <TextField {...params} label=<Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsServer')}</Typography> />}
         value={currentServer}
         onChange={(_, value) => handleSubmit(value)}
         filterOptions={(options, params) => {

@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     paddingBottom: theme.spacing(3),
   },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded',
+  },
 }));
 
 const GroupPage = () => {
@@ -66,7 +69,7 @@ const GroupPage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -75,12 +78,15 @@ const GroupPage = () => {
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
                 label={t('sharedName')}
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
             </AccordionDetails>
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedExtra')}
               </Typography>
             </AccordionSummary>
@@ -90,6 +96,7 @@ const GroupPage = () => {
                 onChange={(event) => setItem({ ...item, groupId: Number(event.target.value) })}
                 endpoint="/api/groups"
                 label={t('groupParent')}
+                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
               />
             </AccordionDetails>
           </Accordion>
@@ -101,7 +108,7 @@ const GroupPage = () => {
           {item.id && (
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('sharedConnections')}
                 </Typography>
               </AccordionSummary>
@@ -112,7 +119,7 @@ const GroupPage = () => {
                   baseId={item.id}
                   keyBase="groupId"
                   keyLink="geofenceId"
-                  label={t('sharedGeofences')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedGeofences')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/notifications"
@@ -121,7 +128,7 @@ const GroupPage = () => {
                   keyBase="groupId"
                   keyLink="notificationId"
                   titleGetter={(it) => formatNotificationTitle(t, it)}
-                  label={t('sharedNotifications')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedNotifications')}</Typography>
                 />
                 {!features.disableDrivers && (
                   <LinkField
@@ -130,7 +137,7 @@ const GroupPage = () => {
                     baseId={item.id}
                     keyBase="groupId"
                     keyLink="driverId"
-                    label={t('sharedDrivers')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDrivers')}</Typography>
                   />
                 )}
                 {!features.disableComputedAttributes && (
@@ -141,7 +148,7 @@ const GroupPage = () => {
                     keyBase="groupId"
                     keyLink="attributeId"
                     titleGetter={(it) => it.description}
-                    label={t('sharedComputedAttributes')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedComputedAttributes')}</Typography>
                   />
                 )}
                 <LinkField
@@ -151,7 +158,7 @@ const GroupPage = () => {
                   keyBase="groupId"
                   keyLink="commandId"
                   titleGetter={(it) => it.description}
-                  label={t('sharedSavedCommands')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedSavedCommands')}</Typography>
                 />
                 {!features.disableMaintenance && (
                   <LinkField
@@ -160,7 +167,7 @@ const GroupPage = () => {
                     baseId={item.id}
                     keyBase="groupId"
                     keyLink="maintenanceId"
-                    label={t('sharedMaintenance')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMaintenance')}</Typography>
                   />
                 )}
               </AccordionDetails>

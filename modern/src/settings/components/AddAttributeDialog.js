@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Button, Dialog, DialogActions, DialogContent, FormControl, InputLabel, MenuItem, Select, TextField, Autocomplete,
+  Button, Dialog, Typography, DialogActions, DialogContent, FormControl, InputLabel, MenuItem, Select, TextField, Autocomplete,
 } from '@mui/material';
 
 import { createFilterOptions } from '@mui/material/useAutocomplete';
@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     paddingBottom: theme.spacing(1),
     paddingTop: theme.spacing(3),
+  },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded', fontWeight: 350,
   },
 }));
 
@@ -38,6 +41,7 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
     <Dialog open={open} fullWidth maxWidth="xs">
       <DialogContent className={classes.details}>
         <Autocomplete
+          classes={{ listbox: classes.fontStyle, input: classes.fontStyle }}
           onChange={(_, option) => {
             setKey(option && typeof option === 'object' ? option.key : option);
             if (option && option.type) {
@@ -57,12 +61,16 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
           options={options}
           getOptionLabel={(option) => (option && typeof option === 'object' ? option.name : option)}
           renderOption={(props, option) => (
-            <li {...props}>
+            <li {...props} style={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
               {option.name}
             </li>
           )}
           renderInput={(params) => (
-            <TextField {...params} label={t('sharedAttribute')} />
+            <TextField
+              {...params}
+              label=<Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedAttribute')}</Typography>
+              sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            />
           )}
           freeSolo
         />
@@ -70,15 +78,16 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
           fullWidth
           disabled={key in definitions}
         >
-          <InputLabel>{t('sharedType')}</InputLabel>
+          <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
           <Select
             label={t('sharedType')}
             value={type}
             onChange={(e) => setType(e.target.value)}
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
           >
-            <MenuItem value="string">{t('sharedTypeString')}</MenuItem>
-            <MenuItem value="number">{t('sharedTypeNumber')}</MenuItem>
-            <MenuItem value="boolean">{t('sharedTypeBoolean')}</MenuItem>
+            <MenuItem value="string" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeString')}</MenuItem>
+            <MenuItem value="number" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeNumber')}</MenuItem>
+            <MenuItem value="boolean" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeBoolean')}</MenuItem>
           </Select>
         </FormControl>
       </DialogContent>
@@ -87,12 +96,14 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
           color="primary"
           disabled={!key}
           onClick={() => onResult({ key, type })}
+          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
         >
           {t('sharedAdd')}
         </Button>
         <Button
           autoFocus
           onClick={() => onResult(null)}
+          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
         >
           {t('sharedCancel')}
         </Button>

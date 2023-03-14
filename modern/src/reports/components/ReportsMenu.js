@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Divider, List, ListItemButton, ListItemIcon, ListItemText,
+  Divider, List, ListItemButton, ListItemIcon, ListItemText, Typography,
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import TimelineIcon from '@mui/icons-material/Timeline';
@@ -33,7 +33,7 @@ const MenuItem = ({
   return (
     <ListItemButton key={link} component={Link} to={link} selected={selected} classes={{ root: classes.listItemRoot }}>
       <ListItemIcon>{icon}</ListItemIcon>
-      <ListItemText primary={title} />
+      <ListItemText primary=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{title}</Typography> />
     </ListItemButton>
   );
 };

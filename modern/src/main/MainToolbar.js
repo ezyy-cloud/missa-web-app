@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  Toolbar, IconButton, OutlinedInput, InputAdornment, Popover, FormControl, InputLabel, Select, MenuItem, FormGroup, FormControlLabel, Checkbox, Badge, ListItemButton, ListItemText,
+  Toolbar, IconButton, OutlinedInput, InputAdornment, Popover, FormControl, InputLabel, Select, MenuItem, FormGroup, FormControlLabel, Checkbox, Badge, ListItemButton, ListItemText, Typography,
 } from '@mui/material';
 import { makeStyles, useTheme } from '@mui/styles';
 import MapIcon from '@mui/icons-material/Map';
@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
   filter: {
     backgroundColor: theme.palette.colors.backgground,
+    fontFamily: 'Gotham Rounded',
+    fontWeight: 350,
   },
 }));
 
@@ -112,7 +114,7 @@ const MainToolbar = ({
         {filteredDevices.length > 3 && (
           <ListItemButton alignItems="center" onClick={() => setDevicesOpen(true)}>
             <ListItemText
-              primary={t('notificationAlways')}
+              primary=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('notificationAlways')}</Typography>
               style={{ textAlign: 'center' }}
             />
           </ListItemButton>
@@ -129,48 +131,48 @@ const MainToolbar = ({
       >
         <div className={classes.filterPanel}>
           <FormControl>
-            <InputLabel>{t('deviceStatus')}</InputLabel>
+            <InputLabel><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceStatus')}</Typography></InputLabel>
             <Select
-              label={t('deviceStatus')}
+              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceStatus')}</Typography>
               value={filter.statuses}
               onChange={(e) => setFilter({ ...filter, statuses: e.target.value })}
               multiple
             >
-              <MenuItem value="online">{`${t('deviceStatusOnline')} (${deviceStatusCount('online')})`}</MenuItem>
-              <MenuItem value="offline">{`${t('deviceStatusOffline')} (${deviceStatusCount('offline')})`}</MenuItem>
-              <MenuItem value="unknown">{`${t('deviceStatusUnknown')} (${deviceStatusCount('unknown')})`}</MenuItem>
+              <MenuItem value="online" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{`${t('deviceStatusOnline')} (${deviceStatusCount('online')})`}</MenuItem>
+              <MenuItem value="offline" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{`${t('deviceStatusOffline')} (${deviceStatusCount('offline')})`}</MenuItem>
+              <MenuItem value="unknown" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{`${t('deviceStatusUnknown')} (${deviceStatusCount('unknown')})`}</MenuItem>
             </Select>
           </FormControl>
           <FormControl>
-            <InputLabel>{t('settingsGroups')}</InputLabel>
+            <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsGroups')}</InputLabel>
             <Select
-              label={t('settingsGroups')}
+              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsGroups')}</Typography>
               value={filter.groups}
               onChange={(e) => setFilter({ ...filter, groups: e.target.value })}
               multiple
             >
               {Object.values(groups).sort((a, b) => a.name.localeCompare(b.name)).map((group) => (
-                <MenuItem key={group.id} value={group.id}>{group.name}</MenuItem>
+                <MenuItem key={group.id} value={group.id}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{group.name}</Typography></MenuItem>
               ))}
             </Select>
           </FormControl>
           <FormControl>
-            <InputLabel>{t('sharedSortBy')}</InputLabel>
+            <InputLabel><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedSortBy')}</Typography></InputLabel>
             <Select
-              label={t('sharedSortBy')}
+              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedSortBy')}</Typography>
               value={filterSort}
               onChange={(e) => setFilterSort(e.target.value)}
               displayEmpty
             >
-              <MenuItem value="">{'\u00a0'}</MenuItem>
-              <MenuItem value="name">{t('sharedName')}</MenuItem>
-              <MenuItem value="lastUpdate">{t('deviceLastUpdate')}</MenuItem>
+              <MenuItem value="" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{'\u00a0'}</MenuItem>
+              <MenuItem value="name" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</MenuItem>
+              <MenuItem value="lastUpdate" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceLastUpdate')}</MenuItem>
             </Select>
           </FormControl>
           <FormGroup>
             <FormControlLabel
               control={<Checkbox checked={filterMap} onChange={(e) => setFilterMap(e.target.checked)} />}
-              label={t('sharedFilterMap')}
+              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedFilterMap')}</Typography>
             />
           </FormGroup>
         </div>

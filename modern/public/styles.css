@@ -1,10 +1,7 @@
 html, body {
-  height: 100%;
-}
-
-body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 canvas {
@@ -12,8 +9,70 @@ canvas {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .root {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.map {
+  --phoneBorderRadius: 10px;
+  --phoneScreenBorderRadius: 33px;
+  --phoneWidth: 200px;
+  --phoneHeight: 630px;
+  width: var(--phoneWidth);
+  height: var(--phoneHeight);
+  padding: 8px;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  border-radius: var(--phoneBorderRadius);
+  background: #f6f9fc;
+  /* background-image: radial-gradient(ellipse farthest-corner at 45px 45px, rgba(50, 50, 50, 0.8) 0%, rgba(80, 80, 80, 0.2) ), url("https://static.vecteezy.com/system/resources/previews/002/920/438/original/abstract-city-map-seamless-pattern-roads-navigation-gps-use-for-pattern-fills-surface-textures-web-page-background-wallpaper-illustration-free-vector.jpg"); */
+  box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3),inset 0 -2px 6px 0 rgba(10,37,64,.35);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
+}
+.phone {
+  --phoneBorderRadius: 30px;
+  --phoneScreenBorderRadius: 33px;
+  --phoneWidth: 245px;
+  --phoneHeight: 500px;
+  width: var(--phoneWidth);
+  height: var(--phoneHeight);
+  padding: 6px;
+  border-radius: var(--phoneBorderRadius);
+  border: 10px solid #ECEFF2;
+  background: #f6f9fc;
+  box-shadow: 0 20px 20px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3),inset 0 -2px 6px 0 rgba(10,37,64,.35);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
+}
+.desktop {
+  --phoneBorderRadius: 30px;
+  --phoneScreenBorderRadius: 5px;
+  --phoneWidth: 782px;
+  --phoneHeight: 533px;
+  width: var(--phoneWidth);
+  height: var(--phoneHeight);
+  padding: 8px;
+  border: 15px solid #eceff23b;
+  border-radius: var(--phoneBorderRadius);
+  box-shadow: 0 0px 0px 0px rgba(50,50,93,.25),0 8px 50px 0px rgba(0,0,0,.3);
+  background: #f6f9fc41;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
 }

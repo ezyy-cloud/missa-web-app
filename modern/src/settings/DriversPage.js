@@ -48,17 +48,17 @@ const DriversPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('sharedName')}</TableCell>
-            <TableCell>{t('deviceIdentifier')}</TableCell>
-            <TableCell className={classes.columnAction} />
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedName')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('deviceIdentifier')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }} className={classes.columnAction} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>{item.uniqueId}</TableCell>
-              <TableCell className={classes.columnAction} padding="none">
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.name}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.uniqueId}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} className={classes.columnAction} padding="none">
                 <CollectionActions itemId={item.id} editPath="/settings/driver" endpoint="drivers" setTimestamp={setTimestamp} />
               </TableCell>
             </TableRow>

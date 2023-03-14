@@ -3,7 +3,7 @@ import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  Accordion, AccordionSummary, AccordionDetails, Typography, Container, FormControl, InputLabel, Select, MenuItem, Checkbox, FormControlLabel, FormGroup, InputAdornment, IconButton, OutlinedInput, Autocomplete, TextField, createFilterOptions, Button,
+  Accordion, Chip, AccordionSummary, AccordionDetails, Typography, Container, FormControl, InputLabel, Select, MenuItem, Checkbox, FormControlLabel, FormGroup, InputAdornment, IconButton, OutlinedInput, Autocomplete, TextField, createFilterOptions, Button,
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -33,6 +33,9 @@ const deviceFields = [
 const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(2),
+  },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded', fontWeight: 350,
   },
   buttons: {
     marginTop: theme.spacing(2),
@@ -117,22 +120,26 @@ const PreferencesPage = () => {
       <Container maxWidth="xs" className={classes.container}>
         <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
               {t('userToken')}
             </Typography>
           </AccordionSummary>
           <AccordionDetails className={classes.details}>
             <TextField
-              label={t('userExpirationTime')}
+              label=<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userExpirationTime')}</Typography>
               type="date"
               value={tokenExpiration}
               onChange={(e) => {
                 setTokenExpiration(e.target.value);
                 setToken(null);
               }}
+              InputProps={{
+                className: classes.fontStyle,
+              }}
             />
             <FormControl>
               <OutlinedInput
+                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 multiline
                 rows={6}
                 readOnly
@@ -158,13 +165,13 @@ const PreferencesPage = () => {
           <>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('mapTitle')}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className={classes.details}>
                 <FormControl>
-                  <InputLabel>{t('mapActive')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapActive')}</InputLabel>
                   <Select
                     label={t('mapActive')}
                     value={attributes.activeMapStyles?.split(',') || ['locationIqStreets', 'osm', 'carto']}
@@ -178,16 +185,17 @@ const PreferencesPage = () => {
                       }
                     }}
                     multiple
+                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                   >
                     {mapStyles.map((style) => (
-                      <MenuItem key={style.id} value={style.id}>
-                        <Typography component="span" color={style.available ? 'textPrimary' : 'error'}>{style.title}</Typography>
+                      <MenuItem key={style.id} value={style.id} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                        <Typography component="span" color={style.available ? 'textPrimary' : 'error'} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{style.title}</Typography>
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel>{t('mapOverlay')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapOverlay')}</InputLabel>
                   <Select
                     label={t('mapOverlay')}
                     value={attributes.selectedMapOverlay || ''}
@@ -200,11 +208,12 @@ const PreferencesPage = () => {
                         navigate(`/settings/user/${user.id}?${query.toString()}`);
                       }
                     }}
+                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                   >
-                    <MenuItem value="">{'\u00a0'}</MenuItem>
+                    <MenuItem value="" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{'\u00a0'}</MenuItem>
                     {mapOverlays.map((overlay) => (
                       <MenuItem key={overlay.id} value={overlay.id}>
-                        <Typography component="span" color={overlay.available ? 'textPrimary' : 'error'}>{overlay.title}</Typography>
+                        <Typography component="span" color={overlay.available ? 'textPrimary' : 'error'} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{overlay.title}</Typography>
                       </MenuItem>
                     ))}
                   </Select>
@@ -212,6 +221,7 @@ const PreferencesPage = () => {
                 <Autocomplete
                   multiple
                   freeSolo
+                  classes={{ listbox: classes.fontStyle, input: classes.fontStyle }}
                   options={Object.keys(positionAttributes)}
                   getOptionLabel={(option) => (positionAttributes.hasOwnProperty(option) ? positionAttributes[option].name : option)}
                   value={attributes.positionItems?.split(',') || ['speed', 'address', 'totalDistance', 'course']}
@@ -225,35 +235,47 @@ const PreferencesPage = () => {
                     }
                     return filtered;
                   }}
+                  renderTags={(value, getTagProps) => value.map((option, index) => (
+                    <Chip
+                      variant="outlined"
+                      color="primary"
+                      label={option}
+                      size="small"
+                      {...getTagProps({ index })}
+                      sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                    />
+                  ))}
                   renderInput={(params) => (
                     <TextField
                       {...params}
-                      label={t('attributePopupInfo')}
+                      label=<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('attributePopupInfo')}</Typography>
                     />
                   )}
                 />
                 <FormControl>
-                  <InputLabel>{t('mapLiveRoutes')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapLiveRoutes')}</InputLabel>
                   <Select
                     label={t('mapLiveRoutes')}
                     value={attributes.mapLiveRoutes || 'none'}
                     onChange={(e) => setAttributes({ ...attributes, mapLiveRoutes: e.target.value })}
+                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                   >
-                    <MenuItem value="none">{t('sharedDisabled')}</MenuItem>
-                    <MenuItem value="selected">{t('deviceSelected')}</MenuItem>
-                    <MenuItem value="all">{t('notificationAlways')}</MenuItem>
+                    <MenuItem value="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDisabled')}</MenuItem>
+                    <MenuItem value="selected" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceSelected')}</MenuItem>
+                    <MenuItem value="all" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('notificationAlways')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel>{t('mapDirection')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapDirection')}</InputLabel>
                   <Select
                     label={t('mapDirection')}
                     value={attributes.mapDirection || 'selected'}
                     onChange={(e) => setAttributes({ ...attributes, mapDirection: e.target.value })}
+                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                   >
-                    <MenuItem value="none">{t('sharedDisabled')}</MenuItem>
-                    <MenuItem value="selected">{t('deviceSelected')}</MenuItem>
-                    <MenuItem value="all">{t('notificationAlways')}</MenuItem>
+                    <MenuItem value="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDisabled')}</MenuItem>
+                    <MenuItem value="selected" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceSelected')}</MenuItem>
+                    <MenuItem value="all" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('notificationAlways')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormGroup>
@@ -264,7 +286,7 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapGeofences: e.target.checked })}
                       />
                     )}
-                    label={t('attributeShowGeofences')}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('attributeShowGeofences')}</Typography>}
                   />
                   <FormControlLabel
                     control={(
@@ -273,7 +295,7 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapFollow: e.target.checked })}
                       />
                     )}
-                    label={t('deviceFollow')}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceFollow')}</Typography>}
                   />
                   <FormControlLabel
                     control={(
@@ -282,7 +304,7 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapCluster: e.target.checked })}
                       />
                     )}
-                    label={t('mapClustering')}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapClustering')}</Typography>}
                   />
                   <FormControlLabel
                     control={(
@@ -291,14 +313,14 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapOnSelect: e.target.checked })}
                       />
                     )}
-                    label={t('mapOnSelect')}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapOnSelect')}</Typography>}
                   />
                 </FormGroup>
               </AccordionDetails>
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('deviceTitle')}
                 </Typography>
               </AccordionSummary>
@@ -310,6 +332,7 @@ const PreferencesPage = () => {
                   data={deviceFields}
                   titleGetter={(it) => t(it.name)}
                   label={t('devicePrimaryInfo')}
+                  sx={{ fontFamily: 'Gotham Rounded' }}
                 />
                 <SelectField
                   emptyValue=""
@@ -318,12 +341,13 @@ const PreferencesPage = () => {
                   data={deviceFields}
                   titleGetter={(it) => t(it.name)}
                   label={t('deviceSecondaryInfo')}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 />
               </AccordionDetails>
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('sharedSound')}
                 </Typography>
               </AccordionSummary>
@@ -335,7 +359,8 @@ const PreferencesPage = () => {
                   endpoint="/api/notifications/types"
                   keyGetter={(it) => it.type}
                   titleGetter={(it) => t(prefixString('event', it.type))}
-                  label={t('eventsSoundEvents')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('eventsSoundEvents')}</Typography>
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 />
                 <SelectField
                   multiple
@@ -343,31 +368,41 @@ const PreferencesPage = () => {
                   onChange={(e) => setAttributes({ ...attributes, soundAlarms: e.target.value.join(',') })}
                   data={alarms}
                   keyGetter={(it) => it.key}
-                  label={t('eventsSoundAlarms')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('eventsSoundAlarms')}</Typography>
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 />
               </AccordionDetails>
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('sharedInfoTitle')}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className={classes.details}>
                 <TextField
                   value={versionApp}
-                  label={t('settingsAppVersion')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsAppVersion')}</Typography>
                   disabled
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <TextField
                   value={versionServer || '-'}
-                  label={t('settingsServerVersion')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsServerVersion')}</Typography>
                   disabled
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <TextField
                   value={socket ? t('deviceStatusOnline') : t('deviceStatusOffline')}
-                  label={t('settingsConnection')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsConnection')}</Typography>
                   disabled
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
               </AccordionDetails>
             </Accordion>
@@ -377,6 +412,7 @@ const PreferencesPage = () => {
                 color="primary"
                 variant="outlined"
                 onClick={() => navigate(-1)}
+                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
               >
                 {t('sharedCancel')}
               </Button>
@@ -385,6 +421,7 @@ const PreferencesPage = () => {
                 color="primary"
                 variant="contained"
                 onClick={handleSave}
+                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
               >
                 {t('sharedSave')}
               </Button>

@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     paddingBottom: theme.spacing(3),
   },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded',
+  },
 }));
 
 const MaintenancePage = () => {
@@ -124,7 +127,7 @@ const MaintenancePage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -132,14 +135,18 @@ const MaintenancePage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label={t('sharedName')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <FormControl>
-                <InputLabel>{t('sharedType')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
                 <Select
-                  label={t('sharedType')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</Typography>
                   value={item.type || ''}
                   onChange={onMaintenanceTypeChange}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 >
                   {convertToList(positionAttributes).map(({ key, name }) => (
                     <MenuItem key={key} value={key}>{name}</MenuItem>
@@ -150,13 +157,19 @@ const MaintenancePage = () => {
                 type="number"
                 value={rawToValue(item.start) || ''}
                 onChange={(event) => setItem({ ...item, start: valueToRaw(event.target.value) })}
-                label={labels.start ? `${t('maintenanceStart')} (${labels.start})` : t('maintenanceStart')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{labels.start ? `${t('maintenanceStart')} (${labels.start})` : t('maintenanceStart')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <TextField
                 type="number"
                 value={rawToValue(item.period) || ''}
                 onChange={(event) => setItem({ ...item, period: valueToRaw(event.target.value) })}
-                label={labels.period ? `${t('maintenancePeriod')} (${labels.period})` : t('maintenancePeriod')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{labels.period ? `${t('maintenancePeriod')} (${labels.period})` : t('maintenancePeriod')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
             </AccordionDetails>
           </Accordion>

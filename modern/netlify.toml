@@ -19,3 +19,8 @@
   from = "/privacy-policy"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/terms-conditions"
+  to = "/index.html"
+  status = 200

@@ -35,7 +35,7 @@ const App = () => {
       if (response.ok) {
         dispatch(sessionActions.updateUser(await response.json()));
       } else {
-        navigate('/login');
+        navigate('/home');
       }
     }
     return null;

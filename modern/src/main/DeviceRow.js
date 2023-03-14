@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import makeStyles from '@mui/styles/makeStyles';
 import {
-  IconButton, Tooltip, Avatar, ListItemAvatar, ListItemText, ListItemButton,
+  IconButton, Tooltip, Avatar, ListItemAvatar, ListItemText, ListItemButton, Typography,
 } from '@mui/material';
 import BatteryFullIcon from '@mui/icons-material/BatteryFull';
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
@@ -73,7 +73,7 @@ const DeviceRow = ({ data, index, style }) => {
         .map((id) => geofences[id].name)
         .join(', ');
     }
-    return item[key];
+    return <Typography sx={{ fontFamily: 'Gotham Rounded' }}>{item[key]}</Typography>;
   };
 
   const secondaryText = () => {
@@ -84,10 +84,10 @@ const DeviceRow = ({ data, index, style }) => {
       status = moment(item.lastUpdate).fromNow();
     }
     return (
-      <>
+      <Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: '350', fontSize: '13px' }}>
         {deviceSecondary && item[deviceSecondary] && `${formatProperty(deviceSecondary)} • `}
         <span className={classes[getStatusColor(item.status)]}>{status}</span>
-      </>
+      </Typography>
     );
   };
 

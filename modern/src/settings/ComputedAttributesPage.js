@@ -50,22 +50,22 @@ const ComputedAttributesPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('sharedDescription')}</TableCell>
-            <TableCell>{t('sharedAttribute')}</TableCell>
-            <TableCell>{t('sharedExpression')}</TableCell>
-            <TableCell>{t('sharedType')}</TableCell>
-            {administrator && <TableCell className={classes.columnAction} />}
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDescription')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedAttribute')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedExpression')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedType')}</TableCell>
+            {administrator && <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />}
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.description}</TableCell>
-              <TableCell>{item.attribute}</TableCell>
-              <TableCell>{item.expression}</TableCell>
-              <TableCell>{item.type}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.description}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.attribute}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.expression}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.type}</TableCell>
               {administrator && (
-                <TableCell className={classes.columnAction} padding="none">
+                <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   <CollectionActions itemId={item.id} editPath="/settings/attribute" endpoint="attributes/computed" setTimestamp={setTimestamp} />
                 </TableCell>
               )}

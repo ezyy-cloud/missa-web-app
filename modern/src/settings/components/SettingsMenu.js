@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Divider, List, ListItemButton, ListItemIcon, ListItemText,
+  Divider, List, ListItemButton, ListItemIcon, ListItemText, Typography,
 } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -61,7 +61,7 @@ const SettingsMenu = () => {
     <>
       <List>
         <MenuItem
-          title={t('sharedPreferences')}
+          title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedPreferences')}</Typography>
           link="/settings/preferences"
           icon={<SettingsIcon color="secondary" />}
           selected={location.pathname === '/settings/preferences'}
@@ -69,34 +69,34 @@ const SettingsMenu = () => {
         {!readonly && (
           <>
             <MenuItem
-              title={t('sharedNotifications')}
+              title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedNotifications')}</Typography>
               link="/settings/notifications"
               icon={<NotificationsIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/notification')}
             />
             <MenuItem
-              title={t('settingsUser')}
+              title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('settingsUser')}</Typography>
               link={`/settings/user/${userId}`}
               icon={<PersonIcon color="secondary" />}
               selected={location.pathname === `/settings/user/${userId}`}
             />
             {!deviceReadonly && (
               <MenuItem
-                title={t('deviceTitle')}
+                title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('deviceTitle')}</Typography>
                 link="/settings/devices"
                 icon={<SmartphoneIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/device')}
               />
             )}
             <MenuItem
-              title={t('sharedGeofences')}
+              title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedGeofences')}</Typography>
               link="/geofences"
               icon={<CreateIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/geofence')}
             />
             {!features.disableGroups && (
               <MenuItem
-                title={t('settingsGroups')}
+                title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('settingsGroups')}</Typography>
                 link="/settings/groups"
                 icon={<FolderIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/group')}
@@ -104,7 +104,7 @@ const SettingsMenu = () => {
             )}
             {!features.disableDrivers && (
               <MenuItem
-                title={t('sharedDrivers')}
+                title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDrivers')}</Typography>
                 link="/settings/drivers"
                 icon={<PersonIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/driver')}
@@ -112,7 +112,7 @@ const SettingsMenu = () => {
             )}
             {!features.disableCalendars && (
               <MenuItem
-                title={t('sharedCalendars')}
+                title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedCalendars')}</Typography>
                 link="/settings/calendars"
                 icon={<TodayIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/calendar')}
@@ -120,7 +120,7 @@ const SettingsMenu = () => {
             )}
             {!features.disableComputedAttributes && (
               <MenuItem
-                title={t('sharedComputedAttributes')}
+                title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedComputedAttributes')}</Typography>
                 link="/settings/attributes"
                 icon={<StorageIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/attribute')}
@@ -128,14 +128,14 @@ const SettingsMenu = () => {
             )}
             {!features.disableMaintenance && (
               <MenuItem
-                title={t('sharedMaintenance')}
+                title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedMaintenance')}</Typography>
                 link="/settings/maintenances"
                 icon={<BuildIcon color="secondary" />}
                 selected={location.pathname.startsWith('/settings/maintenance')}
               />
             )}
             <MenuItem
-              title={t('sharedSavedCommands')}
+              title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedSavedCommands')}</Typography>
               link="/settings/commands"
               icon={<PublishIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/command') && !location.pathname.startsWith('/settings/command-send')}
@@ -149,14 +149,14 @@ const SettingsMenu = () => {
           <List>
             {admin && (
               <MenuItem
-                title={t('settingsServer')}
+                title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('settingsServer')}</Typography>
                 link="/settings/server"
                 icon={<StorageIcon color="secondary" />}
                 selected={location.pathname === '/settings/server'}
               />
             )}
             <MenuItem
-              title={t('settingsUsers')}
+              title=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('settingsUsers')}</Typography>
               link="/settings/users"
               icon={<PeopleIcon color="secondary" />}
               selected={location.pathname.startsWith('/settings/user') && location.pathname !== `/settings/user/${userId}`}

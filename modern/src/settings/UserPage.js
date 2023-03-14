@@ -43,6 +43,10 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     paddingBottom: theme.spacing(3),
   },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded',
+    fontWeight: 350,
+  },
 }));
 
 const UserPage = () => {
@@ -121,7 +125,7 @@ const UserPage = () => {
         <>
           <Accordion defaultExpanded={!attribute}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -129,24 +133,33 @@ const UserPage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label={t('sharedName')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <TextField
                 value={item.email || ''}
                 onChange={(event) => setItem({ ...item, email: event.target.value })}
-                label={t('userEmail')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userEmail')}</Typography>
                 disabled={fixedEmail}
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <TextField
                 type="password"
                 onChange={(event) => setItem({ ...item, password: event.target.value })}
-                label={t('userPassword')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userPassword')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
             </AccordionDetails>
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedPreferences')}
               </Typography>
             </AccordionSummary>
@@ -154,79 +167,88 @@ const UserPage = () => {
               <TextField
                 value={item.phone || ''}
                 onChange={(event) => setItem({ ...item, phone: event.target.value })}
-                label={t('sharedPhone')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedPhone')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <FormControl>
-                <InputLabel>{t('mapDefault')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapDefault')}</InputLabel>
                 <Select
                   label={t('mapDefault')}
                   value={item.map || 'locationIqStreets'}
                   onChange={(e) => setItem({ ...item, map: e.target.value })}
+                  sx={{ fontFamily: 'Gotham Rounded' }}
                 >
                   {mapStyles.filter((style) => style.available).map((style) => (
                     <MenuItem key={style.id} value={style.id}>
-                      <Typography component="span">{style.title}</Typography>
+                      <Typography component="span" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{style.title}</Typography>
                     </MenuItem>
                   ))}
                 </Select>
               </FormControl>
               <FormControl>
-                <InputLabel>{t('settingsCoordinateFormat')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsCoordinateFormat')}</InputLabel>
                 <Select
                   label={t('settingsCoordinateFormat')}
                   value={item.coordinateFormat || 'dd'}
                   onChange={(event) => setItem({ ...item, coordinateFormat: event.target.value })}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 >
-                  <MenuItem value="dd">{t('sharedDecimalDegrees')}</MenuItem>
-                  <MenuItem value="ddm">{t('sharedDegreesDecimalMinutes')}</MenuItem>
-                  <MenuItem value="dms">{t('sharedDegreesMinutesSeconds')}</MenuItem>
+                  <MenuItem value="dd" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDecimalDegrees')}</MenuItem>
+                  <MenuItem value="ddm" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDegreesDecimalMinutes')}</MenuItem>
+                  <MenuItem value="dms" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDegreesMinutesSeconds')}</MenuItem>
                 </Select>
               </FormControl>
               <FormControl>
-                <InputLabel>{t('settingsSpeedUnit')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsSpeedUnit')}</InputLabel>
                 <Select
                   label={t('settingsSpeedUnit')}
                   value={(item.attributes && item.attributes.speedUnit) || 'kn'}
                   onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, speedUnit: e.target.value } })}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 >
-                  <MenuItem value="kn">{t('sharedKn')}</MenuItem>
-                  <MenuItem value="kmh">{t('sharedKmh')}</MenuItem>
-                  <MenuItem value="mph">{t('sharedMph')}</MenuItem>
+                  <MenuItem value="kn" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedKn')}</MenuItem>
+                  <MenuItem value="kmh" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedKmh')}</MenuItem>
+                  <MenuItem value="mph" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMph')}</MenuItem>
                 </Select>
               </FormControl>
               <FormControl>
-                <InputLabel>{t('settingsDistanceUnit')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsDistanceUnit')}</InputLabel>
                 <Select
                   label={t('settingsDistanceUnit')}
                   value={(item.attributes && item.attributes.distanceUnit) || 'km'}
                   onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, distanceUnit: e.target.value } })}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 >
-                  <MenuItem value="km">{t('sharedKm')}</MenuItem>
-                  <MenuItem value="mi">{t('sharedMi')}</MenuItem>
-                  <MenuItem value="nmi">{t('sharedNmi')}</MenuItem>
+                  <MenuItem value="km" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedKm')}</MenuItem>
+                  <MenuItem value="mi" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMi')}</MenuItem>
+                  <MenuItem value="nmi" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedNmi')}</MenuItem>
                 </Select>
               </FormControl>
               <FormControl>
-                <InputLabel>{t('settingsAltitudeUnit')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsAltitudeUnit')}</InputLabel>
                 <Select
                   label={t('settingsAltitudeUnit')}
                   value={(item.attributes && item.attributes.altitudeUnit) || 'm'}
                   onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, altitudeUnit: e.target.value } })}
+                  sx={{ fontFamily: 'Gotham Rounded' }}
                 >
-                  <MenuItem value="m">{t('sharedMeters')}</MenuItem>
-                  <MenuItem value="ft">{t('sharedFeet')}</MenuItem>
+                  <MenuItem value="m" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMeters')}</MenuItem>
+                  <MenuItem value="ft" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedFeet')}</MenuItem>
                 </Select>
               </FormControl>
               <FormControl>
-                <InputLabel>{t('settingsVolumeUnit')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsVolumeUnit')}</InputLabel>
                 <Select
                   label={t('settingsVolumeUnit')}
                   value={(item.attributes && item.attributes.volumeUnit) || 'ltr'}
                   onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, volumeUnit: e.target.value } })}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 >
-                  <MenuItem value="ltr">{t('sharedLiter')}</MenuItem>
-                  <MenuItem value="usGal">{t('sharedUsGallon')}</MenuItem>
-                  <MenuItem value="impGal">{t('sharedImpGallon')}</MenuItem>
+                  <MenuItem value="ltr" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedLiter')}</MenuItem>
+                  <MenuItem value="usGal" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedUsGallon')}</MenuItem>
+                  <MenuItem value="impGal" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedImpGallon')}</MenuItem>
                 </Select>
               </FormControl>
               <SelectField
@@ -236,24 +258,28 @@ const UserPage = () => {
                 endpoint="/api/server/timezones"
                 keyGetter={(it) => it}
                 titleGetter={(it) => it}
-                label={t('sharedTimezone')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTimezone')}</Typography>
+                sx={{ fontFamily: 'Gotham Rounded' }}
               />
               <TextField
                 value={item.poiLayer || ''}
                 onChange={(event) => setItem({ ...item, poiLayer: event.target.value })}
-                label={t('mapPoiLayer')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapPoiLayer')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <FormGroup>
                 <FormControlLabel
                   control={<Checkbox checked={item.twelveHourFormat} onChange={(event) => setItem({ ...item, twelveHourFormat: event.target.checked })} />}
-                  label={t('settingsTwelveHourFormat')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsTwelveHourFormat')}</Typography>
                 />
               </FormGroup>
             </AccordionDetails>
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedLocation')}
               </Typography>
             </AccordionSummary>
@@ -262,23 +288,33 @@ const UserPage = () => {
                 type="number"
                 value={item.latitude || 0}
                 onChange={(event) => setItem({ ...item, latitude: Number(event.target.value) })}
-                label={t('positionLatitude')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('positionLatitude')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <TextField
                 type="number"
                 value={item.longitude || 0}
                 onChange={(event) => setItem({ ...item, longitude: Number(event.target.value) })}
-                label={t('positionLongitude')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('positionLongitude')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <TextField
                 type="number"
                 value={item.zoom || 0}
                 onChange={(event) => setItem({ ...item, zoom: Number(event.target.value) })}
-                label={t('serverZoom')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('serverZoom')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <Button
                 variant="outlined"
                 color="primary"
+                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 onClick={() => {
                   const { lng, lat } = map.getCenter();
                   setItem({
@@ -295,66 +331,75 @@ const UserPage = () => {
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedPermissions')}
               </Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.details}>
               <TextField
-                label={t('userExpirationTime')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userExpirationTime')}</Typography>
                 type="date"
                 value={(item.expirationTime && moment(item.expirationTime).locale('en').format(moment.HTML5_FMT.DATE)) || '2099-01-01'}
                 onChange={(e) => setItem({ ...item, expirationTime: moment(e.target.value, moment.HTML5_FMT.DATE).locale('en').format() })}
                 disabled={!manager}
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <TextField
                 type="number"
                 value={item.deviceLimit || 0}
                 onChange={(e) => setItem({ ...item, deviceLimit: Number(e.target.value) })}
-                label={t('userDeviceLimit')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userDeviceLimit')}</Typography>
                 disabled={!admin}
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <TextField
                 type="number"
                 value={item.userLimit || 0}
                 onChange={(e) => setItem({ ...item, userLimit: Number(e.target.value) })}
-                label={t('userUserLimit')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userUserLimit')}</Typography>
                 disabled={!admin}
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <FormGroup>
                 <FormControlLabel
                   control={<Checkbox checked={item.disabled} onChange={(e) => setItem({ ...item, disabled: e.target.checked })} />}
-                  label={t('sharedDisabled')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDisabled')}</Typography>
                   disabled={!manager}
                 />
                 <FormControlLabel
                   control={<Checkbox checked={item.administrator} onChange={(e) => setItem({ ...item, administrator: e.target.checked })} />}
-                  label={t('userAdmin')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userAdmin')}</Typography>
                   disabled={!admin}
                 />
                 <FormControlLabel
                   control={<Checkbox checked={item.readonly} onChange={(e) => setItem({ ...item, readonly: e.target.checked })} />}
-                  label={t('serverReadonly')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('serverReadonly')}</Typography>
                   disabled={!manager}
                 />
                 <FormControlLabel
                   control={<Checkbox checked={item.deviceReadonly} onChange={(e) => setItem({ ...item, deviceReadonly: e.target.checked })} />}
-                  label={t('userDeviceReadonly')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userDeviceReadonly')}</Typography>
                   disabled={!manager}
                 />
                 <FormControlLabel
                   control={<Checkbox checked={item.limitCommands} onChange={(e) => setItem({ ...item, limitCommands: e.target.checked })} />}
-                  label={t('userLimitCommands')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userLimitCommands')}</Typography>
                   disabled={!manager}
                 />
                 <FormControlLabel
                   control={<Checkbox checked={item.disableReports} onChange={(e) => setItem({ ...item, disableReports: e.target.checked })} />}
-                  label={t('userDisableReports')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userDisableReports')}</Typography>
                   disabled={!manager}
                 />
                 <FormControlLabel
                   control={<Checkbox checked={item.fixedEmail} onChange={(e) => setItem({ ...item, fixedEmail: e.target.checked })} />}
-                  label={t('userFixedEmail')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userFixedEmail')}</Typography>
                   disabled={!manager}
                 />
               </FormGroup>
@@ -370,7 +415,7 @@ const UserPage = () => {
           {registrationEnabled && item.id === currentUser.id && !manager && (
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" color="error">
+                <Typography variant="subtitle1" color="error" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('userDeleteAccount')}
                 </Typography>
               </AccordionSummary>
@@ -378,14 +423,18 @@ const UserPage = () => {
                 <TextField
                   value={deleteEmail}
                   onChange={(event) => setDeleteEmail(event.target.value)}
-                  label={t('userEmail')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userEmail')}</Typography>
                   error={deleteFailed}
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <Button
                   variant="outlined"
                   color="error"
                   onClick={handleDelete}
                   startIcon={<DeleteForeverIcon />}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 >
                   {t('userDeleteAccount')}
                 </Button>
@@ -395,7 +444,7 @@ const UserPage = () => {
           {item.id && manager && (
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('sharedConnections')}
                 </Typography>
               </AccordionSummary>
@@ -406,7 +455,7 @@ const UserPage = () => {
                   baseId={item.id}
                   keyBase="userId"
                   keyLink="deviceId"
-                  label={t('deviceTitle')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceTitle')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/groups?all=true"
@@ -414,7 +463,7 @@ const UserPage = () => {
                   baseId={item.id}
                   keyBase="userId"
                   keyLink="groupId"
-                  label={t('settingsGroups')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsGroups')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/geofences?all=true"
@@ -422,7 +471,7 @@ const UserPage = () => {
                   baseId={item.id}
                   keyBase="userId"
                   keyLink="geofenceId"
-                  label={t('sharedGeofences')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedGeofences')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/notifications?all=true"
@@ -431,7 +480,7 @@ const UserPage = () => {
                   keyBase="userId"
                   keyLink="notificationId"
                   titleGetter={(it) => formatNotificationTitle(t, it, true)}
-                  label={t('sharedNotifications')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedNotifications')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/calendars?all=true"
@@ -439,7 +488,7 @@ const UserPage = () => {
                   baseId={item.id}
                   keyBase="userId"
                   keyLink="calendarId"
-                  label={t('sharedCalendars')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedCalendars')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/users?all=true"
@@ -447,7 +496,7 @@ const UserPage = () => {
                   baseId={item.id}
                   keyBase="userId"
                   keyLink="managedUserId"
-                  label={t('settingsUsers')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsUsers')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/attributes/computed?all=true"
@@ -456,7 +505,7 @@ const UserPage = () => {
                   keyBase="userId"
                   keyLink="attributeId"
                   titleGetter={(it) => it.description}
-                  label={t('sharedComputedAttributes')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedComputedAttributes')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/drivers?all=true"
@@ -464,7 +513,7 @@ const UserPage = () => {
                   baseId={item.id}
                   keyBase="userId"
                   keyLink="driverId"
-                  label={t('sharedDrivers')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDrivers')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/commands?all=true"
@@ -473,7 +522,7 @@ const UserPage = () => {
                   keyBase="userId"
                   keyLink="commandId"
                   titleGetter={(it) => it.description}
-                  label={t('sharedSavedCommands')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedSavedCommands')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/maintenance?all=true"
@@ -481,7 +530,7 @@ const UserPage = () => {
                   baseId={item.id}
                   keyBase="userId"
                   keyLink="maintenanceId"
-                  label={t('sharedMaintenance')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMaintenance')}</Typography>
                 />
               </AccordionDetails>
             </Accordion>

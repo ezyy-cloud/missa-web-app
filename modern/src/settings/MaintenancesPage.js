@@ -71,21 +71,21 @@ const MaintenacesPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('sharedName')}</TableCell>
-            <TableCell>{t('sharedType')}</TableCell>
-            <TableCell>{t('maintenanceStart')}</TableCell>
-            <TableCell>{t('maintenancePeriod')}</TableCell>
-            <TableCell className={classes.columnAction} />
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedName')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedType')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('maintenanceStart')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('maintenancePeriod')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }} className={classes.columnAction} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>{item.type}</TableCell>
-              <TableCell>{convertAttribute(item.type, item.start)}</TableCell>
-              <TableCell>{convertAttribute(item.type, item.period)}</TableCell>
-              <TableCell className={classes.columnAction} padding="none">
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.name}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.type}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{convertAttribute(item.type, item.start)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{convertAttribute(item.type, item.period)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} className={classes.columnAction} padding="none">
                 <CollectionActions itemId={item.id} editPath="/settings/maintenance" endpoint="maintenance" setTimestamp={setTimestamp} />
               </TableCell>
             </TableRow>

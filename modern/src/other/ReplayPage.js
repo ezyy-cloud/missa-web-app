@@ -179,7 +179,7 @@ const ReplayPage = () => {
             <IconButton edge="start" sx={{ mr: 2 }} onClick={() => navigate(-1)}>
               <ArrowBackIcon color="secondary" />
             </IconButton>
-            <Typography variant="h6" className={classes.title}>{t('reportReplay')}</Typography>
+            <Typography variant="h6" className={classes.title} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportReplay')}</Typography>
             {!expanded && (
               <>
                 <IconButton onClick={handleDownload}>
@@ -195,7 +195,7 @@ const ReplayPage = () => {
         <Paper className={classes.content} square>
           {!expanded ? (
             <>
-              <Typography variant="subtitle1" align="center">{deviceName}</Typography>
+              <Typography variant="subtitle1" align="center" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{deviceName}</Typography>
               <Slider
                 className={classes.slider}
                 max={positions.length - 1}
@@ -205,7 +205,11 @@ const ReplayPage = () => {
                 onChange={(_, index) => setIndex(index)}
               />
               <div className={classes.controls}>
-                {`${index + 1}/${positions.length}`}
+                <Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                  {' '}
+                  {`${index + 1}/${positions.length}`}
+                  {' '}
+                </Typography>
                 <IconButton onClick={() => setIndex((index) => index - 1)} disabled={playing || index <= 0}>
                   <FastRewindIcon />
                 </IconButton>
@@ -215,7 +219,7 @@ const ReplayPage = () => {
                 <IconButton onClick={() => setIndex((index) => index + 1)} disabled={playing || index >= positions.length - 1}>
                   <FastForwardIcon />
                 </IconButton>
-                {formatTime(positions[index].fixTime, 'seconds', hours12)}
+                <Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatTime(positions[index].fixTime, 'seconds', hours12)}</Typography>
               </div>
             </>
           ) : (

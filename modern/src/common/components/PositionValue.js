@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   formatAlarm, formatAltitude, formatBoolean, formatCoordinate, formatCourse, formatDistance, formatNumber, formatNumericHours, formatPercentage, formatSpeed, formatTime,
@@ -66,25 +66,25 @@ const PositionValue = ({ position, property, attribute }) => {
     case 'image':
     case 'video':
     case 'audio':
-      return (<Link href={`/api/media/${device.uniqueId}/${value}`} target="_blank">{value}</Link>);
+      return (<Link href={`/api/media/${device.uniqueId}/${value}`} target="_blank" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{value}</Link>);
     case 'totalDistance':
     case 'hours':
       return (
         <>
           {formatValue(value)}
           &nbsp;&nbsp;
-          {admin && (<Link component={RouterLink} underline="none" to={`/settings/accumulators/${position.deviceId}`}>&#9881;</Link>)}
+          {admin && (<Link component={RouterLink} underline="none" to={`/settings/accumulators/${position.deviceId}`} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>&#9881;</Link>)}
         </>
       );
     case 'address':
       return (<AddressValue latitude={position.latitude} longitude={position.longitude} originalAddress={value} />);
     case 'network':
       if (value) {
-        return (<Link component={RouterLink} underline="none" to={`/network/${position.id}`}>{t('sharedInfoTitle')}</Link>);
+        return (<Link component={RouterLink} underline="none" to={`/network/${position.id}`} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedInfoTitle')}</Link>);
       }
       return '';
     default:
-      return formatValue(value);
+      return <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatValue(value)}</Typography>;
   }
 };
 

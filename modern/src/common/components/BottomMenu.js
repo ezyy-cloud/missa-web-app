@@ -116,7 +116,7 @@ const BottomMenu = () => {
     <Paper square elevation={3}>
       <BottomNavigation value={currentSelection()} onChange={handleSelection} className={classes.bottomNav} showLabels>
         <BottomNavigationAction
-          label={t('mapTitle')}
+          label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350, fontSize: '12px' }}>{t('mapTitle')}</Typography>
           className={classes.bottomNavAction}
           icon={(
             <Badge color="error" variant="dot" overlap="circular" invisible={socket !== false}>
@@ -126,21 +126,33 @@ const BottomMenu = () => {
           value="map"
         />
         {!disableReports && (
-          <BottomNavigationAction label={t('reportTitle')} className={classes.bottomNavAction} icon={<DescriptionIcon />} value="reports" />
+          <BottomNavigationAction label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350, fontSize: '12px' }}>{t('reportTitle')}</Typography> className={classes.bottomNavAction} icon={<DescriptionIcon />} value="reports" />
         )}
-        <BottomNavigationAction label={t('settingsTitle')} className={classes.bottomNavAction} icon={<SettingsIcon />} value="settings" />
+        <BottomNavigationAction label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350, fontSize: '12px' }}>{t('settingsTitle')}</Typography> className={classes.bottomNavAction} icon={<SettingsIcon />} value="settings" />
         {readonly ? (
-          <BottomNavigationAction label={t('loginLogout')} className={classes.bottomNavAction} icon={<ExitToAppIcon />} value="logout" />
+          <BottomNavigationAction label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350, fontSize: '12px' }}>{t('loginLogout')}</Typography> className={classes.bottomNavAction} icon={<ExitToAppIcon />} value="logout" />
         ) : (
-          <BottomNavigationAction label={t('settingsUser')} className={classes.bottomNavAction} icon={<PersonIcon />} value="account" />
+          <BottomNavigationAction label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350, fontSize: '12px' }}>{t('settingsUser')}</Typography> className={classes.bottomNavAction} icon={<PersonIcon />} value="account" />
         )}
       </BottomNavigation>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>
         <MenuItem onClick={handleAccount}>
-          <Typography color="textPrimary">{t('settingsUser')}</Typography>
+          <Typography
+            color="textPrimary"
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+          >
+            {t('settingsUser')}
+
+          </Typography>
         </MenuItem>
         <MenuItem onClick={handleLogout}>
-          <Typography color="error">{t('loginLogout')}</Typography>
+          <Typography
+            color="error"
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+          >
+            {t('loginLogout')}
+
+          </Typography>
         </MenuItem>
       </Menu>
     </Paper>

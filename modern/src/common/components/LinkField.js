@@ -1,6 +1,13 @@
-import { Autocomplete, TextField } from '@mui/material';
+import { Autocomplete, TextField, Chip } from '@mui/material';
 import React, { useState } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
 import { useEffectAsync } from '../../reactHelper';
+
+const useStyles = makeStyles(() => ({
+  fontStyle: {
+    fontFamily: 'Gotham Rounded', fontWeight: 350,
+  },
+}));
 
 const LinkField = ({
   label,
@@ -12,6 +19,7 @@ const LinkField = ({
   keyGetter = (item) => item.id,
   titleGetter = (item) => item.name,
 }) => {
+  const classes = useStyles();
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState();
@@ -72,11 +80,22 @@ const LinkField = ({
 
   return (
     <Autocomplete
+      classes={{ listbox: classes.fontStyle, input: classes.fontStyle }}
       loading={active && !items}
       isOptionEqualToValue={(i1, i2) => keyGetter(i1) === keyGetter(i2)}
       options={items || []}
       getOptionLabel={(item) => titleGetter(item)}
-      renderInput={(params) => <TextField {...params} label={label} />}
+      renderTags={(value, getTagProps) => value.map((option, index) => (
+        <Chip
+          variant="outlined"
+          color="primary"
+          label={option.name || option.type}
+          size="small"
+          {...getTagProps({ index })}
+          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+        />
+      ))}
+      renderInput={(params) => <TextField {...params} label={label} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} />}
       value={(items && linked) || []}
       onChange={(_, value) => onChange(value)}
       open={open}

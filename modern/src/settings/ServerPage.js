@@ -52,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     paddingBottom: theme.spacing(3),
   },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded', fontWeight: 350,
+  },
 }));
 
 const ServerPage = () => {
@@ -90,7 +93,7 @@ const ServerPage = () => {
           <>
             <Accordion defaultExpanded>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('sharedPreferences')}
                 </Typography>
               </AccordionSummary>
@@ -98,84 +101,96 @@ const ServerPage = () => {
                 <TextField
                   value={item.mapUrl || ''}
                   onChange={(event) => setItem({ ...item, mapUrl: event.target.value })}
-                  label={t('mapCustomLabel')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapCustomLabel')}</Typography>
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <TextField
                   value={item.overlayUrl || ''}
                   onChange={(event) => setItem({ ...item, overlayUrl: event.target.value })}
-                  label={t('mapOverlayCustom')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapOverlayCustom')}</Typography>
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <FormControl>
-                  <InputLabel>{t('mapDefault')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapDefault')}</InputLabel>
                   <Select
-                    label={t('mapDefault')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapDefault')}</Typography>
                     value={item.map || 'locationIqStreets'}
                     onChange={(e) => setItem({ ...item, map: e.target.value })}
+                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                   >
                     {mapStyles.filter((style) => style.available).map((style) => (
                       <MenuItem key={style.id} value={style.id}>
-                        <Typography component="span">{style.title}</Typography>
+                        <Typography component="span" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{style.title}</Typography>
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel>{t('settingsCoordinateFormat')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsCoordinateFormat')}</InputLabel>
                   <Select
-                    label={t('settingsCoordinateFormat')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsCoordinateFormat')}</Typography>
                     value={item.coordinateFormat || 'dd'}
                     onChange={(event) => setItem({ ...item, coordinateFormat: event.target.value })}
+                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                   >
-                    <MenuItem value="dd">{t('sharedDecimalDegrees')}</MenuItem>
-                    <MenuItem value="ddm">{t('sharedDegreesDecimalMinutes')}</MenuItem>
-                    <MenuItem value="dms">{t('sharedDegreesMinutesSeconds')}</MenuItem>
+                    <MenuItem value="dd" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDecimalDegrees')}</MenuItem>
+                    <MenuItem value="ddm" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDegreesDecimalMinutes')}</MenuItem>
+                    <MenuItem value="dms" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDegreesMinutesSeconds')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel>{t('settingsSpeedUnit')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsSpeedUnit')}</InputLabel>
                   <Select
-                    label={t('settingsSpeedUnit')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsSpeedUnit')}</Typography>
                     value={item.attributes.speedUnit || 'kn'}
+                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                     onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, speedUnit: e.target.value } })}
                   >
-                    <MenuItem value="kn">{t('sharedKn')}</MenuItem>
-                    <MenuItem value="kmh">{t('sharedKmh')}</MenuItem>
-                    <MenuItem value="mph">{t('sharedMph')}</MenuItem>
+                    <MenuItem value="kn" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedKn')}</MenuItem>
+                    <MenuItem value="kmh" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedKmh')}</MenuItem>
+                    <MenuItem value="mph" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMph')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel>{t('settingsDistanceUnit')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsDistanceUnit')}</InputLabel>
                   <Select
-                    label={t('settingsDistanceUnit')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsDistanceUnit')}</Typography>
+                    sx={{ fontFamily: 'Gotham Rounded' }}
                     value={item.attributes.distanceUnit || 'km'}
                     onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, distanceUnit: e.target.value } })}
                   >
-                    <MenuItem value="km">{t('sharedKm')}</MenuItem>
-                    <MenuItem value="mi">{t('sharedMi')}</MenuItem>
-                    <MenuItem value="nmi">{t('sharedNmi')}</MenuItem>
+                    <MenuItem value="km" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedKm')}</MenuItem>
+                    <MenuItem value="mi" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMi')}</MenuItem>
+                    <MenuItem value="nmi" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedNmi')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel>{t('settingsAltitudeUnit')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsAltitudeUnit')}</InputLabel>
                   <Select
-                    label={t('settingsAltitudeUnit')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsAltitudeUnit')}</Typography>
                     value={item.attributes.altitudeUnit || 'm'}
+                    sx={{ fontFamily: 'Gotham Rounded' }}
                     onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, altitudeUnit: e.target.value } })}
                   >
-                    <MenuItem value="m">{t('sharedMeters')}</MenuItem>
-                    <MenuItem value="ft">{t('sharedFeet')}</MenuItem>
+                    <MenuItem value="m" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMeters')}</MenuItem>
+                    <MenuItem value="ft" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedFeet')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel>{t('settingsVolumeUnit')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsVolumeUnit')}</InputLabel>
                   <Select
-                    label={t('settingsVolumeUnit')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsVolumeUnit')}</Typography>
                     value={item.attributes.volumeUnit || 'ltr'}
+                    sx={{ fontFamily: 'Gotham Rounded' }}
                     onChange={(e) => setItem({ ...item, attributes: { ...item.attributes, volumeUnit: e.target.value } })}
                   >
-                    <MenuItem value="ltr">{t('sharedLiter')}</MenuItem>
-                    <MenuItem value="usGal">{t('sharedUsGallon')}</MenuItem>
-                    <MenuItem value="impGal">{t('sharedImpGallon')}</MenuItem>
+                    <MenuItem value="ltr" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedLiter')}</MenuItem>
+                    <MenuItem value="usGal" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedUsGallon')}</MenuItem>
+                    <MenuItem value="impGal" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedImpGallon')}</MenuItem>
                   </Select>
                 </FormControl>
                 <SelectField
@@ -185,33 +200,40 @@ const ServerPage = () => {
                   endpoint="/api/server/timezones"
                   keyGetter={(it) => it}
                   titleGetter={(it) => it}
-                  label={t('sharedTimezone')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTimezone')}</Typography>
+                  sx={{ fontFamily: 'Gotham Rounded' }}
                 />
                 <TextField
                   value={item.poiLayer || ''}
                   onChange={(event) => setItem({ ...item, poiLayer: event.target.value })}
-                  label={t('mapPoiLayer')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapPoiLayer')}</Typography>
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <TextField
                   value={item.announcement || ''}
                   onChange={(event) => setItem({ ...item, announcement: event.target.value })}
-                  label={t('serverAnnouncement')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('serverAnnouncement')}</Typography>
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <FormGroup>
                   <FormControlLabel
                     control={<Checkbox checked={item.twelveHourFormat} onChange={(event) => setItem({ ...item, twelveHourFormat: event.target.checked })} />}
-                    label={t('settingsTwelveHourFormat')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsTwelveHourFormat')}</Typography>
                   />
                   <FormControlLabel
                     control={<Checkbox checked={item.forceSettings} onChange={(event) => setItem({ ...item, forceSettings: event.target.checked })} />}
-                    label={t('serverForceSettings')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('serverForceSettings')}</Typography>
                   />
                 </FormGroup>
               </AccordionDetails>
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('sharedLocation')}
                 </Typography>
               </AccordionSummary>
@@ -220,19 +242,28 @@ const ServerPage = () => {
                   type="number"
                   value={item.latitude || 0}
                   onChange={(event) => setItem({ ...item, latitude: Number(event.target.value) })}
-                  label={t('positionLatitude')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('positionLatitude')}</Typography>
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <TextField
                   type="number"
                   value={item.longitude || 0}
                   onChange={(event) => setItem({ ...item, longitude: Number(event.target.value) })}
-                  label={t('positionLongitude')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('positionLongitude')}</Typography>
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <TextField
                   type="number"
                   value={item.zoom || 0}
                   onChange={(event) => setItem({ ...item, zoom: Number(event.target.value) })}
-                  label={t('serverZoom')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('serverZoom')}</Typography>
+                  InputProps={{
+                    className: classes.fontStyle,
+                  }}
                 />
                 <Button
                   variant="outlined"
@@ -246,6 +277,7 @@ const ServerPage = () => {
                       zoom: Number(map.getZoom().toFixed(1)),
                     });
                   }}
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 >
                   {t('mapCurrentLocation')}
                 </Button>
@@ -253,7 +285,7 @@ const ServerPage = () => {
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                   {t('sharedPermissions')}
                 </Typography>
               </AccordionSummary>
@@ -261,27 +293,27 @@ const ServerPage = () => {
                 <FormGroup>
                   <FormControlLabel
                     control={<Checkbox checked={item.registration} onChange={(event) => setItem({ ...item, registration: event.target.checked })} />}
-                    label={t('serverRegistration')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('serverRegistration')}</Typography>
                   />
                   <FormControlLabel
                     control={<Checkbox checked={item.readonly} onChange={(event) => setItem({ ...item, readonly: event.target.checked })} />}
-                    label={t('serverReadonly')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('serverReadonly')}</Typography>
                   />
                   <FormControlLabel
                     control={<Checkbox checked={item.deviceReadonly} onChange={(event) => setItem({ ...item, deviceReadonly: event.target.checked })} />}
-                    label={t('userDeviceReadonly')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userDeviceReadonly')}</Typography>
                   />
                   <FormControlLabel
                     control={<Checkbox checked={item.limitCommands} onChange={(event) => setItem({ ...item, limitCommands: event.target.checked })} />}
-                    label={t('userLimitCommands')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userLimitCommands')}</Typography>
                   />
                   <FormControlLabel
                     control={<Checkbox checked={item.disableReports} onChange={(event) => setItem({ ...item, disableReports: event.target.checked })} />}
-                    label={t('userDisableReports')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userDisableReports')}</Typography>
                   />
                   <FormControlLabel
                     control={<Checkbox checked={item.fixedEmail} onChange={(e) => setItem({ ...item, fixedEmail: e.target.checked })} />}
-                    label={t('userFixedEmail')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userFixedEmail')}</Typography>
                   />
                 </FormGroup>
               </AccordionDetails>
@@ -294,10 +326,10 @@ const ServerPage = () => {
           </>
         )}
         <div className={classes.buttons}>
-          <Button type="button" color="primary" variant="outlined" onClick={() => navigate(-1)}>
+          <Button type="button" color="primary" variant="outlined" onClick={() => navigate(-1)} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
             {t('sharedCancel')}
           </Button>
-          <Button type="button" color="primary" variant="contained" onClick={handleSave}>
+          <Button type="button" color="primary" variant="contained" onClick={handleSave} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
             {t('sharedSave')}
           </Button>
         </div>

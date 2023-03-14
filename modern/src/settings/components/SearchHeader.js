@@ -30,6 +30,7 @@ const SearchHeader = ({ keyword, setKeyword }) => {
         placeholder={t('sharedSearch')}
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
+        sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
       />
     </div>
   ) : '';

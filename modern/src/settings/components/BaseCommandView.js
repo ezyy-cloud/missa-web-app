@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  TextField, FormControlLabel, Checkbox,
+  TextField, FormControlLabel, Checkbox, Typography,
 } from '@mui/material';
 import { useTranslation } from '../../common/components/LocalizationProvider';
 import SelectField from '../../common/components/SelectField';
@@ -31,6 +31,7 @@ const BaseCommandView = ({ deviceId, item, setItem }) => {
         keyGetter={(it) => it.type}
         titleGetter={(it) => t(prefixString('command', it.type))}
         label={t('sharedType')}
+        sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
       />
       {attributes.map(({ key, name, type }) => {
         if (type === 'boolean') {
@@ -47,6 +48,7 @@ const BaseCommandView = ({ deviceId, item, setItem }) => {
                 />
               )}
               label={name}
+              sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
             />
           );
         }
@@ -60,12 +62,13 @@ const BaseCommandView = ({ deviceId, item, setItem }) => {
               setItem(updateItem);
             }}
             label={name}
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
           />
         );
       })}
       <FormControlLabel
         control={<Checkbox checked={item.textChannel} onChange={(event) => setItem({ ...item, textChannel: event.target.checked })} />}
-        label={t('commandSendSms')}
+        label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('commandSendSms')}</Typography>
       />
     </>
   );

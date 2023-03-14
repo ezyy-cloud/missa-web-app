@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FormControl, InputLabel, MenuItem, Select,
+  FormControl, InputLabel, MenuItem, Select, Typography,
 } from '@mui/material';
 import { useTranslation } from '../../common/components/LocalizationProvider';
 import useReportStyles from '../common/useReportStyles';
@@ -14,19 +14,20 @@ const ColumnSelect = ({
   return (
     <div className={classes.filterItem}>
       <FormControl fullWidth>
-        <InputLabel>{t('sharedColumns')}</InputLabel>
+        <InputLabel sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedColumns')}</InputLabel>
         <Select
-          label={t('sharedColumns')}
+          label=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedColumns')}</Typography>
           value={columns}
           onChange={(e) => setColumns(e.target.value)}
           multiple
+          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
         >
           {columnsArray
             ? columnsArray.map(([key, string]) => (
-              <MenuItem key={key} value={key}>{t(string)}</MenuItem>
+              <MenuItem key={key} value={key} style={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(string)}</MenuItem>
             ))
             : Object.keys(columnsObject).map((key) => (
-              <MenuItem key={key} value={key}>{columnsObject[key].name}</MenuItem>
+              <MenuItem key={key} value={key} style={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{columnsObject[key].name}</MenuItem>
             ))}
         </Select>
       </FormControl>

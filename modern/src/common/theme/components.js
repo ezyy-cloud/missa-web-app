@@ -9,7 +9,7 @@ export default {
   MuiOutlinedInput: {
     styleOverrides: {
       root: {
-        backgroundColor: grey[50],
+        backgroundColor: grey[200],
       },
     },
   },

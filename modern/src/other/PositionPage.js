@@ -8,7 +8,6 @@ import makeStyles from '@mui/styles/makeStyles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffectAsync } from '../reactHelper';
-import { prefixString } from '../common/util/stringUtils';
 import { useTranslation } from '../common/components/LocalizationProvider';
 import PositionValue from '../common/components/PositionValue';
 
@@ -65,7 +64,7 @@ const PositionPage = () => {
           <IconButton color="inherit" edge="start" sx={{ mr: 2 }} onClick={() => navigate(-1)}>
             <ArrowBackIcon />
           </IconButton>
-          <Typography variant="h6">
+          <Typography variant="h6" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
             {deviceName}
           </Typography>
         </Toolbar>
@@ -76,24 +75,21 @@ const PositionPage = () => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>{t('stateName')}</TableCell>
-                  <TableCell>{t('sharedName')}</TableCell>
-                  <TableCell>{t('stateValue')}</TableCell>
+                  <TableCell><Typography variant="h5" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('stateName')}</Typography></TableCell>
+                  <TableCell sx={{ textAlign: 'end' }}><Typography variant="h5" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('stateValue')}</Typography></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {item && Object.getOwnPropertyNames(item).filter((it) => it !== 'attributes').map((property) => (
                   <TableRow key={property}>
-                    <TableCell>{property}</TableCell>
-                    <TableCell><strong>{t(prefixString('position', property))}</strong></TableCell>
-                    <TableCell><PositionValue position={item} property={property} /></TableCell>
+                    <TableCell><Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{property}</Typography></TableCell>
+                    <TableCell sx={{ textAlign: 'end' }}><PositionValue position={item} property={property} /></TableCell>
                   </TableRow>
                 ))}
                 {item && Object.getOwnPropertyNames(item.attributes).map((attribute) => (
                   <TableRow key={attribute}>
-                    <TableCell>{attribute}</TableCell>
-                    <TableCell><strong>{t(prefixString('position', attribute)) || t(prefixString('device', attribute))}</strong></TableCell>
-                    <TableCell><PositionValue position={item} attribute={attribute} /></TableCell>
+                    <TableCell><Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{attribute}</Typography></TableCell>
+                    <TableCell sx={{ textAlign: 'end' }}><PositionValue position={item} attribute={attribute} /></TableCell>
                   </TableRow>
                 ))}
               </TableBody>

@@ -1,5 +1,5 @@
 import {
-  FormControl, InputLabel, MenuItem, Select,
+  FormControl, InputLabel, MenuItem, Select, Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
 import { useEffectAsync } from '../../reactHelper';
@@ -32,7 +32,7 @@ const SelectField = ({
   if (items) {
     return (
       <FormControl>
-        <InputLabel>{label}</InputLabel>
+        <InputLabel><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{label}</Typography></InputLabel>
         <Select
           label={label}
           multiple={multiple}
@@ -40,10 +40,10 @@ const SelectField = ({
           onChange={onChange}
         >
           {!multiple && emptyValue !== null && (
-            <MenuItem value={emptyValue}>{emptyTitle}</MenuItem>
+            <MenuItem value={emptyValue}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{emptyTitle}</Typography></MenuItem>
           )}
           {items.map((item) => (
-            <MenuItem key={keyGetter(item)} value={keyGetter(item)}>{titleGetter(item)}</MenuItem>
+            <MenuItem key={keyGetter(item)} value={keyGetter(item)}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{titleGetter(item)}</Typography></MenuItem>
           ))}
         </Select>
       </FormControl>

@@ -15,7 +15,7 @@ const Navbar = ({ setOpenDrawer, title }) => (
       >
         <MenuIcon />
       </IconButton>
-      <Typography variant="h6" noWrap>
+      <Typography variant="h6" noWrap sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
         {title}
       </Typography>
     </Toolbar>

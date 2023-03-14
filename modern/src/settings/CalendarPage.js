@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     paddingBottom: theme.spacing(3),
   },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded', fontWeight: 350,
+  },
 }));
 
 const CalendarPage = () => {
@@ -105,7 +108,7 @@ const CalendarPage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -113,64 +116,75 @@ const CalendarPage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label={t('sharedName')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <FormControl>
-                <InputLabel>{t('sharedType')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
                 <Select
-                  label={t('sharedType')}
+                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</Typography>
                   value={simple ? 'simple' : 'custom'}
                   onChange={(e) => setItem({ ...item, data: (e.target.value === 'simple' ? simpleCalendar() : null) })}
+                  sx={{ fontFamily: 'Gotham Rounded' }}
                 >
-                  <MenuItem value="simple">{t('calendarSimple')}</MenuItem>
-                  <MenuItem value="custom">{t('reportCustom')}</MenuItem>
+                  <MenuItem value="simple" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarSimple')}</MenuItem>
+                  <MenuItem value="custom" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportCustom')}</MenuItem>
                 </Select>
               </FormControl>
               {simple ? (
                 <>
                   <TextField
-                    label={t('reportFrom')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportFrom')}</Typography>
                     type="datetime-local"
                     value={moment(lines[5].slice(-15)).locale('en').format(moment.HTML5_FMT.DATETIME_LOCAL)}
                     onChange={(e) => {
                       const time = formatCalendarTime(moment(e.target.value, moment.HTML5_FMT.DATETIME_LOCAL));
                       setItem({ ...item, data: updateCalendar(lines, 5, `DTSTART;${time}`) });
                     }}
+                    InputProps={{
+                      className: classes.fontStyle,
+                    }}
                   />
                   <TextField
-                    label={t('reportTo')}
+                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportTo')}</Typography>
                     type="datetime-local"
                     value={moment(lines[6].slice(-15)).locale('en').format(moment.HTML5_FMT.DATETIME_LOCAL)}
                     onChange={(e) => {
                       const time = formatCalendarTime(moment(e.target.value, moment.HTML5_FMT.DATETIME_LOCAL));
                       setItem({ ...item, data: updateCalendar(lines, 6, `DTEND;${time}`) });
                     }}
+                    InputProps={{
+                      className: classes.fontStyle,
+                    }}
                   />
                   <FormControl>
-                    <InputLabel>{t('calendarRecurrence')}</InputLabel>
+                    <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarRecurrence')}</InputLabel>
                     <Select
-                      label={t('calendarRecurrence')}
+                      label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarRecurrence')}</Typography>
                       value={rule.frequency}
+                      sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                       onChange={(e) => setItem({ ...item, data: updateCalendar(lines, 7, formatRule({ frequency: e.target.value })) })}
                     >
                       {['ONCE', 'DAILY', 'WEEKLY', 'MONTHLY'].map((it) => (
-                        <MenuItem key={it} value={it}>{t(prefixString('calendar', it.toLowerCase()))}</MenuItem>
+                        <MenuItem key={it} value={it} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(prefixString('calendar', it.toLowerCase()))}</MenuItem>
                       ))}
                     </Select>
                   </FormControl>
                   {['WEEKLY', 'MONTHLY'].includes(rule.frequency) && (
                     <FormControl>
-                      <InputLabel>{t('calendarDays')}</InputLabel>
+                      <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarDays')}</InputLabel>
                       <Select
                         multiple
-                        label={t('calendarDays')}
+                        label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarDays')}</Typography>
                         value={rule.by}
                         onChange={(e) => setItem({ ...item, data: updateCalendar(lines, 7, formatRule({ ...rule, by: e.target.value })) })}
                       >
                         {rule.frequency === 'WEEKLY' ? ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map((it) => (
-                          <MenuItem key={it} value={it.substring(0, 2).toUpperCase()}>{t(prefixString('calendar', it))}</MenuItem>
+                          <MenuItem key={it} value={it.substring(0, 2).toUpperCase()} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(prefixString('calendar', it))}</MenuItem>
                         )) : Array.from({ length: 31 }, (_, i) => i + 1).map((it) => (
-                          <MenuItem key={it} value={it}>{it}</MenuItem>
+                          <MenuItem key={it} value={it} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{it}</MenuItem>
                         ))}
                       </Select>
                     </FormControl>

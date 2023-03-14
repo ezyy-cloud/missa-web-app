@@ -88,10 +88,10 @@ const ChartReportPage = () => {
       <ReportFilter handleSubmit={handleSubmit} showOnly>
         <div className={classes.filterItem}>
           <FormControl fullWidth>
-            <InputLabel>{t('reportChartType')}</InputLabel>
-            <Select label={t('reportChartType')} value={type} onChange={(e) => setType(e.target.value)}>
+            <InputLabel sx={{ fontFamily: 'Gotham Rounded' }}>{t('reportChartType')}</InputLabel>
+            <Select label={t('reportChartType')} value={type} onChange={(e) => setType(e.target.value)} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
               {Object.keys(positionAttributes).filter((key) => positionAttributes[key].type === 'number').map((key) => (
-                <MenuItem key={key} value={key}>{positionAttributes[key].name}</MenuItem>
+                <MenuItem key={key} value={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{positionAttributes[key].name}</MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -103,14 +103,32 @@ const ChartReportPage = () => {
             <LineChart
               data={items}
               margin={{
-                top: 10, right: 40, left: 0, bottom: 10,
+                top: 30, right: 40, left: 20, bottom: 150,
               }}
             >
-              <XAxis dataKey="fixTime" />
-              <YAxis type="number" tickFormatter={(value) => value.toFixed(2)} domain={[minValue - valueRange / 5, maxValue + valueRange / 5]} />
-              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="fixTime"
+                angle="90"
+                interval="preserveStartEnd"
+                tickLine={false}
+                tickMargin={40}
+              />
+              <YAxis
+                type="number"
+                tickFormatter={(value) => value.toFixed(2)}
+                domain={[0, maxValue + valueRange - valueRange + 5]}
+                tickLine={false}
+              />
+              <CartesianGrid stroke="#fff000" strokeDasharray="5 5" />
               <Tooltip formatter={(value, key) => [value, positionAttributes[key].name]} />
-              <Line type="monotone" dataKey={type} />
+              <Line
+                type="monotone"
+                dataKey={type}
+                dot={false}
+                activeDot={{ stroke: 'yellow', strokeWidth: 2, r: 5 }}
+                strokeWidth={1}
+                stroke="#000"
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>

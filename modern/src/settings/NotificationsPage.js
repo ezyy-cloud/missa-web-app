@@ -61,21 +61,21 @@ const NotificationsPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('notificationType')}</TableCell>
-            <TableCell>{t('notificationAlways')}</TableCell>
-            <TableCell>{t('sharedAlarms')}</TableCell>
-            <TableCell>{t('notificationNotificators')}</TableCell>
-            <TableCell className={classes.columnAction} />
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('notificationType')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('notificationAlways')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedAlarms')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('notificationNotificators')}</TableCell>
+            <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{t(prefixString('event', item.type))}</TableCell>
-              <TableCell>{formatBoolean(item.always, t)}</TableCell>
-              <TableCell>{formatList('alarm', item.attributes.alarms)}</TableCell>
-              <TableCell>{formatList('notificator', item.notificators)}</TableCell>
-              <TableCell className={classes.columnAction} padding="none">
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(prefixString('event', item.type))}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatBoolean(item.always, t)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatList('alarm', item.attributes.alarms)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatList('notificator', item.notificators)}</TableCell>
+              <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 <CollectionActions itemId={item.id} editPath="/settings/notification" endpoint="notifications" setTimestamp={setTimestamp} />
               </TableCell>
             </TableRow>

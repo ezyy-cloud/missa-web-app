@@ -19,6 +19,9 @@ import LogoImage from './LogoImage';
 import { useCatch } from '../reactHelper';
 
 const useStyles = makeStyles((theme) => ({
+  fontStyle: {
+    fontFamily: 'Gotham Rounded', fontWeight: 350,
+  },
   options: {
     position: 'fixed',
     top: theme.spacing(1),
@@ -156,7 +159,7 @@ const LoginPage = () => {
             <LogoImage color={theme.palette.secondary.contrastText} />
           </Grid>
           <Grid xs={8}>
-            <Typography variant="h4" className={classes.sidebarTitle} gutterBottom>
+            <Typography variant="h4" className={classes.sidebarTitle} gutterBottom sx={{ fontFamily: 'Gotham Rounded' }}>
               Missa Cloud
             </Typography>
           </Grid>
@@ -165,7 +168,7 @@ const LoginPage = () => {
         <TextField
           required
           error={failed}
-          label={t('userEmail')}
+          label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userEmail')}</Typography>
           name="email"
           value={email}
           autoComplete="email"
@@ -173,11 +176,14 @@ const LoginPage = () => {
           onChange={(e) => setEmail(e.target.value)}
           onKeyUp={handleSpecialKey}
           helperText={failed && 'Invalid username or password'}
+          InputProps={{
+            className: classes.fontStyle,
+          }}
         />
         <TextField
           required
           error={failed}
-          label={t('userPassword')}
+          label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userPassword')}</Typography>
           name="password"
           value={password}
           type="password"
@@ -185,6 +191,9 @@ const LoginPage = () => {
           autoFocus={!!email}
           onChange={(e) => setPassword(e.target.value)}
           onKeyUp={handleSpecialKey}
+          InputProps={{
+            className: classes.fontStyle,
+          }}
         />
         <Button
           onClick={handlePasswordLogin}
@@ -193,6 +202,7 @@ const LoginPage = () => {
           color="secondary"
           disabled={!email || !password}
           className={classes.loginButton}
+          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
         >
           {t('loginLogin')}
         </Button>
@@ -203,6 +213,7 @@ const LoginPage = () => {
             onClick={() => navigate('/register')}
             disabled={!registrationEnabled}
             color="secondary"
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
           >
             {t('loginRegister')}
           </Button>
@@ -210,8 +221,8 @@ const LoginPage = () => {
           {languageEnabled && (
             <FormControl fullWidth>
               <InputLabel>{t('loginLanguage')}</InputLabel>
-              <Select label={t('loginLanguage')} value={language} onChange={(e) => setLanguage(e.target.value)}>
-                {languageList.map((it) => <MenuItem key={it.code} value={it.code}>{it.name}</MenuItem>)}
+              <Select label={t('loginLanguage')} value={language} onChange={(e) => setLanguage(e.target.value)} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                {languageList.map((it) => <MenuItem key={it.code} value={it.code} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{it.name}</MenuItem>)}
               </Select>
             </FormControl>
           )}
@@ -222,12 +233,14 @@ const LoginPage = () => {
             className={classes.resetPassword}
             underline="none"
             variant="caption"
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
           >
             {t('loginReset')}
           </Link>
         )}
       </div>
       <Snackbar
+        sx={{ fontFamily: 'Gotham Rounded' }}
         open={!!announcement && !announcementShown}
         message={announcement}
         action={(

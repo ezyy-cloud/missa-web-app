@@ -52,20 +52,20 @@ const CommandsPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>{t('sharedDescription')}</TableCell>
-            <TableCell>{t('sharedType')}</TableCell>
-            <TableCell>{t('commandSendSms')}</TableCell>
-            {!limitCommands && <TableCell className={classes.columnAction} />}
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDescription')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedType')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('commandSendSms')}</TableCell>
+            {!limitCommands && <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />}
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell>{item.description}</TableCell>
-              <TableCell>{t(prefixString('command', item.type))}</TableCell>
-              <TableCell>{formatBoolean(item.textChannel, t)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.description}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(prefixString('command', item.type))}</TableCell>
+              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatBoolean(item.textChannel, t)}</TableCell>
               {!limitCommands && (
-                <TableCell className={classes.columnAction} padding="none">
+                <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} className={classes.columnAction} padding="none">
                   <CollectionActions itemId={item.id} editPath="/settings/command" endpoint="commands" setTimestamp={setTimestamp} />
                 </TableCell>
               )}

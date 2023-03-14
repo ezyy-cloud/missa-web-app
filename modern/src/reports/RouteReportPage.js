@@ -101,15 +101,15 @@ const RouteReportPage = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className={classes.columnAction} />
-                <TableCell>{t('sharedDevice')}</TableCell>
-                {columns.map((key) => (<TableCell key={key}>{positionAttributes[key].name}</TableCell>))}
+                <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />
+                <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDevice')}</TableCell>
+                {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Gotham Rounded' }}>{positionAttributes[key].name}</TableCell>))}
               </TableRow>
             </TableHead>
             <TableBody>
               {!loading ? items.map((item) => (
                 <TableRow key={item.id}>
-                  <TableCell className={classes.columnAction} padding="none">
+                  <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                     {selectedItem === item ? (
                       <IconButton size="small" onClick={() => setSelectedItem(null)}>
                         <GpsFixedIcon fontSize="small" />
@@ -120,9 +120,9 @@ const RouteReportPage = () => {
                       </IconButton>
                     )}
                   </TableCell>
-                  <TableCell>{devices[item.deviceId].name}</TableCell>
+                  <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{devices[item.deviceId].name}</TableCell>
                   {columns.map((key) => (
-                    <TableCell key={key}>
+                    <TableCell key={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                       <PositionValue
                         position={item}
                         property={item.hasOwnProperty(key) ? key : null}

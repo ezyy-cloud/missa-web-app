@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(2),
     paddingBottom: theme.spacing(3),
   },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded',
+  },
 }));
 
 const GeofencePage = () => {
@@ -51,7 +54,7 @@ const GeofencePage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -59,13 +62,16 @@ const GeofencePage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label={t('sharedName')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
             </AccordionDetails>
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 {t('sharedExtra')}
               </Typography>
             </AccordionSummary>
@@ -73,13 +79,17 @@ const GeofencePage = () => {
               <TextField
                 value={item.description || ''}
                 onChange={(event) => setItem({ ...item, description: event.target.value })}
-                label={t('sharedDescription')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDescription')}</Typography>
+                InputProps={{
+                  className: classes.fontStyle,
+                }}
               />
               <SelectField
                 value={item.calendarId || 0}
                 onChange={(event) => setItem({ ...item, calendarId: Number(event.target.value) })}
                 endpoint="/api/calendars"
-                label={t('sharedCalendar')}
+                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedCalendar')}</Typography>
+                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
               />
             </AccordionDetails>
           </Accordion>

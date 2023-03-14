@@ -162,7 +162,7 @@ const EditAttributesAccordion = ({ attribute, attributes, setAttributes, definit
   return features.disableAttributes ? '' : (
     <Accordion defaultExpanded={!!attribute}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
           {t('sharedAttributes')}
         </Typography>
       </AccordionSummary>
@@ -180,7 +180,8 @@ const EditAttributesAccordion = ({ attribute, attributes, setAttributes, definit
                       onChange={(e) => updateAttribute(key, e.target.checked)}
                     />
                   )}
-                  label={getAttributeName(key, subtype)}
+                  label=<Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded' }}>{getAttributeName(key, subtype)}</Typography>
+                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 />
                 <IconButton size="small" className={classes.removeButton} onClick={() => deleteAttribute(key)}>
                   <CloseIcon fontSize="small" />
@@ -190,8 +191,9 @@ const EditAttributesAccordion = ({ attribute, attributes, setAttributes, definit
           }
           return (
             <FormControl key={key}>
-              <InputLabel>{getAttributeName(key, subtype)}</InputLabel>
+              <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{getAttributeName(key, subtype)}</InputLabel>
               <OutlinedInput
+                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
                 label={getAttributeName(key, subtype)}
                 type={type === 'number' ? 'number' : 'text'}
                 value={getDisplayValue(value, subtype)}
@@ -209,6 +211,7 @@ const EditAttributesAccordion = ({ attribute, attributes, setAttributes, definit
           );
         })}
         <Button
+          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
           variant="outlined"
           color="primary"
           onClick={() => setAddDialogShown(true)}

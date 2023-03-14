@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
       flexBasis: '33%',
     },
   },
+  fontStyle: {
+    fontFamily: 'Gotham Rounded', fontWeight: 350,
+  },
   details: {
     display: 'flex',
     flexDirection: 'column',
@@ -79,14 +82,18 @@ const EditItemView = ({
         {item ? children : (
           <Accordion defaultExpanded>
             <AccordionSummary>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
                 <Skeleton width="10em" />
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
               {[...Array(3)].map((_, i) => (
                 <Skeleton key={-i} width="100%">
-                  <TextField />
+                  <TextField
+                    InputProps={{
+                      className: classes.fontStyle,
+                    }}
+                  />
                 </Skeleton>
               ))}
             </AccordionDetails>
@@ -99,6 +106,7 @@ const EditItemView = ({
             variant="outlined"
             onClick={() => navigate(-1)}
             disabled={!item}
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
           >
             {t('sharedCancel')}
           </Button>
@@ -108,6 +116,7 @@ const EditItemView = ({
             variant="contained"
             onClick={handleSave}
             disabled={!item || !validate()}
+            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
           >
             {t('sharedSave')}
           </Button>
