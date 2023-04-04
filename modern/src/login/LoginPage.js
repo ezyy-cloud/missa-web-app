@@ -168,7 +168,7 @@ const LoginPage = () => {
         <TextField
           required
           error={failed}
-          label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userEmail')}</Typography>
+          label={t('userEmail')}
           name="email"
           value={email}
           autoComplete="email"
@@ -183,7 +183,7 @@ const LoginPage = () => {
         <TextField
           required
           error={failed}
-          label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userPassword')}</Typography>
+          label={t('userPassword')}
           name="password"
           value={password}
           type="password"

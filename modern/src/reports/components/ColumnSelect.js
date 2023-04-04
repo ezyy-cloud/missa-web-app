@@ -24,10 +24,10 @@ const ColumnSelect = ({
         >
           {columnsArray
             ? columnsArray.map(([key, string]) => (
-              <MenuItem key={key} value={key} style={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(string)}</MenuItem>
+              <MenuItem key={key} value={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(string)}</MenuItem>
             ))
             : Object.keys(columnsObject).map((key) => (
-              <MenuItem key={key} value={key} style={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{columnsObject[key].name}</MenuItem>
+              <MenuItem key={key} value={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{columnsObject[key].name}</MenuItem>
             ))}
         </Select>
       </FormControl>
