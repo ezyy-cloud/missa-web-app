@@ -19,7 +19,7 @@ const CustomSolutionsSection = () => (
   >
     <Typography
       sx={{
-        fontFamily: 'Gotham Rounded, sans-serif',
+        fontFamily: 'Product Sans, sans-serif',
         fontWeight: '400',
         textAlign: 'center',
         fontSize: { xs: '35px', sm: '20px', md: '60px' },
@@ -35,7 +35,7 @@ const CustomSolutionsSection = () => (
           <Typography
             variant="h5"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '400',
               textAlign: 'center',
               mb: { sm: 2 },
@@ -49,7 +49,7 @@ const CustomSolutionsSection = () => (
           <Typography
             variant="body1"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '300',
               textAlign: 'center',
               mb: { sm: 2 },
@@ -80,7 +80,7 @@ const CustomSolutionsSection = () => (
           <Typography
             variant="h5"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '400',
               textAlign: 'center',
               mb: { sm: 2 },
@@ -94,7 +94,7 @@ const CustomSolutionsSection = () => (
           <Typography
             variant="body1"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '300',
               textAlign: 'center',
               mb: { sm: 0 },
@@ -126,7 +126,7 @@ const CustomSolutionsSection = () => (
           <Typography
             variant="h5"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '400',
               textAlign: 'center',
               mb: { sm: 3 },
@@ -140,7 +140,7 @@ const CustomSolutionsSection = () => (
           <Typography
             variant="body1"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '300',
               textAlign: 'center',
               mb: { sm: 2 },
@@ -177,7 +177,7 @@ const CustomSolutionsSection = () => (
         href="#contained-buttons"
         sx={{
           borderRadius: '23px',
-          fontFamily: 'Gotham Rounded, sans-serif',
+          fontFamily: 'Product Sans, sans-serif',
         }}
         endIcon={<ChevronRightIcon />}
         onClick={() => {

@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
   },
 }));
 
@@ -127,7 +127,7 @@ const MaintenancePage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -135,18 +135,18 @@ const MaintenancePage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedName')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
               />
               <FormControl>
-                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
                 <Select
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</Typography>
                   value={item.type || ''}
                   onChange={onMaintenanceTypeChange}
-                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                 >
                   {convertToList(positionAttributes).map(({ key, name }) => (
                     <MenuItem key={key} value={key}>{name}</MenuItem>
@@ -157,7 +157,7 @@ const MaintenancePage = () => {
                 type="number"
                 value={rawToValue(item.start) || ''}
                 onChange={(event) => setItem({ ...item, start: valueToRaw(event.target.value) })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{labels.start ? `${t('maintenanceStart')} (${labels.start})` : t('maintenanceStart')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{labels.start ? `${t('maintenanceStart')} (${labels.start})` : t('maintenanceStart')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -166,7 +166,7 @@ const MaintenancePage = () => {
                 type="number"
                 value={rawToValue(item.period) || ''}
                 onChange={(event) => setItem({ ...item, period: valueToRaw(event.target.value) })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{labels.period ? `${t('maintenancePeriod')} (${labels.period})` : t('maintenancePeriod')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{labels.period ? `${t('maintenancePeriod')} (${labels.period})` : t('maintenancePeriod')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}

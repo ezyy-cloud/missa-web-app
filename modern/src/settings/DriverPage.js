@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
   },
 }));
 
@@ -43,7 +43,7 @@ const DriverPage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -51,7 +51,7 @@ const DriverPage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedName')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -59,7 +59,7 @@ const DriverPage = () => {
               <TextField
                 value={item.uniqueId || ''}
                 onChange={(event) => setItem({ ...item, uniqueId: event.target.value })}
-                label=<Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceIdentifier')}</Typography>
+                label=<Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceIdentifier')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}

@@ -83,7 +83,7 @@ const EventPage = () => {
           <IconButton color="inherit" edge="start" sx={{ mr: 2 }} onClick={() => navigate('/')}>
             <ArrowBackIcon />
           </IconButton>
-          <Typography variant="h6" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{event && formatType(event)}</Typography>
+          <Typography variant="h6" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{event && formatType(event)}</Typography>
         </Toolbar>
       </AppBar>
       <div className={classes.mapContainer}>

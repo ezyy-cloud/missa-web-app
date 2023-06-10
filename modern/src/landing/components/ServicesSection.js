@@ -20,7 +20,7 @@ const ServicesSection = () => (
   >
     <Typography
       sx={{
-        fontFamily: 'Gotham Rounded, sans-serif',
+        fontFamily: 'Product Sans, sans-serif',
         fontWeight: '400',
         textAlign: 'center',
         fontSize: { xs: '35px', sm: '20px', md: '60px' },
@@ -36,10 +36,10 @@ const ServicesSection = () => (
         <Card elevation={4} sx={{ display: { md: 'flex' }, borderTopLeftRadius: { sm: '40px' } }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
-              <Typography component="div" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontSize: '25px' }}>
+              <Typography component="div" sx={{ fontFamily: 'Product Sans, sans-serif', fontSize: '25px' }}>
                 Telematics Insurance
               </Typography>
-              <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300', fontSize: '18px' }}>
+              <Typography variant="body2" sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300', fontSize: '18px' }}>
                 Usage-Based Insurance (UBI) is a type of auto
                 insurance that tracks mileage and driving behaviors.
                 The basic idea of UBI is that a driver&#39;s
@@ -67,10 +67,10 @@ const ServicesSection = () => (
           />
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
-              <Typography component="div" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontSize: '25px' }}>
+              <Typography component="div" sx={{ fontFamily: 'Product Sans, sans-serif', fontSize: '25px' }}>
                 Roadside Assistance
               </Typography>
-              <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300', fontSize: '18px' }}>
+              <Typography variant="body2" sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300', fontSize: '18px' }}>
                 Roadside assistance, also known as
                 breakdown coverage, is a service that
                 assists motorists whose vehicles have suffered a
@@ -87,10 +87,10 @@ const ServicesSection = () => (
         <Card elevation={4} sx={{ display: { md: 'flex' }, borderBottomLeftRadius: { sm: '40px' } }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
-              <Typography component="div" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontSize: '25px' }}>
+              <Typography component="div" sx={{ fontFamily: 'Product Sans, sans-serif', fontSize: '25px' }}>
                 Vehicle Maintenance
               </Typography>
-              <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300', fontSize: '18px' }}>
+              <Typography variant="body2" sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300', fontSize: '18px' }}>
                 Vehicle maintenance and servicing is
                 carried out when the vehicle completes
                 certain kilometres on its normal running
@@ -119,10 +119,10 @@ const ServicesSection = () => (
           />
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
-              <Typography component="div" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontSize: '25px' }}>
+              <Typography component="div" sx={{ fontFamily: 'Product Sans, sans-serif', fontSize: '25px' }}>
                 Gadget Insurance
               </Typography>
-              <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300', fontSize: '18px' }}>
+              <Typography variant="body2" sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300', fontSize: '18px' }}>
                 Gadget insurance covers the cost of
                 repairing or replacing your gadgets if
                 they are lost, damaged or stolen, the
@@ -142,7 +142,7 @@ const ServicesSection = () => (
         href="#contained-buttons"
         sx={{
           borderRadius: '23px',
-          fontFamily: 'Gotham Rounded, sans-serif',
+          fontFamily: 'Product Sans, sans-serif',
         }}
         onClick={() => {
           window.open('https://forms.gle/9H5VgxWzHVAcnwsC6', '_blank');

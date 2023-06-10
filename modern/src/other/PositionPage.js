@@ -64,7 +64,7 @@ const PositionPage = () => {
           <IconButton color="inherit" edge="start" sx={{ mr: 2 }} onClick={() => navigate(-1)}>
             <ArrowBackIcon />
           </IconButton>
-          <Typography variant="h6" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+          <Typography variant="h6" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
             {deviceName}
           </Typography>
         </Toolbar>
@@ -75,20 +75,20 @@ const PositionPage = () => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell><Typography variant="h5" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('stateName')}</Typography></TableCell>
-                  <TableCell sx={{ textAlign: 'end' }}><Typography variant="h5" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('stateValue')}</Typography></TableCell>
+                  <TableCell><Typography variant="h5" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('stateName')}</Typography></TableCell>
+                  <TableCell sx={{ textAlign: 'end' }}><Typography variant="h5" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('stateValue')}</Typography></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {item && Object.getOwnPropertyNames(item).filter((it) => it !== 'attributes').map((property) => (
                   <TableRow key={property}>
-                    <TableCell><Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{property}</Typography></TableCell>
+                    <TableCell><Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{property}</Typography></TableCell>
                     <TableCell sx={{ textAlign: 'end' }}><PositionValue position={item} property={property} /></TableCell>
                   </TableRow>
                 ))}
                 {item && Object.getOwnPropertyNames(item.attributes).map((attribute) => (
                   <TableRow key={attribute}>
-                    <TableCell><Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{attribute}</Typography></TableCell>
+                    <TableCell><Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{attribute}</Typography></TableCell>
                     <TableCell sx={{ textAlign: 'end' }}><PositionValue position={item} attribute={attribute} /></TableCell>
                   </TableRow>
                 ))}

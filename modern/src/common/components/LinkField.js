@@ -5,7 +5,7 @@ import { useEffectAsync } from '../../reactHelper';
 
 const useStyles = makeStyles(() => ({
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
 }));
 
@@ -92,10 +92,10 @@ const LinkField = ({
           label={option.name || option.type}
           size="small"
           {...getTagProps({ index })}
-          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+          sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
         />
       ))}
-      renderInput={(params) => <TextField {...params} label={label} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} />}
+      renderInput={(params) => <TextField {...params} label={label} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }} />}
       value={(items && linked) || []}
       onChange={(_, value) => onChange(value)}
       open={open}

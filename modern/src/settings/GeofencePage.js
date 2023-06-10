@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
   },
 }));
 
@@ -54,7 +54,7 @@ const GeofencePage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -62,7 +62,7 @@ const GeofencePage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedName')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -71,7 +71,7 @@ const GeofencePage = () => {
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedExtra')}
               </Typography>
             </AccordionSummary>
@@ -79,7 +79,7 @@ const GeofencePage = () => {
               <TextField
                 value={item.description || ''}
                 onChange={(event) => setItem({ ...item, description: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDescription')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedDescription')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -88,8 +88,8 @@ const GeofencePage = () => {
                 value={item.calendarId || 0}
                 onChange={(event) => setItem({ ...item, calendarId: Number(event.target.value) })}
                 endpoint="/api/calendars"
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedCalendar')}</Typography>
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedCalendar')}</Typography>
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               />
             </AccordionDetails>
           </Accordion>

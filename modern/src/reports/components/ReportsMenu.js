@@ -33,7 +33,7 @@ const MenuItem = ({
   return (
     <ListItemButton key={link} component={Link} to={link} selected={selected} classes={{ root: classes.listItemRoot }}>
       <ListItemIcon>{icon}</ListItemIcon>
-      <ListItemText primary=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{title}</Typography> />
+      <ListItemText primary=<Typography sx={{ fontFamily: 'Product Sans' }}>{title}</Typography> />
     </ListItemButton>
   );
 };

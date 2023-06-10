@@ -88,10 +88,10 @@ const ChartReportPage = () => {
       <ReportFilter handleSubmit={handleSubmit} showOnly>
         <div className={classes.filterItem}>
           <FormControl fullWidth>
-            <InputLabel sx={{ fontFamily: 'Gotham Rounded' }}>{t('reportChartType')}</InputLabel>
-            <Select label={t('reportChartType')} value={type} onChange={(e) => setType(e.target.value)} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+            <InputLabel sx={{ fontFamily: 'Product Sans' }}>{t('reportChartType')}</InputLabel>
+            <Select label={t('reportChartType')} value={type} onChange={(e) => setType(e.target.value)} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
               {Object.keys(positionAttributes).filter((key) => positionAttributes[key].type === 'number').map((key) => (
-                <MenuItem key={key} value={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{positionAttributes[key].name}</MenuItem>
+                <MenuItem key={key} value={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{positionAttributes[key].name}</MenuItem>
               ))}
             </Select>
           </FormControl>

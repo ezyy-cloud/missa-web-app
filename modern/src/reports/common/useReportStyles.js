@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
     fontWeight: 350,
   },
   containerMap: {
@@ -21,13 +21,13 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'stretch',
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
     fontWeight: 350,
   },
   columnAction: {
     width: '1%',
     paddingLeft: theme.spacing(1),
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
     fontWeight: 350,
   },
   filter: {
@@ -35,25 +35,25 @@ export default makeStyles((theme) => ({
     flexWrap: 'wrap',
     gap: theme.spacing(2),
     padding: theme.spacing(3, 2, 2),
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
     fontWeight: 350,
   },
   filterItem: {
     minWidth: 0,
     flex: `1 1 ${theme.dimensions.filterFormWidth}`,
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
     fontWeight: 350,
   },
   filterButtons: {
     display: 'flex',
     gap: theme.spacing(1),
     flex: `1 1 ${theme.dimensions.filterFormWidth}`,
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
   },
   filterButton: {
     flexGrow: 1,
     background: theme.palette.colors.primary,
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
     '&:hover': {
       backgroundColor: theme.palette.colors.primary,
     },
@@ -61,10 +61,10 @@ export default makeStyles((theme) => ({
   chart: {
     flexGrow: 1,
     overflow: 'hidden',
-    fontFamily: 'Gotham Rounded',
+    fontFamily: 'Product Sans',
     fontWeight: 350,
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
 }));

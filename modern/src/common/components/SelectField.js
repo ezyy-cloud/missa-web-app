@@ -32,19 +32,19 @@ const SelectField = ({
   if (items) {
     return (
       <FormControl>
-        <InputLabel><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{label}</Typography></InputLabel>
+        <InputLabel><Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{label}</Typography></InputLabel>
         <Select
           label={label}
           multiple={multiple}
           value={value}
           onChange={onChange}
-          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+          sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
         >
           {!multiple && emptyValue !== null && (
-            <MenuItem value={emptyValue} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{emptyTitle}</MenuItem>
+            <MenuItem value={emptyValue} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{emptyTitle}</MenuItem>
           )}
           {items.map((item) => (
-            <MenuItem key={keyGetter(item)} value={keyGetter(item)} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{titleGetter(item)}</MenuItem>
+            <MenuItem key={keyGetter(item)} value={keyGetter(item)} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{titleGetter(item)}</MenuItem>
           ))}
         </Select>
       </FormControl>

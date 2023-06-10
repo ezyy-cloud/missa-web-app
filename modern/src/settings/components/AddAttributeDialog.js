@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
 }));
 
@@ -61,15 +61,15 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
           options={options}
           getOptionLabel={(option) => (option && typeof option === 'object' ? option.name : option)}
           renderOption={(props, option) => (
-            <li {...props} style={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+            <li {...props} style={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
               {option.name}
             </li>
           )}
           renderInput={(params) => (
             <TextField
               {...params}
-              label=<Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedAttribute')}</Typography>
-              sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+              label=<Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedAttribute')}</Typography>
+              sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
             />
           )}
           freeSolo
@@ -78,16 +78,16 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
           fullWidth
           disabled={key in definitions}
         >
-          <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
+          <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
           <Select
             label={t('sharedType')}
             value={type}
             onChange={(e) => setType(e.target.value)}
-            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
           >
-            <MenuItem value="string" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeString')}</MenuItem>
-            <MenuItem value="number" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeNumber')}</MenuItem>
-            <MenuItem value="boolean" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeBoolean')}</MenuItem>
+            <MenuItem value="string" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedTypeString')}</MenuItem>
+            <MenuItem value="number" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedTypeNumber')}</MenuItem>
+            <MenuItem value="boolean" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedTypeBoolean')}</MenuItem>
           </Select>
         </FormControl>
       </DialogContent>
@@ -96,14 +96,14 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
           color="primary"
           disabled={!key}
           onClick={() => onResult({ key, type })}
-          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+          sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
         >
           {t('sharedAdd')}
         </Button>
         <Button
           autoFocus
           onClick={() => onResult(null)}
-          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+          sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
         >
           {t('sharedCancel')}
         </Button>

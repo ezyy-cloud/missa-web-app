@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
 }));
 
@@ -41,7 +41,7 @@ const CommandPage = () => {
       {item && (
         <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+            <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
               {t('sharedRequired')}
             </Typography>
           </AccordionSummary>
@@ -49,7 +49,7 @@ const CommandPage = () => {
             <TextField
               value={item.description || ''}
               onChange={(event) => setItem({ ...item, description: event.target.value })}
-              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDescription')}</Typography>
+              label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedDescription')}</Typography>
               InputProps={{
                 className: classes.fontStyle,
               }}

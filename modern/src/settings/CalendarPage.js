@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
 }));
 
@@ -108,7 +108,7 @@ const CalendarPage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -116,27 +116,27 @@ const CalendarPage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedName')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
               />
               <FormControl>
-                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
                 <Select
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</Typography>
                   value={simple ? 'simple' : 'custom'}
                   onChange={(e) => setItem({ ...item, data: (e.target.value === 'simple' ? simpleCalendar() : null) })}
-                  sx={{ fontFamily: 'Gotham Rounded' }}
+                  sx={{ fontFamily: 'Product Sans' }}
                 >
-                  <MenuItem value="simple" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarSimple')}</MenuItem>
-                  <MenuItem value="custom" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportCustom')}</MenuItem>
+                  <MenuItem value="simple" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('calendarSimple')}</MenuItem>
+                  <MenuItem value="custom" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportCustom')}</MenuItem>
                 </Select>
               </FormControl>
               {simple ? (
                 <>
                   <TextField
-                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportFrom')}</Typography>
+                    label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportFrom')}</Typography>
                     type="datetime-local"
                     value={moment(lines[5].slice(-15)).locale('en').format(moment.HTML5_FMT.DATETIME_LOCAL)}
                     onChange={(e) => {
@@ -148,7 +148,7 @@ const CalendarPage = () => {
                     }}
                   />
                   <TextField
-                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportTo')}</Typography>
+                    label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportTo')}</Typography>
                     type="datetime-local"
                     value={moment(lines[6].slice(-15)).locale('en').format(moment.HTML5_FMT.DATETIME_LOCAL)}
                     onChange={(e) => {
@@ -160,31 +160,31 @@ const CalendarPage = () => {
                     }}
                   />
                   <FormControl>
-                    <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarRecurrence')}</InputLabel>
+                    <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('calendarRecurrence')}</InputLabel>
                     <Select
-                      label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarRecurrence')}</Typography>
+                      label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('calendarRecurrence')}</Typography>
                       value={rule.frequency}
-                      sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                      sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                       onChange={(e) => setItem({ ...item, data: updateCalendar(lines, 7, formatRule({ frequency: e.target.value })) })}
                     >
                       {['ONCE', 'DAILY', 'WEEKLY', 'MONTHLY'].map((it) => (
-                        <MenuItem key={it} value={it} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(prefixString('calendar', it.toLowerCase()))}</MenuItem>
+                        <MenuItem key={it} value={it} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(prefixString('calendar', it.toLowerCase()))}</MenuItem>
                       ))}
                     </Select>
                   </FormControl>
                   {['WEEKLY', 'MONTHLY'].includes(rule.frequency) && (
                     <FormControl>
-                      <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarDays')}</InputLabel>
+                      <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('calendarDays')}</InputLabel>
                       <Select
                         multiple
-                        label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('calendarDays')}</Typography>
+                        label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('calendarDays')}</Typography>
                         value={rule.by}
                         onChange={(e) => setItem({ ...item, data: updateCalendar(lines, 7, formatRule({ ...rule, by: e.target.value })) })}
                       >
                         {rule.frequency === 'WEEKLY' ? ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map((it) => (
-                          <MenuItem key={it} value={it.substring(0, 2).toUpperCase()} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(prefixString('calendar', it))}</MenuItem>
+                          <MenuItem key={it} value={it.substring(0, 2).toUpperCase()} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(prefixString('calendar', it))}</MenuItem>
                         )) : Array.from({ length: 31 }, (_, i) => i + 1).map((it) => (
-                          <MenuItem key={it} value={it} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{it}</MenuItem>
+                          <MenuItem key={it} value={it} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{it}</MenuItem>
                         ))}
                       </Select>
                     </FormControl>

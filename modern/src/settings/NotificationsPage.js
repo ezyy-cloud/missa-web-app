@@ -61,21 +61,21 @@ const NotificationsPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('notificationType')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('notificationAlways')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedAlarms')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('notificationNotificators')}</TableCell>
-            <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('notificationType')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('notificationAlways')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedAlarms')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('notificationNotificators')}</TableCell>
+            <TableCell className={classes.columnAction} sx={{ fontFamily: 'Product Sans' }} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(prefixString('event', item.type))}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatBoolean(item.always, t)}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatList('alarm', item.attributes.alarms)}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatList('notificator', item.notificators)}</TableCell>
-              <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(prefixString('event', item.type))}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{formatBoolean(item.always, t)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{formatList('alarm', item.attributes.alarms)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{formatList('notificator', item.notificators)}</TableCell>
+              <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 <CollectionActions itemId={item.id} editPath="/settings/notification" endpoint="notifications" setTimestamp={setTimestamp} />
               </TableCell>
             </TableRow>

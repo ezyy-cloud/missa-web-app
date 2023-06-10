@@ -127,12 +127,12 @@ const LoginLayout = ({ children }) => {
             <Stack spacing={2}>
               <Stack direction="row" sx={{ alignItems: 'end' }}>
                 <LogoImage color={theme.palette.secondary.contrastText} />
-                <Typography variant="h4" className={classes.sidebarTitle} sx={{ fontFamily: 'Gotham Rounded' }}>
+                <Typography variant="h4" className={classes.sidebarTitle} sx={{ fontFamily: 'Product Sans' }}>
                   Missa Cloud
                 </Typography>
               </Stack>
 
-              <Typography variant="subtitle1" className={classes.sidebarBody} gutterBottom sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" className={classes.sidebarBody} gutterBottom sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 Missa is a telematics platform helping you put a geo
                 tracker on everything that matters to you.
                 Monitor the location of all your assets right from your connected device. Get in touch today,
@@ -141,7 +141,7 @@ const LoginLayout = ({ children }) => {
               <div style={{ justifyContent: 'space-between', display: 'flex', marginTop: '4vh', marginBottom: '12vh' }}>
                 <Button
                   variant="outlined"
-                  sx={{ borderRadius: '23px', borderColor: 'yellow', fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  sx={{ borderRadius: '23px', borderColor: 'yellow', fontFamily: 'Product Sans', fontWeight: 350 }}
                   endIcon={<HomeIcon />}
                   className={classes.menuButton}
                   onClick={() => navigate('/home')}
@@ -150,7 +150,7 @@ const LoginLayout = ({ children }) => {
                 </Button>
                 <Button
                   variant="outlined"
-                  sx={{ borderRadius: '23px', borderColor: 'yellow', fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  sx={{ borderRadius: '23px', borderColor: 'yellow', fontFamily: 'Product Sans', fontWeight: 350 }}
                   endIcon={<ChevronRightIcon />}
                   className={classes.menuButton}
                   onClick={() => {
@@ -236,7 +236,7 @@ const LoginLayout = ({ children }) => {
           <Button
             onClick={() => navigate('/home')}
             color="secondary"
-            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
           >
             Home
           </Button>

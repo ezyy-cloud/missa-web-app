@@ -50,22 +50,22 @@ const ComputedAttributesPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDescription')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedAttribute')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedExpression')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedType')}</TableCell>
-            {administrator && <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />}
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedDescription')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedAttribute')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedExpression')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedType')}</TableCell>
+            {administrator && <TableCell className={classes.columnAction} sx={{ fontFamily: 'Product Sans' }} />}
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.description}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.attribute}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.expression}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.type}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.description}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.attribute}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.expression}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.type}</TableCell>
               {administrator && (
-                <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   <CollectionActions itemId={item.id} editPath="/settings/attribute" endpoint="attributes/computed" setTimestamp={setTimestamp} />
                 </TableCell>
               )}

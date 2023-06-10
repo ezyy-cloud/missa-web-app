@@ -64,7 +64,7 @@ const ProductLineSection = () => (
             variant="h2"
             component="h2"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '400',
               fontSize: { xs: '35px', sm: '20px', md: '60px' },
             }}
@@ -83,7 +83,7 @@ const ProductLineSection = () => (
               <Typography
                 variant="h6"
                 sx={{
-                  fontFamily: 'Gotham Rounded, sans-serif',
+                  fontFamily: 'Product Sans, sans-serif',
                   fontWeight: '400',
                 }}
               >
@@ -91,7 +91,7 @@ const ProductLineSection = () => (
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300' }}
+                sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300' }}
               >
                 Manage your vehicle where ever you are with Missa.
                 Monitor Green Driving, Over Speeding, Jamming,
@@ -110,7 +110,7 @@ const ProductLineSection = () => (
               <Typography
                 variant="h6"
                 sx={{
-                  fontFamily: 'Gotham Rounded, sans-serif',
+                  fontFamily: 'Product Sans, sans-serif',
                   fontWeight: '400',
                 }}
               >
@@ -118,7 +118,7 @@ const ProductLineSection = () => (
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300' }}
+                sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300' }}
               >
                 Secure your movable assets with Missa. Asset
                 Tracking systems help to manage equipment
@@ -138,7 +138,7 @@ const ProductLineSection = () => (
               <Typography
                 variant="h6"
                 sx={{
-                  fontFamily: 'Gotham Rounded, sans-serif',
+                  fontFamily: 'Product Sans, sans-serif',
                   fontWeight: '400',
                 }}
               >
@@ -146,7 +146,7 @@ const ProductLineSection = () => (
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300' }}
+                sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300' }}
               >
                 Keep an on your livestock herds from your phone. Know where your herds are
                 located 24/7 and find them easily if they stray. Keep valuable pets  monitored
@@ -164,7 +164,7 @@ const ProductLineSection = () => (
               <Typography
                 variant="h6"
                 sx={{
-                  fontFamily: 'Gotham Rounded, sans-serif',
+                  fontFamily: 'Product Sans, sans-serif',
                   fontWeight: '400',
                 }}
               >
@@ -172,7 +172,7 @@ const ProductLineSection = () => (
               </Typography>
               <Typography
                 variant="body1"
-                sx={{ fontFamily: 'Gotham Rounded, sans-serif', fontWeight: '300' }}
+                sx={{ fontFamily: 'Product Sans, sans-serif', fontWeight: '300' }}
               >
                 Always the know location of your phone or laptop. Never lose your gadgets to thieves again.
                 Free tracking of devices ensures you only pay for your devices when we find them for you.
@@ -191,7 +191,7 @@ const ProductLineSection = () => (
                   mt={3}
                   sx={{
                     borderRadius: '23px',
-                    fontFamily: 'Gotham Rounded, sans-serif',
+                    fontFamily: 'Product Sans, sans-serif',
                   }}
                   onClick={() => {
                     window.open('https://forms.gle/9H5VgxWzHVAcnwsC6', '_blank');

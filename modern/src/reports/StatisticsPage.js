@@ -63,14 +63,14 @@ const StatisticsPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(columnsMap.get(key))}</TableCell>))}
+            {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(columnsMap.get(key))}</TableCell>))}
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.map((item) => (
             <TableRow key={item.id}>
               {columns.map((key) => (
-                <TableCell key={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <TableCell key={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {key === 'captureTime' ? formatTime(item[key], 'date', hours12) : item[key]}
                 </TableCell>
               ))}

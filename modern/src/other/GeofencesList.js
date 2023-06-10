@@ -41,7 +41,7 @@ const GeofencesList = ({ onGeofenceSelected }) => {
       {Object.values(items).map((item, index, list) => (
         <Fragment key={item.id}>
           <ListItemButton key={item.id} onClick={() => onGeofenceSelected(item.id)}>
-            <ListItemText primary=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.name}</Typography> />
+            <ListItemText primary=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.name}</Typography> />
             <CollectionActions itemId={item.id} editPath="/settings/geofence" endpoint="geofences" setTimestamp={refreshGeofences} />
           </ListItemButton>
           {index < list.length - 1 ? <Divider /> : null}

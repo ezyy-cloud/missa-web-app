@@ -86,7 +86,7 @@ const CommandSendPage = () => {
       <Container maxWidth="xs" className={classes.container}>
         <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+            <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
               {t('sharedRequired')}
             </Typography>
           </AccordionSummary>
@@ -98,8 +98,8 @@ const CommandSendPage = () => {
               onChange={(e) => setSavedId(e.target.value)}
               endpoint={`/api/commands/send?deviceId=${deviceId}`}
               titleGetter={(it) => it.description}
-              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedSavedCommand')}</Typography>
-              sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+              label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedSavedCommand')}</Typography>
+              sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
             />
             {!limitCommands && !savedId && (
               <BaseCommandView deviceId={deviceId} item={item} setItem={setItem} />
@@ -112,7 +112,7 @@ const CommandSendPage = () => {
             color="primary"
             variant="outlined"
             onClick={() => navigate(-1)}
-            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
           >
             {t('sharedCancel')}
           </Button>
@@ -122,7 +122,7 @@ const CommandSendPage = () => {
             variant="contained"
             onClick={handleSend}
             disabled={!validate()}
-            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
           >
             {t('commandSend')}
           </Button>

@@ -31,7 +31,7 @@ const BaseCommandView = ({ deviceId, item, setItem }) => {
         keyGetter={(it) => it.type}
         titleGetter={(it) => t(prefixString('command', it.type))}
         label={t('sharedType')}
-        sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+        sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
       />
       {attributes.map(({ key, name, type }) => {
         if (type === 'boolean') {
@@ -48,7 +48,7 @@ const BaseCommandView = ({ deviceId, item, setItem }) => {
                 />
               )}
               label={name}
-              sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+              sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
             />
           );
         }
@@ -62,13 +62,13 @@ const BaseCommandView = ({ deviceId, item, setItem }) => {
               setItem(updateItem);
             }}
             label={name}
-            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
           />
         );
       })}
       <FormControlLabel
         control={<Checkbox checked={item.textChannel} onChange={(event) => setItem({ ...item, textChannel: event.target.checked })} />}
-        label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('commandSendSms')}</Typography>
+        label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('commandSendSms')}</Typography>
       />
     </>
   );

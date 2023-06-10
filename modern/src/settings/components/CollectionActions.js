@@ -60,10 +60,10 @@ const CollectionActions = ({
           </IconButton>
           <Menu open={!!menuAnchorEl} anchorEl={menuAnchorEl} onClose={() => setMenuAnchorEl(null)}>
             {customAction && (
-              <MenuItem onClick={handleCustom} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{customAction.title}</MenuItem>
+              <MenuItem onClick={handleCustom} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{customAction.title}</MenuItem>
             )}
-            <MenuItem onClick={handleEdit} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedEdit')}</MenuItem>
-            <MenuItem onClick={handleRemove} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedRemove')}</MenuItem>
+            <MenuItem onClick={handleEdit} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedEdit')}</MenuItem>
+            <MenuItem onClick={handleRemove} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedRemove')}</MenuItem>
           </Menu>
         </>
       ) : (

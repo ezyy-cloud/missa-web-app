@@ -1,5 +1,5 @@
 export default {
   typography: {
-    fontFamily: 'Gotham Rounded, sans-serif',
+    fontFamily: 'Product Sans, sans-serif',
   },
 };

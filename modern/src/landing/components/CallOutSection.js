@@ -22,7 +22,7 @@ const CallOutSection = () => (
       <Grid container xs={12} sm={8} md={5}>
         <Box sx={{
           fontSize: { xs: '35px', sm: '20px', md: '60px' },
-          fontFamily: 'Gotham Rounded, sans-serif',
+          fontFamily: 'Product Sans, sans-serif',
           fontWeight: '400',
         }}
         >
@@ -48,7 +48,7 @@ const CallOutSection = () => (
           variant="h6"
           component="h6"
           sx={{
-            fontFamily: 'Gotham Rounded, sans-serif',
+            fontFamily: 'Product Sans, sans-serif',
             fontWeight: '300',
             pr: { xs: 0, sm: 15, md: 25 },
             pt: { xs: 4, sm: 0 },
@@ -66,7 +66,7 @@ const CallOutSection = () => (
           href="#contained-buttons"
           sx={{
             borderRadius: '23px',
-            fontFamily: 'Gotham Rounded, sans-serif',
+            fontFamily: 'Product Sans, sans-serif',
             mt: { xs: 4, sm: 0 },
           }}
           endIcon={<ChevronRightIcon />}

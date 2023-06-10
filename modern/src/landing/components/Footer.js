@@ -37,7 +37,7 @@ const Footer = () => {
               component="h5"
               mb={1}
               sx={{
-                fontFamily: 'Gotham Rounded, sans-serif',
+                fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
@@ -49,7 +49,7 @@ const Footer = () => {
               variant="subtitle"
               component="subtitle"
               sx={{
-                fontFamily: 'Gotham Rounded, sans-serif',
+                fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
@@ -61,7 +61,7 @@ const Footer = () => {
               variant="subtitle"
               component="subtitle"
               sx={{
-                fontFamily: 'Gotham Rounded, sans-serif',
+                fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
@@ -77,7 +77,7 @@ const Footer = () => {
               component="h5"
               mb={1}
               sx={{
-                fontFamily: 'Gotham Rounded, sans-serif',
+                fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
@@ -88,7 +88,7 @@ const Footer = () => {
             <Typography
               variant="subtitle1"
               sx={{
-                fontFamily: 'Gotham Rounded, sans-serif',
+                fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
@@ -99,7 +99,7 @@ const Footer = () => {
             <Typography
               variant="subtitle1"
               sx={{
-                fontFamily: 'Gotham Rounded, sans-serif',
+                fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
@@ -115,7 +115,7 @@ const Footer = () => {
               component="h5"
               mb={1}
               sx={{
-                fontFamily: 'Gotham Rounded, sans-serif',
+                fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
@@ -128,7 +128,7 @@ const Footer = () => {
             >
               <Link
                 sx={{
-                  fontFamily: 'Gotham Rounded, sans-serif',
+                  fontFamily: 'Product Sans, sans-serif',
                   fontWeight: '300',
                   color: '#fff',
                 }}
@@ -146,7 +146,7 @@ const Footer = () => {
             >
               <Link
                 sx={{
-                  fontFamily: 'Gotham Rounded, sans-serif',
+                  fontFamily: 'Product Sans, sans-serif',
                   fontWeight: '300',
                   color: '#fff',
                 }}
@@ -164,7 +164,7 @@ const Footer = () => {
           <Typography
             variant="subtitle1"
             sx={{
-              fontFamily: 'Gotham Rounded, sans-serif',
+              fontFamily: 'Product Sans, sans-serif',
               fontWeight: '300',
               color: '#fff',
             }}

@@ -57,7 +57,7 @@ const ChangeServerPage = () => {
         freeSolo
         className={classes.field}
         options={officialServers}
-        renderInput={(params) => <TextField {...params} label=<Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsServer')}</Typography> />}
+        renderInput={(params) => <TextField {...params} label=<Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('settingsServer')}</Typography> />}
         value={currentServer}
         onChange={(_, value) => handleSubmit(value)}
         filterOptions={(options, params) => {

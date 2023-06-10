@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
 }));
 
@@ -86,7 +86,7 @@ const ComputedAttributePage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -94,7 +94,7 @@ const ComputedAttributePage = () => {
               <TextField
                 value={item.description || ''}
                 onChange={(e) => setItem({ ...item, description: e.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDescription')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans' }}>{t('sharedDescription')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -123,15 +123,15 @@ const ComputedAttributePage = () => {
                 options={options}
                 getOptionLabel={(option) => option.name || option}
                 renderOption={(props, option) => (
-                  <li {...props} style={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                  <li {...props} style={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                     {option.name}
                   </li>
                 )}
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedAttribute')}</Typography>
-                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                    label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedAttribute')}</Typography>
+                    sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                   />
                 )}
                 freeSolo
@@ -139,7 +139,7 @@ const ComputedAttributePage = () => {
               <TextField
                 value={item.expression || ''}
                 onChange={(e) => setItem({ ...item, expression: e.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedExpression')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedExpression')}</Typography>
                 multiline
                 rows={4}
                 InputProps={{
@@ -147,23 +147,23 @@ const ComputedAttributePage = () => {
                 }}
               />
               <FormControl disabled={item.attribute in positionAttributes}>
-                <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
+                <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
                 <Select
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</Typography>
                   value={item.type || ''}
                   onChange={(e) => setItem({ ...item, type: e.target.value })}
-                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                 >
-                  <MenuItem value="string" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeString')}</MenuItem>
-                  <MenuItem value="number" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeNumber')}</MenuItem>
-                  <MenuItem value="boolean" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedTypeBoolean')}</MenuItem>
+                  <MenuItem value="string" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedTypeString')}</MenuItem>
+                  <MenuItem value="number" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedTypeNumber')}</MenuItem>
+                  <MenuItem value="boolean" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedTypeBoolean')}</MenuItem>
                 </Select>
               </FormControl>
             </AccordionDetails>
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedTest')}
               </Typography>
             </AccordionSummary>
@@ -172,15 +172,15 @@ const ComputedAttributePage = () => {
                 value={deviceId || 0}
                 onChange={(e) => setDeviceId(Number(e.target.value))}
                 endpoint="/api/devices"
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDevice')}</Typography>
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedDevice')}</Typography>
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               />
               <Button
                 variant="outlined"
                 color="primary"
                 onClick={testAttribute}
                 disabled={!deviceId}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               >
                 {t('sharedTestExpression')}
               </Button>
@@ -189,7 +189,7 @@ const ComputedAttributePage = () => {
                 onClose={() => setResult(null)}
                 autoHideDuration={snackBarDurationLongMs}
                 message={result}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               />
             </AccordionDetails>
           </Accordion>

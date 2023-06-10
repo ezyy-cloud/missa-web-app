@@ -67,7 +67,7 @@ const NotificationPage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -80,7 +80,7 @@ const NotificationPage = () => {
                 keyGetter={(it) => it.type}
                 titleGetter={(it) => t(prefixString('event', it.type))}
                 label={t('sharedType')}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               />
               {item.type === 'alarm' && (
                 <SelectField
@@ -90,7 +90,7 @@ const NotificationPage = () => {
                   data={alarms}
                   keyGetter={(it) => it.key}
                   label={t('sharedAlarms')}
-                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                 />
               )}
               <SelectField
@@ -101,14 +101,14 @@ const NotificationPage = () => {
                 keyGetter={(it) => it.type}
                 titleGetter={(it) => t(prefixString('notificator', it.type))}
                 label={t('notificationNotificators')}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               />
               <Button
                 variant="outlined"
                 color="primary"
                 onClick={testNotificators}
                 disabled={!item.notificators}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               >
                 {t('sharedTestNotificators')}
               </Button>
@@ -120,14 +120,14 @@ const NotificationPage = () => {
                       onChange={(event) => setItem({ ...item, always: event.target.checked })}
                     />
                     )}
-                  label={<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('notificationAlways')}</Typography>}
+                  label={<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('notificationAlways')}</Typography>}
                 />
               </FormGroup>
             </AccordionDetails>
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedExtra')}
               </Typography>
             </AccordionSummary>
@@ -137,7 +137,7 @@ const NotificationPage = () => {
                 onChange={(event) => setItem({ ...item, calendarId: Number(event.target.value) })}
                 endpoint="/api/calendars"
                 label={t('sharedCalendar')}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               />
             </AccordionDetails>
           </Accordion>

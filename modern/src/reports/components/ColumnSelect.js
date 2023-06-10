@@ -14,20 +14,20 @@ const ColumnSelect = ({
   return (
     <div className={classes.filterItem}>
       <FormControl fullWidth>
-        <InputLabel sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedColumns')}</InputLabel>
+        <InputLabel sx={{ fontFamily: 'Product Sans' }}>{t('sharedColumns')}</InputLabel>
         <Select
-          label=<Typography sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedColumns')}</Typography>
+          label=<Typography sx={{ fontFamily: 'Product Sans' }}>{t('sharedColumns')}</Typography>
           value={columns}
           onChange={(e) => setColumns(e.target.value)}
           multiple
-          sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+          sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
         >
           {columnsArray
             ? columnsArray.map(([key, string]) => (
-              <MenuItem key={key} value={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(string)}</MenuItem>
+              <MenuItem key={key} value={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(string)}</MenuItem>
             ))
             : Object.keys(columnsObject).map((key) => (
-              <MenuItem key={key} value={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{columnsObject[key].name}</MenuItem>
+              <MenuItem key={key} value={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{columnsObject[key].name}</MenuItem>
             ))}
         </Select>
       </FormControl>

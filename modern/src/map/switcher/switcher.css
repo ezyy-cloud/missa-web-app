@@ -1,6 +1,6 @@
 .maplibregl-style-list {
   display: none;
-  font-family: 'Gotham Rounded';
+  font-family: 'Product Sans';
 }
 
 .maplibregl-ctrl-group .maplibregl-style-list button {
@@ -13,13 +13,13 @@
   text-align: right;
   width: 100%;
   height: auto;
-  font-family: 'Gotham Rounded';
+  font-family: 'Product Sans';
   font-weight: 100;
 }
 
 .maplibregl-style-list button.active {
   font-weight: bold;
-  font-family: 'Gotham Rounded';
+  font-family: 'Product Sans';
 }
 
 .maplibregl-style-list button:hover {

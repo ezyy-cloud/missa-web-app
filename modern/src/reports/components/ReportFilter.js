@@ -80,15 +80,15 @@ const ReportFilter = ({ children, handleSubmit, showOnly, ignoreDevice, multiDev
       {!ignoreDevice && (
         <div className={classes.filterItem}>
           <FormControl fullWidth>
-            <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(multiDevice ? 'deviceTitle' : 'reportDevice')}</InputLabel>
+            <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(multiDevice ? 'deviceTitle' : 'reportDevice')}</InputLabel>
             <Select
-              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(multiDevice ? 'deviceTitle' : 'reportDevice')}</Typography>
+              label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(multiDevice ? 'deviceTitle' : 'reportDevice')}</Typography>
               value={multiDevice ? deviceIds : deviceId || ''}
               onChange={(e) => dispatch(multiDevice ? reportsActions.updateDeviceIds(e.target.value) : reportsActions.updateDeviceId(e.target.value))}
               multiple={multiDevice}
             >
               {Object.values(devices).sort((a, b) => a.name.localeCompare(b.name)).map((device) => (
-                <MenuItem key={device.id} value={device.id} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{device.name}</MenuItem>
+                <MenuItem key={device.id} value={device.id} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{device.name}</MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -97,15 +97,15 @@ const ReportFilter = ({ children, handleSubmit, showOnly, ignoreDevice, multiDev
       {includeGroups && (
         <div className={classes.filterItem}>
           <FormControl fullWidth>
-            <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsGroups')}</InputLabel>
+            <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('settingsGroups')}</InputLabel>
             <Select
-              label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsGroups')}</Typography>
+              label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('settingsGroups')}</Typography>
               value={groupIds}
               onChange={(e) => dispatch(reportsActions.updateGroupIds(e.target.value))}
               multiple
             >
               {Object.values(groups).sort((a, b) => a.name.localeCompare(b.name)).map((group) => (
-                <MenuItem key={group.id} value={group.id} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{group.name}</MenuItem>
+                <MenuItem key={group.id} value={group.id} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{group.name}</MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -113,22 +113,22 @@ const ReportFilter = ({ children, handleSubmit, showOnly, ignoreDevice, multiDev
       )}
       <div className={classes.filterItem}>
         <FormControl fullWidth>
-          <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportPeriod')}</InputLabel>
-          <Select label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportPeriod')}</Typography> value={period} onChange={(e) => dispatch(reportsActions.updatePeriod(e.target.value))}>
-            <MenuItem value="today" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportToday')}</MenuItem>
-            <MenuItem value="yesterday" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportYesterday')}</MenuItem>
-            <MenuItem value="thisWeek" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportThisWeek')}</MenuItem>
-            <MenuItem value="previousWeek" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportPreviousWeek')}</MenuItem>
-            <MenuItem value="thisMonth" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportThisMonth')}</MenuItem>
-            <MenuItem value="previousMonth" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportPreviousMonth')}</MenuItem>
-            <MenuItem value="custom" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportCustom')}</MenuItem>
+          <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportPeriod')}</InputLabel>
+          <Select label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportPeriod')}</Typography> value={period} onChange={(e) => dispatch(reportsActions.updatePeriod(e.target.value))}>
+            <MenuItem value="today" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportToday')}</MenuItem>
+            <MenuItem value="yesterday" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportYesterday')}</MenuItem>
+            <MenuItem value="thisWeek" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportThisWeek')}</MenuItem>
+            <MenuItem value="previousWeek" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportPreviousWeek')}</MenuItem>
+            <MenuItem value="thisMonth" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportThisMonth')}</MenuItem>
+            <MenuItem value="previousMonth" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportPreviousMonth')}</MenuItem>
+            <MenuItem value="custom" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportCustom')}</MenuItem>
           </Select>
         </FormControl>
       </div>
       {period === 'custom' && (
         <div className={classes.filterItem}>
           <TextField
-            label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportFrom')}</Typography>
+            label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportFrom')}</Typography>
             type="datetime-local"
             value={from}
             onChange={(e) => dispatch(reportsActions.updateFrom(e.target.value))}
@@ -142,7 +142,7 @@ const ReportFilter = ({ children, handleSubmit, showOnly, ignoreDevice, multiDev
       {period === 'custom' && (
         <div className={classes.filterItem}>
           <TextField
-            label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportTo')}</Typography>
+            label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportTo')}</Typography>
             type="datetime-local"
             value={to}
             onChange={(e) => dispatch(reportsActions.updateTo(e.target.value))}
@@ -161,7 +161,7 @@ const ReportFilter = ({ children, handleSubmit, showOnly, ignoreDevice, multiDev
           color="secondary"
           className={classes.filterButton}
           disabled={disabled}
-          sx={{ fontFamily: 'Gotham Rounded' }}
+          sx={{ fontFamily: 'Product Sans' }}
         >
           {t('reportShow')}
         </Button>
@@ -172,7 +172,7 @@ const ReportFilter = ({ children, handleSubmit, showOnly, ignoreDevice, multiDev
             color="secondary"
             className={classes.filterButton}
             disabled={disabled}
-            sx={{ fontFamily: 'Gotham Rounded' }}
+            sx={{ fontFamily: 'Product Sans' }}
           >
             {t('reportExport')}
           </Button>
@@ -184,12 +184,12 @@ const ReportFilter = ({ children, handleSubmit, showOnly, ignoreDevice, multiDev
             color="secondary"
             className={classes.filterButton}
             disabled={disabled}
-            sx={{ fontFamily: 'Gotham Rounded' }}
+            sx={{ fontFamily: 'Product Sans' }}
           >
             <Typography
               variant="button"
               noWrap
-              sx={{ fontFamily: 'Gotham Rounded' }}
+              sx={{ fontFamily: 'Product Sans' }}
             >
               {t('reportEmail')}
             </Typography>

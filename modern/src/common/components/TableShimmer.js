@@ -6,7 +6,7 @@ const TableShimmer = ({ columns, startAction, endAction }) => [...Array(3)].map(
     {[...Array(columns)].map((_, j) => {
       const action = (startAction && j === 0) || (endAction && j === columns - 1);
       return (
-        <TableCell key={-j} padding={action ? 'none' : 'normal'} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+        <TableCell key={-j} padding={action ? 'none' : 'normal'} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
           {!action && <Skeleton />}
         </TableCell>
       );

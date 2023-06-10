@@ -62,15 +62,15 @@ const PageTitle = ({ breadcrumbs }) => {
 
   if (desktop) {
     return (
-      <Typography variant="h6" noWrap sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(breadcrumbs[0])}</Typography>
+      <Typography variant="h6" noWrap sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(breadcrumbs[0])}</Typography>
     );
   }
   return (
     <Breadcrumbs className={classes.text}>
       {breadcrumbs.slice(0, -1).map((breadcrumb) => (
-        <Typography variant="h6" color="white" key={breadcrumb} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(breadcrumb)}</Typography>
+        <Typography variant="h6" color="white" key={breadcrumb} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(breadcrumb)}</Typography>
       ))}
-      <Typography variant="h6" color="white" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(breadcrumbs[breadcrumbs.length - 1])}</Typography>
+      <Typography variant="h6" color="white" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(breadcrumbs[breadcrumbs.length - 1])}</Typography>
     </Breadcrumbs>
   );
 };

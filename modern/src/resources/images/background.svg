@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="45" width="45" viewBox="0 0 64 64"><path d="M32 5a21 21 0 0 0-21 21c0 17 21 33 21 33s21-16 21-33A21 21 0 0 0 32 5zm0 31a10" fill="#ffda00"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="45" width="45" viewBox="0 0 100 100">
+
+  <filter id="dropshadow" height="130%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.6"/> <!-- slope is the opacity of the shadow -->
+    </feComponentTransfer>
+    <feMerge> 
+      <feMergeNode/> <!-- this contains the offset blurred image -->
+      <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <circle cx="50" cy="50" r="35" stroke="black" stroke-width="0" fill="#ffda00" style="filter:url(#dropshadow)"/>
+</svg> 

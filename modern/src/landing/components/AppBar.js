@@ -117,7 +117,7 @@ const MissaAppBar = (props) => {
             </Grid>
             <Button
               variant="outlined"
-              sx={{ borderRadius: '23px', fontFamily: 'Gotham Rounded' }}
+              sx={{ borderRadius: '23px', fontFamily: 'Product Sans' }}
               endIcon={<ChevronRightIcon />}
               onClick={() => navigate('/login')}
             >

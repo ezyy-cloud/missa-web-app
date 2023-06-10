@@ -71,21 +71,21 @@ const MaintenacesPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedName')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedType')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('maintenanceStart')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('maintenancePeriod')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }} className={classes.columnAction} />
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedName')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedType')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('maintenanceStart')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('maintenancePeriod')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }} className={classes.columnAction} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.name}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.type}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{convertAttribute(item.type, item.start)}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{convertAttribute(item.type, item.period)}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} className={classes.columnAction} padding="none">
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.name}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.type}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{convertAttribute(item.type, item.start)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{convertAttribute(item.type, item.period)}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }} className={classes.columnAction} padding="none">
                 <CollectionActions itemId={item.id} editPath="/settings/maintenance" endpoint="maintenance" setTimestamp={setTimestamp} />
               </TableCell>
             </TableRow>

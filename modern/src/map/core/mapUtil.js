@@ -39,13 +39,13 @@ export const prepareIcon = (background, icon, color) => {
   context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
   if (icon) {
-    const iconRatio = 0.4;
+    const iconRatio = 0.5;
     const imageWidth = canvas.width * iconRatio;
     const imageHeight = canvas.height * iconRatio;
     if (navigator.userAgent.indexOf('Firefox') > 0) {
-      context.drawImage(icon, (canvas.width - imageWidth) / 2, (canvas.height - imageHeight) / 3.5, imageWidth, imageHeight);
+      context.drawImage(icon, (canvas.width - imageWidth) / 2, (canvas.height - imageHeight) / 2, imageWidth, imageHeight);
     } else {
-      context.drawImage(canvasTintImage(icon, color), (canvas.width - imageWidth) / 2, (canvas.height - imageHeight) / 3.5, imageWidth, imageHeight);
+      context.drawImage(canvasTintImage(icon, color), (canvas.width - imageWidth) / 2, (canvas.height - imageHeight) / 2, imageWidth, imageHeight);
     }
   }
 
@@ -105,5 +105,5 @@ export const findFonts = (map) => {
   if (anyFont) {
     return [anyFont];
   }
-  return ['Gotham Rounded'];
+  return ['Product Sans'];
 };

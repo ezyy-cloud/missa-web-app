@@ -123,14 +123,14 @@ const StopReportPage = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />
-                {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Gotham Rounded' }}>{t(columnsMap.get(key))}</TableCell>))}
+                <TableCell className={classes.columnAction} sx={{ fontFamily: 'Product Sans' }} />
+                {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Product Sans' }}>{t(columnsMap.get(key))}</TableCell>))}
               </TableRow>
             </TableHead>
             <TableBody>
               {!loading ? items.map((item) => (
                 <TableRow key={item.positionId}>
-                  <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                  <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                     {selectedItem === item ? (
                       <IconButton size="small" onClick={() => setSelectedItem(null)}>
                         <GpsFixedIcon fontSize="small" />
@@ -142,12 +142,12 @@ const StopReportPage = () => {
                     )}
                   </TableCell>
                   {columns.map((key) => (
-                    <TableCell key={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                    <TableCell key={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                       {formatValue(item, key)}
                     </TableCell>
                   ))}
                 </TableRow>
-              )) : (<TableShimmer columns={columns.length + 1} startAction sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} />)}
+              )) : (<TableShimmer columns={columns.length + 1} startAction sx={{ fontFamily: 'Product Sans', fontWeight: 350 }} />)}
             </TableBody>
           </Table>
         </div>

@@ -48,15 +48,15 @@ const GroupsPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedName')}</TableCell>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }} className={classes.columnAction} />
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedName')}</TableCell>
+            <TableCell sx={{ fontFamily: 'Product Sans' }} className={classes.columnAction} />
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.filter(filterByKeyword(searchKeyword)).map((item) => (
             <TableRow key={item.id}>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{item.name}</TableCell>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} className={classes.columnAction} padding="none">
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{item.name}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }} className={classes.columnAction} padding="none">
                 <CollectionActions itemId={item.id} editPath="/settings/group" endpoint="groups" setTimestamp={setTimestamp} />
               </TableCell>
             </TableRow>

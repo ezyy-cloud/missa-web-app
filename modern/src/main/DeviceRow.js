@@ -73,7 +73,7 @@ const DeviceRow = ({ data, index, style }) => {
         .map((id) => geofences[id].name)
         .join(', ');
     }
-    return <Typography sx={{ fontFamily: 'Gotham Rounded' }}>{item[key]}</Typography>;
+    return <Typography sx={{ fontFamily: 'Product Sans' }}>{item[key]}</Typography>;
   };
 
   const secondaryText = () => {
@@ -84,7 +84,7 @@ const DeviceRow = ({ data, index, style }) => {
       status = moment(item.lastUpdate).fromNow();
     }
     return (
-      <Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: '350', fontSize: '13px' }}>
+      <Typography sx={{ fontFamily: 'Product Sans', fontWeight: '350', fontSize: '13px' }}>
         {deviceSecondary && item[deviceSecondary] && `${formatProperty(deviceSecondary)} • `}
         <span className={classes[getStatusColor(item.status)]}>{status}</span>
       </Typography>

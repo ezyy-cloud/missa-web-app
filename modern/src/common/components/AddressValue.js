@@ -29,7 +29,7 @@ const AddressValue = ({ latitude, longitude, originalAddress }) => {
     return address;
   }
   if (addressEnabled) {
-    return (<Link href="#" onClick={showAddress}><Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedShowAddress')}</Typography></Link>);
+    return (<Link href="#" onClick={showAddress}><Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedShowAddress')}</Typography></Link>);
   }
   return '';
 };

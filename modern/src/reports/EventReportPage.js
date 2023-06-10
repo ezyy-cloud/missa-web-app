@@ -154,9 +154,9 @@ const EventReportPage = () => {
             <ReportFilter handleSubmit={handleSubmit}>
               <div className={classes.filterItem}>
                 <FormControl fullWidth>
-                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportEventTypes')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportEventTypes')}</InputLabel>
                   <Select
-                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportEventTypes')}</Typography>
+                    label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportEventTypes')}</Typography>
                     value={eventTypes}
                     onChange={(event, child) => {
                       let values = event.target.value;
@@ -169,7 +169,7 @@ const EventReportPage = () => {
                     multiple
                   >
                     {allEventTypes.map(([key, string]) => (
-                      <MenuItem key={key} value={key}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t(string)}</Typography></MenuItem>
+                      <MenuItem key={key} value={key}><Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t(string)}</Typography></MenuItem>
                     ))}
                   </Select>
                 </FormControl>
@@ -180,14 +180,14 @@ const EventReportPage = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell className={classes.columnAction} sx={{ fontFamily: 'Gotham Rounded' }} />
-                {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Gotham Rounded' }}>{t(columnsMap.get(key))}</TableCell>))}
+                <TableCell className={classes.columnAction} sx={{ fontFamily: 'Product Sans' }} />
+                {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Product Sans' }}>{t(columnsMap.get(key))}</TableCell>))}
               </TableRow>
             </TableHead>
             <TableBody>
               {!loading ? items.map((item) => (
                 <TableRow key={item.id}>
-                  <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                  <TableCell className={classes.columnAction} padding="none" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                     {item.positionId ? selectedItem === item ? (
                       <IconButton size="small" onClick={() => setSelectedItem(null)}>
                         <GpsFixedIcon fontSize="small" />
@@ -199,12 +199,12 @@ const EventReportPage = () => {
                     ) : ''}
                   </TableCell>
                   {columns.map((key) => (
-                    <TableCell key={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                    <TableCell key={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                       {formatValue(item, key)}
                     </TableCell>
                   ))}
                 </TableRow>
-              )) : (<TableShimmer columns={columns.length + 1} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }} />)}
+              )) : (<TableShimmer columns={columns.length + 1} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }} />)}
             </TableBody>
           </Table>
         </div>

@@ -66,25 +66,25 @@ const PositionValue = ({ position, property, attribute }) => {
     case 'image':
     case 'video':
     case 'audio':
-      return (<Link href={`/api/media/${device.uniqueId}/${value}`} target="_blank" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{value}</Link>);
+      return (<Link href={`/api/media/${device.uniqueId}/${value}`} target="_blank" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{value}</Link>);
     case 'totalDistance':
     case 'hours':
       return (
         <>
           {formatValue(value)}
           &nbsp;&nbsp;
-          {admin && (<Link component={RouterLink} underline="none" to={`/settings/accumulators/${position.deviceId}`} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>&#9881;</Link>)}
+          {admin && (<Link component={RouterLink} underline="none" to={`/settings/accumulators/${position.deviceId}`} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>&#9881;</Link>)}
         </>
       );
     case 'address':
       return (<AddressValue latitude={position.latitude} longitude={position.longitude} originalAddress={value} />);
     case 'network':
       if (value) {
-        return (<Link component={RouterLink} underline="none" to={`/network/${position.id}`} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedInfoTitle')}</Link>);
+        return (<Link component={RouterLink} underline="none" to={`/network/${position.id}`} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedInfoTitle')}</Link>);
       }
       return '';
     default:
-      return <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{formatValue(value)}</Typography>;
+      return <Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{formatValue(value)}</Typography>;
   }
 };
 

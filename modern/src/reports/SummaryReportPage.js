@@ -101,10 +101,10 @@ const SummaryReportPage = () => {
         <ReportFilter handleSubmit={handleSubmit} multiDevice includeGroups>
           <div className={classes.filterItem}>
             <FormControl fullWidth>
-              <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
-              <Select label={t('sharedType')} value={daily} onChange={(e) => setDaily(e.target.value)} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
-                <MenuItem value={false} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportSummary')}</MenuItem>
-                <MenuItem value sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('reportDaily')}</MenuItem>
+              <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedType')}</InputLabel>
+              <Select label={t('sharedType')} value={daily} onChange={(e) => setDaily(e.target.value)} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
+                <MenuItem value={false} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportSummary')}</MenuItem>
+                <MenuItem value sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('reportDaily')}</MenuItem>
               </Select>
             </FormControl>
           </div>
@@ -114,16 +114,16 @@ const SummaryReportPage = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell sx={{ fontFamily: 'Gotham Rounded' }}>{t('sharedDevice')}</TableCell>
-            {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Gotham Rounded' }}>{t(columnsMap.get(key))}</TableCell>))}
+            <TableCell sx={{ fontFamily: 'Product Sans' }}>{t('sharedDevice')}</TableCell>
+            {columns.map((key) => (<TableCell key={key} sx={{ fontFamily: 'Product Sans' }}>{t(columnsMap.get(key))}</TableCell>))}
           </TableRow>
         </TableHead>
         <TableBody>
           {!loading ? items.map((item) => (
             <TableRow key={(`${item.deviceId}_${Date.parse(item.startTime)}`)}>
-              <TableCell sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{devices[item.deviceId].name}</TableCell>
+              <TableCell sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{devices[item.deviceId].name}</TableCell>
               {columns.map((key) => (
-                <TableCell key={key} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <TableCell key={key} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {formatValue(item, key)}
                 </TableCell>
               ))}

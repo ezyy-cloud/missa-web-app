@@ -50,7 +50,7 @@ const EventsDrawer = ({ open, onClose }) => {
       onClose={onClose}
     >
       <Toolbar className={classes.toolbar} disableGutters>
-        <Typography variant="h6" className={classes.title} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+        <Typography variant="h6" className={classes.title} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
           {t('reportEvents')}
         </Typography>
         <IconButton size="small" color="inherit" onClick={() => dispatch(eventsActions.deleteAll())}>
@@ -65,7 +65,7 @@ const EventsDrawer = ({ open, onClose }) => {
             disabled={!event.id}
           >
             <ListItemText
-              primary=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{`${devices[event.deviceId]?.name} • ${formatType(event)}`}</Typography>
+              primary=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{`${devices[event.deviceId]?.name} • ${formatType(event)}`}</Typography>
               secondary={formatTime(event.eventTime, 'seconds', hours12)}
             />
             <IconButton size="small" onClick={() => dispatch(eventsActions.delete(event))}>

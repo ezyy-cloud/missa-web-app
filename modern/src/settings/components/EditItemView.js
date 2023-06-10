@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
   details: {
     display: 'flex',
@@ -82,7 +82,7 @@ const EditItemView = ({
         {item ? children : (
           <Accordion defaultExpanded>
             <AccordionSummary>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 <Skeleton width="10em" />
               </Typography>
             </AccordionSummary>
@@ -106,7 +106,7 @@ const EditItemView = ({
             variant="outlined"
             onClick={() => navigate(-1)}
             disabled={!item}
-            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
           >
             {t('sharedCancel')}
           </Button>
@@ -116,7 +116,7 @@ const EditItemView = ({
             variant="contained"
             onClick={handleSave}
             disabled={!item || !validate()}
-            sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+            sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
           >
             {t('sharedSave')}
           </Button>

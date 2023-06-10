@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
 }));
 
@@ -80,7 +80,7 @@ const DevicePage = () => {
         <>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -88,7 +88,7 @@ const DevicePage = () => {
               <TextField
                 value={item.name || ''}
                 onChange={(event) => setItem({ ...item, name: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedName')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedName')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -96,7 +96,7 @@ const DevicePage = () => {
               <TextField
                 value={item.uniqueId || ''}
                 onChange={(event) => setItem({ ...item, uniqueId: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceIdentifier')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceIdentifier')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -105,7 +105,7 @@ const DevicePage = () => {
           </Accordion>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedExtra')}
               </Typography>
             </AccordionSummary>
@@ -114,12 +114,12 @@ const DevicePage = () => {
                 value={item.groupId || 0}
                 onChange={(event) => setItem({ ...item, groupId: Number(event.target.value) })}
                 endpoint="/api/groups"
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('groupParent')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('groupParent')}</Typography>
               />
               <TextField
                 value={item.phone || ''}
                 onChange={(event) => setItem({ ...item, phone: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedPhone')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedPhone')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -127,7 +127,7 @@ const DevicePage = () => {
               <TextField
                 value={item.model || ''}
                 onChange={(event) => setItem({ ...item, model: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceModel')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceModel')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -135,7 +135,7 @@ const DevicePage = () => {
               <TextField
                 value={item.contact || ''}
                 onChange={(event) => setItem({ ...item, contact: event.target.value })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceContact')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceContact')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -148,10 +148,10 @@ const DevicePage = () => {
                   id: category,
                   name: t(`category${category.replace(/^\w/, (c) => c.toUpperCase())}`),
                 }))}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceCategory')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceCategory')}</Typography>
               />
               <TextField
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userExpirationTime')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('userExpirationTime')}</Typography>
                 type="date"
                 value={(item.expirationTime && moment(item.expirationTime).locale('en').format(moment.HTML5_FMT.DATE)) || '2099-01-01'}
                 onChange={(e) => setItem({ ...item, expirationTime: moment(e.target.value, moment.HTML5_FMT.DATE).locale('en').format() })}
@@ -162,7 +162,7 @@ const DevicePage = () => {
               />
               <FormControlLabel
                 control={<Checkbox checked={item.disabled} onChange={(event) => setItem({ ...item, disabled: event.target.checked })} />}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDisabled')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedDisabled')}</Typography>
                 disabled={!admin}
               />
             </AccordionDetails>
@@ -170,7 +170,7 @@ const DevicePage = () => {
           {item.id && (
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {t('attributeDeviceImage')}
                 </Typography>
               </AccordionSummary>
@@ -193,7 +193,7 @@ const DevicePage = () => {
           {item.id && (
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {t('sharedConnections')}
                 </Typography>
               </AccordionSummary>
@@ -204,7 +204,7 @@ const DevicePage = () => {
                   baseId={item.id}
                   keyBase="deviceId"
                   keyLink="geofenceId"
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedGeofences')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedGeofences')}</Typography>
                 />
                 <LinkField
                   endpointAll="/api/notifications"
@@ -213,7 +213,7 @@ const DevicePage = () => {
                   keyBase="deviceId"
                   keyLink="notificationId"
                   titleGetter={(it) => formatNotificationTitle(t, it)}
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedNotifications')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedNotifications')}</Typography>
                 />
                 {!features.disableDrivers && (
                   <LinkField
@@ -222,7 +222,7 @@ const DevicePage = () => {
                     baseId={item.id}
                     keyBase="deviceId"
                     keyLink="driverId"
-                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDrivers')}</Typography>
+                    label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedDrivers')}</Typography>
                   />
                 )}
                 {!features.disableComputedAttributes && (
@@ -233,7 +233,7 @@ const DevicePage = () => {
                     keyBase="deviceId"
                     keyLink="attributeId"
                     titleGetter={(it) => it.description}
-                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedComputedAttributes')}</Typography>
+                    label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedComputedAttributes')}</Typography>
                   />
                 )}
                 <LinkField
@@ -243,7 +243,7 @@ const DevicePage = () => {
                   keyBase="deviceId"
                   keyLink="commandId"
                   titleGetter={(it) => it.description}
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedSavedCommands')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedSavedCommands')}</Typography>
                 />
                 {!features.disableMaintenance && (
                   <LinkField
@@ -252,7 +252,7 @@ const DevicePage = () => {
                     baseId={item.id}
                     keyBase="deviceId"
                     keyLink="maintenanceId"
-                    label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedMaintenance')}</Typography>
+                    label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedMaintenance')}</Typography>
                   />
                 )}
               </AccordionDetails>

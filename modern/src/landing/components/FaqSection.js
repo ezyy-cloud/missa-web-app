@@ -97,7 +97,7 @@ const FaqSection = () => (
     <Typography
       mb={5}
       sx={{
-        fontFamily: 'Gotham Rounded, sans-serif',
+        fontFamily: 'Product Sans, sans-serif',
         fontWeight: '400',
         textAlign: 'center',
         fontSize: { xs: '35px', sm: '20px', md: '60px' },
@@ -115,7 +115,7 @@ const FaqSection = () => (
               >
                 <Typography
                   style={{
-                    fontFamily: 'Gotham Rounded, sans-serif',
+                    fontFamily: 'Product Sans, sans-serif',
                     fontWeight: '400',
                   }}
                 >
@@ -124,7 +124,7 @@ const FaqSection = () => (
               </StepLabel>
               <StepContent>
                 <Typography sx={{
-                  fontFamily: 'Gotham Rounded',
+                  fontFamily: 'Product Sans',
                   fontWeight: '300',
                 }}
                 >
@@ -145,7 +145,7 @@ const FaqSection = () => (
               >
                 <Typography
                   style={{
-                    fontFamily: 'Gotham Rounded, sans-serif',
+                    fontFamily: 'Product Sans, sans-serif',
                     fontWeight: '400',
                   }}
                 >
@@ -154,7 +154,7 @@ const FaqSection = () => (
               </StepLabel>
               <StepContent>
                 <Typography style={{
-                  fontFamily: 'Gotham Rounded, sans-serif',
+                  fontFamily: 'Product Sans, sans-serif',
                   fontWeight: '300',
                 }}
                 >
@@ -172,7 +172,7 @@ const FaqSection = () => (
         href="#contained-buttons"
         sx={{
           borderRadius: '23px',
-          fontFamily: 'Gotham Rounded, sans-serif',
+          fontFamily: 'Product Sans, sans-serif',
         }}
         endIcon={<ChevronRightIcon />}
         onClick={() => {

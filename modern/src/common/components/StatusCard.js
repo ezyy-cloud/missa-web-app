@@ -100,10 +100,10 @@ const StatusRow = ({ name, content }) => {
   return (
     <TableRow>
       <TableCell className={classes.cell}>
-        <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{name}</Typography>
+        <Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{name}</Typography>
       </TableCell>
       <TableCell className={classes.cell} sx={{ textAlign: 'end' }}>
-        <Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{content}</Typography>
+        <Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{content}</Typography>
       </TableCell>
     </TableRow>
   );
@@ -189,7 +189,7 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
               </CardMedia>
             ) : (
               <div className={classes.header}>
-                <Typography variant="h6" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <Typography variant="h6" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {device.name}
                 </Typography>
                 <IconButton
@@ -261,11 +261,11 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
       )}
       {position && (
         <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>
-          <MenuItem onClick={() => navigate(`/position/${position.id}`)}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedShowDetails')}</Typography></MenuItem>
-          <MenuItem onClick={handleGeofence}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedCreateGeofence')}</Typography></MenuItem>
-          <MenuItem component="a" target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${position.latitude}%2C${position.longitude}`}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('linkGoogleMaps')}</Typography></MenuItem>
-          <MenuItem component="a" target="_blank" href={`http://maps.apple.com/?ll=${position.latitude},${position.longitude}`}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('linkAppleMaps')}</Typography></MenuItem>
-          <MenuItem component="a" target="_blank" href={`https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${position.latitude}%2C${position.longitude}&heading=${position.course}`}><Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('linkStreetView')}</Typography></MenuItem>
+          <MenuItem onClick={() => navigate(`/position/${position.id}`)}><Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedShowDetails')}</Typography></MenuItem>
+          <MenuItem onClick={handleGeofence}><Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedCreateGeofence')}</Typography></MenuItem>
+          <MenuItem component="a" target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${position.latitude}%2C${position.longitude}`}><Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('linkGoogleMaps')}</Typography></MenuItem>
+          <MenuItem component="a" target="_blank" href={`http://maps.apple.com/?ll=${position.latitude},${position.longitude}`}><Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('linkAppleMaps')}</Typography></MenuItem>
+          <MenuItem component="a" target="_blank" href={`https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${position.latitude}%2C${position.longitude}&heading=${position.course}`}><Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('linkStreetView')}</Typography></MenuItem>
         </Menu>
       )}
       <RemoveDialog

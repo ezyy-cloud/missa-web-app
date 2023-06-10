@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
   buttons: {
     marginTop: theme.spacing(2),
@@ -120,13 +120,13 @@ const PreferencesPage = () => {
       <Container maxWidth="xs" className={classes.container}>
         <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+            <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
               {t('userToken')}
             </Typography>
           </AccordionSummary>
           <AccordionDetails className={classes.details}>
             <TextField
-              label=<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('userExpirationTime')}</Typography>
+              label=<Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('userExpirationTime')}</Typography>
               type="date"
               value={tokenExpiration}
               onChange={(e) => {
@@ -139,7 +139,7 @@ const PreferencesPage = () => {
             />
             <FormControl>
               <OutlinedInput
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                 multiline
                 rows={6}
                 readOnly
@@ -165,13 +165,13 @@ const PreferencesPage = () => {
           <>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {t('mapTitle')}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className={classes.details}>
                 <FormControl>
-                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapActive')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('mapActive')}</InputLabel>
                   <Select
                     label={t('mapActive')}
                     value={attributes.activeMapStyles?.split(',') || ['locationIqStreets', 'osm', 'carto']}
@@ -185,17 +185,17 @@ const PreferencesPage = () => {
                       }
                     }}
                     multiple
-                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                    sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                   >
                     {mapStyles.map((style) => (
-                      <MenuItem key={style.id} value={style.id} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
-                        <Typography component="span" color={style.available ? 'textPrimary' : 'error'} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{style.title}</Typography>
+                      <MenuItem key={style.id} value={style.id} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
+                        <Typography component="span" color={style.available ? 'textPrimary' : 'error'} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{style.title}</Typography>
                       </MenuItem>
                     ))}
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapOverlay')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('mapOverlay')}</InputLabel>
                   <Select
                     label={t('mapOverlay')}
                     value={attributes.selectedMapOverlay || ''}
@@ -208,12 +208,12 @@ const PreferencesPage = () => {
                         navigate(`/settings/user/${user.id}?${query.toString()}`);
                       }
                     }}
-                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                    sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                   >
-                    <MenuItem value="" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{'\u00a0'}</MenuItem>
+                    <MenuItem value="" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{'\u00a0'}</MenuItem>
                     {mapOverlays.map((overlay) => (
                       <MenuItem key={overlay.id} value={overlay.id}>
-                        <Typography component="span" color={overlay.available ? 'textPrimary' : 'error'} sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{overlay.title}</Typography>
+                        <Typography component="span" color={overlay.available ? 'textPrimary' : 'error'} sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{overlay.title}</Typography>
                       </MenuItem>
                     ))}
                   </Select>
@@ -242,40 +242,40 @@ const PreferencesPage = () => {
                       label={option}
                       size="small"
                       {...getTagProps({ index })}
-                      sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                      sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                     />
                   ))}
                   renderInput={(params) => (
                     <TextField
                       {...params}
-                      label=<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('attributePopupInfo')}</Typography>
+                      label=<Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('attributePopupInfo')}</Typography>
                     />
                   )}
                 />
                 <FormControl>
-                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapLiveRoutes')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('mapLiveRoutes')}</InputLabel>
                   <Select
                     label={t('mapLiveRoutes')}
                     value={attributes.mapLiveRoutes || 'none'}
                     onChange={(e) => setAttributes({ ...attributes, mapLiveRoutes: e.target.value })}
-                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                    sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                   >
-                    <MenuItem value="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDisabled')}</MenuItem>
-                    <MenuItem value="selected" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceSelected')}</MenuItem>
-                    <MenuItem value="all" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('notificationAlways')}</MenuItem>
+                    <MenuItem value="none" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedDisabled')}</MenuItem>
+                    <MenuItem value="selected" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceSelected')}</MenuItem>
+                    <MenuItem value="all" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('notificationAlways')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl>
-                  <InputLabel sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapDirection')}</InputLabel>
+                  <InputLabel sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('mapDirection')}</InputLabel>
                   <Select
                     label={t('mapDirection')}
                     value={attributes.mapDirection || 'selected'}
                     onChange={(e) => setAttributes({ ...attributes, mapDirection: e.target.value })}
-                    sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                    sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                   >
-                    <MenuItem value="none" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('sharedDisabled')}</MenuItem>
-                    <MenuItem value="selected" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceSelected')}</MenuItem>
-                    <MenuItem value="all" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('notificationAlways')}</MenuItem>
+                    <MenuItem value="none" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('sharedDisabled')}</MenuItem>
+                    <MenuItem value="selected" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceSelected')}</MenuItem>
+                    <MenuItem value="all" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('notificationAlways')}</MenuItem>
                   </Select>
                 </FormControl>
                 <FormGroup>
@@ -286,7 +286,7 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapGeofences: e.target.checked })}
                       />
                     )}
-                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('attributeShowGeofences')}</Typography>}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('attributeShowGeofences')}</Typography>}
                   />
                   <FormControlLabel
                     control={(
@@ -295,7 +295,7 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapFollow: e.target.checked })}
                       />
                     )}
-                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('deviceFollow')}</Typography>}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('deviceFollow')}</Typography>}
                   />
                   <FormControlLabel
                     control={(
@@ -304,7 +304,7 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapCluster: e.target.checked })}
                       />
                     )}
-                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapClustering')}</Typography>}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('mapClustering')}</Typography>}
                   />
                   <FormControlLabel
                     control={(
@@ -313,14 +313,14 @@ const PreferencesPage = () => {
                         onChange={(e) => setAttributes({ ...attributes, mapOnSelect: e.target.checked })}
                       />
                     )}
-                    label={<Typography variant="body2" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('mapOnSelect')}</Typography>}
+                    label={<Typography variant="body2" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('mapOnSelect')}</Typography>}
                   />
                 </FormGroup>
               </AccordionDetails>
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {t('deviceTitle')}
                 </Typography>
               </AccordionSummary>
@@ -332,7 +332,7 @@ const PreferencesPage = () => {
                   data={deviceFields}
                   titleGetter={(it) => t(it.name)}
                   label={t('devicePrimaryInfo')}
-                  sx={{ fontFamily: 'Gotham Rounded' }}
+                  sx={{ fontFamily: 'Product Sans' }}
                 />
                 <SelectField
                   emptyValue=""
@@ -341,13 +341,13 @@ const PreferencesPage = () => {
                   data={deviceFields}
                   titleGetter={(it) => t(it.name)}
                   label={t('deviceSecondaryInfo')}
-                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                 />
               </AccordionDetails>
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {t('sharedSound')}
                 </Typography>
               </AccordionSummary>
@@ -359,8 +359,8 @@ const PreferencesPage = () => {
                   endpoint="/api/notifications/types"
                   keyGetter={(it) => it.type}
                   titleGetter={(it) => t(prefixString('event', it.type))}
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('eventsSoundEvents')}</Typography>
-                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('eventsSoundEvents')}</Typography>
+                  sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                 />
                 <SelectField
                   multiple
@@ -368,21 +368,21 @@ const PreferencesPage = () => {
                   onChange={(e) => setAttributes({ ...attributes, soundAlarms: e.target.value.join(',') })}
                   data={alarms}
                   keyGetter={(it) => it.key}
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('eventsSoundAlarms')}</Typography>
-                  sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('eventsSoundAlarms')}</Typography>
+                  sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
                 />
               </AccordionDetails>
             </Accordion>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+                <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                   {t('sharedInfoTitle')}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className={classes.details}>
                 <TextField
                   value={versionApp}
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsAppVersion')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('settingsAppVersion')}</Typography>
                   disabled
                   InputProps={{
                     className: classes.fontStyle,
@@ -390,7 +390,7 @@ const PreferencesPage = () => {
                 />
                 <TextField
                   value={versionServer || '-'}
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsServerVersion')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('settingsServerVersion')}</Typography>
                   disabled
                   InputProps={{
                     className: classes.fontStyle,
@@ -398,7 +398,7 @@ const PreferencesPage = () => {
                 />
                 <TextField
                   value={socket ? t('deviceStatusOnline') : t('deviceStatusOffline')}
-                  label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('settingsConnection')}</Typography>
+                  label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('settingsConnection')}</Typography>
                   disabled
                   InputProps={{
                     className: classes.fontStyle,
@@ -412,7 +412,7 @@ const PreferencesPage = () => {
                 color="primary"
                 variant="outlined"
                 onClick={() => navigate(-1)}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               >
                 {t('sharedCancel')}
               </Button>
@@ -421,7 +421,7 @@ const PreferencesPage = () => {
                 color="primary"
                 variant="contained"
                 onClick={handleSave}
-                sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}
+                sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}
               >
                 {t('sharedSave')}
               </Button>

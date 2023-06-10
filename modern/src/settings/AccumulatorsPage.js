@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
   },
   fontStyle: {
-    fontFamily: 'Gotham Rounded', fontWeight: 350,
+    fontFamily: 'Product Sans', fontWeight: 350,
   },
   buttons: {
     marginTop: theme.spacing(2),
@@ -85,7 +85,7 @@ const AccumulatorsPage = () => {
         <Container maxWidth="xs" className={classes.container}>
           <Accordion defaultExpanded>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1" sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>
+              <Typography variant="subtitle1" sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>
                 {t('sharedRequired')}
               </Typography>
             </AccordionSummary>
@@ -94,7 +94,7 @@ const AccumulatorsPage = () => {
                 type="number"
                 value={item.hours / 3600000}
                 onChange={(event) => setItem({ ...item, hours: Number(event.target.value) * 3600000 })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{t('positionHours')}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{t('positionHours')}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -103,7 +103,7 @@ const AccumulatorsPage = () => {
                 type="number"
                 value={distanceFromMeters(item.totalDistance, distanceUnit)}
                 onChange={(event) => setItem({ ...item, totalDistance: distanceToMeters(Number(event.target.value), distanceUnit) })}
-                label=<Typography sx={{ fontFamily: 'Gotham Rounded', fontWeight: 350 }}>{`${t('deviceTotalDistance')} (${distanceUnitString(distanceUnit, t)})`}</Typography>
+                label=<Typography sx={{ fontFamily: 'Product Sans', fontWeight: 350 }}>{`${t('deviceTotalDistance')} (${distanceUnitString(distanceUnit, t)})`}</Typography>
                 InputProps={{
                   className: classes.fontStyle,
                 }}
@@ -116,7 +116,7 @@ const AccumulatorsPage = () => {
               color="primary"
               variant="outlined"
               onClick={() => navigate(-1)}
-              sx={{ fontFamily: 'Gotham Rounded' }}
+              sx={{ fontFamily: 'Product Sans' }}
             >
               {t('sharedCancel')}
             </Button>
@@ -125,7 +125,7 @@ const AccumulatorsPage = () => {
               color="primary"
               variant="contained"
               onClick={handleSave}
-              sx={{ fontFamily: 'Gotham Rounded' }}
+              sx={{ fontFamily: 'Product Sans' }}
             >
               {t('sharedSave')}
             </Button>

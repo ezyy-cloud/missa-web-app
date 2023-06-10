@@ -18,7 +18,7 @@ const ClientReferralSection = () => (
   >
     <Typography
       sx={{
-        fontFamily: 'Gotham Rounded, sans-serif',
+        fontFamily: 'Product Sans, sans-serif',
         fontWeight: '400',
         textAlign: 'center',
         fontSize: { xs: '35px', sm: '20px', md: '60px' },
