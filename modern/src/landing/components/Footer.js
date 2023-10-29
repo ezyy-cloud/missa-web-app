@@ -34,7 +34,6 @@ const Footer = () => {
           <Stack>
             <Typography
               variant="h5"
-              component="h5"
               mb={1}
               sx={{
                 fontFamily: 'Product Sans, sans-serif',
@@ -46,20 +45,29 @@ const Footer = () => {
             </Typography>
 
             <Typography
-              variant="subtitle"
-              component="subtitle"
+              variant="subtitle1"
               sx={{
                 fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
                 color: '#fff',
               }}
             >
-              61J Tongogara Street
+              5 Bryanston Court
             </Typography>
 
             <Typography
-              variant="subtitle"
-              component="subtitle"
+              variant="subtitle1"
+              sx={{
+                fontFamily: 'Product Sans, sans-serif',
+                fontWeight: '300',
+                color: '#fff',
+              }}
+            >
+              51 Fife Avenue
+            </Typography>
+
+            <Typography
+              variant="subtitle1"
               sx={{
                 fontFamily: 'Product Sans, sans-serif',
                 fontWeight: '300',
@@ -67,6 +75,17 @@ const Footer = () => {
               }}
             >
               Harare
+            </Typography>
+
+            <Typography
+              variant="subtitle1"
+              sx={{
+                fontFamily: 'Product Sans, sans-serif',
+                fontWeight: '300',
+                color: '#fff',
+              }}
+            >
+              Zimbabwe
             </Typography>
           </Stack>
         </Grid>
@@ -182,7 +201,7 @@ const Footer = () => {
             {' '}
             -
             {' '}
-            { new Date().getFullYear() }
+            {new Date().getFullYear()}
 
           </Typography>
         </Grid>
