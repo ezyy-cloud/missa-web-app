@@ -17,6 +17,7 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import IconButton from '@mui/material/IconButton';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '@mui/system';
+import { Typography } from '@mui/material';
 
 const ElevationScroll = (props) => {
   const { children } = props;
@@ -51,9 +52,9 @@ const MissaAppBar = (props) => {
       <ElevationScroll {...props}>
         <AppBar elevation={0}>
           <Toolbar>
-            <Image src="https://svgshare.com/i/qeZ.svg" width={120} />
+            <Image src="https://missabucket.s3.amazonaws.com/missa.svg" width={120} />
             <Box sx={{ flexGrow: 1 }} />
-            <Grid container sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }} spacing={2}>
+            <Grid container sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, pr: 4 }} spacing={2}>
               <Grid div>
                 <IconButton
                   color="primary"
@@ -113,6 +114,49 @@ const MissaAppBar = (props) => {
                 >
                   <PhoneAndroidIcon color="primary" />
                 </IconButton>
+              </Grid>
+
+              <Grid
+                div
+                sx={{
+                  alignItems: 'center',
+                  display: 'flex',
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontFamily: 'Product Sans, sans-serif',
+                    fontWeight: '600',
+                    lineHeight: 1.7,
+                    color: 'black',
+                    alignItems: 'center',
+                    display: 'flex',
+                  }}
+                >
+                  CAR RENTAL
+                </Typography>
+              </Grid>
+              <Grid
+                div
+                sx={{
+                  alignItems: 'center',
+                  display: 'flex',
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontFamily: 'Product Sans, sans-serif',
+                    fontWeight: '600',
+                    lineHeight: 1.7,
+                    color: 'black',
+                    alignItems: 'center',
+                    display: 'flex',
+                  }}
+                >
+                  COURIER SERVICES
+                </Typography>
               </Grid>
             </Grid>
             <Button
